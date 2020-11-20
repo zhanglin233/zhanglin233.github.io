@@ -13,6 +13,14 @@ enableToc: true
 
 # Comment
 comment:
+  # gitalk: true
+  # clientID: '9011b0d4482b2d4839ff'
+  # secret: '6d7160f76a65ecc330e55090f50072ccdc8aca6e '
+  # repo: 'zhanglin233.github.io'
+  # ower: 'zhanglin233'
+  # admin: 'zhanglin233'
+  # distractionFreeMode: true
+
     # livere: MTAyMC81MDk5NC8yNzQ3Ng  # https://www.livere.com
     # disqus: leopard
     # uyan: 2143225  # 有言id,登录有言官网申请
