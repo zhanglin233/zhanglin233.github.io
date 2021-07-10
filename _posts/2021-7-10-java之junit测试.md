@@ -14,6 +14,9 @@ JUnit是一个Java语言的单元测试框架。它由Kent Beck和Erich Gamma建
 
 简单的说，单元测试就是对你程序中最小的功能模块进行测试，在c语言里可能是一个函数，java中可能是一个方法或者类。目的就是为了提高代码的质量。
 
+###为什么要引入单元测试
+平常写代码的时候经常需要检验某些方法功能是否正常，正常情况下需要创立完整的类来运行检验该方法，这样难免效率低下，引入junit之后就不用构建一个完整的程序便可以对某一方法进行检验。
+
 ## IDEA中junit的使用
 
 ### 创建包名及代码
@@ -52,9 +55,11 @@ public class DaoTest {
 在要测试的方法前键入@test，这是会发现test为红色提示。
 ![]({{site.url}}/images/2021_7_10_junit/2.png)
 这是我们只需按住Ctrl+shift+Alt+s打开项目结构，找到库并在右边找到+号按钮新建一个java库，并在idea的安装目录中的lib文件夹找到junit-4.12.jar文件并导入即可。
-
+![]({{site.url}}/images/2021_7_10_junit/6.png)
 ![]({{site.url}}/images/2021_7_10_junit/3.png)
 接下来，便需要将junit.jar文件导入到模块中。
 ![]({{site.url}}/images/2021_7_10_junit/4.png)
 选中junit4.12jar文件并点击右上方的+号并添加到模块依赖中。
 ![]({{site.url}}/images/2021_7_10_junit/5.png)
+接下来便返回项目中，导入org.junit.test包后，可以看到@Test变为了正常的颜色，接下来点击方法前面的绿色三角形便可以对方法进行测验了。
+![]({{site.url}}/images/2021_7_10_junit/7.png)
