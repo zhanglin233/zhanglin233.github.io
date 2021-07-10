@@ -1,3 +1,10 @@
+---
+layout: post
+title: java核心卷一第四章对象与类
+tags:  技术 javaweb
+---
+
+
  ##4.3
  ###4.3.1 Employee 类 （后续未说明都以Employee 类为例）
   文件名必须与public类的名字相匹配。在一个源文件中，只能有一个公共类，但可以有任意数目的非公共类。
