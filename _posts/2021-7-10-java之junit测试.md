@@ -21,7 +21,7 @@ JUnit是一个Java语言的单元测试框架。它由Kent Beck和Erich Gamma建
 ####包名规范
 
 单元测试的代码都放在test包下，和源码不在同一个包下
-![]({{site.url/images/2021-7-10-junit/Snipaste_2021-07-10_19-05-24.png}})
+![]({{site.url/images/2021_7_10_junit/1.png}})
 如图所示，DaoTest类单独放在test包下。
 测试的类方法都以test开头，后面接要测试的类或者方法的名字
 
@@ -50,11 +50,11 @@ public class DaoTest {
 
 ```
 在要测试的方法前键入@test，这是会发现test为红色提示。
-![]({{site.url/images\\2021-7-10-junit\\添加@test.png}})
+![]({{site.url/images/2021-7-10-junit/2.png}})
 这是我们只需按住Ctrl+shift+Alt+s打开项目结构，找到库并在右边找到+号按钮新建一个java库，并在idea的安装目录中的lib文件夹找到junit-4.12.jar文件并导入即可。
 
-![]({{site.url/images\\2021-7-10-junit\\添加junit的jar包.png}})
+![]({{site.url/images/2021-7-10-junit/3.png}})
 接下来，便需要将junit.jar文件导入到模块中。
-![]({{site.url/images\\2021-7-10-junit\\将junit添加到模块中.png}})
+![]({{site.url/images\\2021-7-10-junit\\4.png}})
 选中junit4.12jar文件并点击右上方的+号并添加到模块依赖中。
-![]({{site.url/images\\2021-7-10-junit\\选中junit.jar并添加到模块中.png}})
+![]({{site.url/images\\2021-7-10-junit\\5.png}})
