@@ -21,7 +21,7 @@ JUnit是一个Java语言的单元测试框架。它由Kent Beck和Erich Gamma建
  包名规范
 
 单元测试的代码都放在test包下，和源码不在同一个包下
-![]({{site.url}}/images/2021_7_10_junit/1.png)
+![]({{site.url}}/images/2021_7_10_junit/1.png)           
 如图所示，DaoTest类单独放在test包下。
 测试的类方法都以test开头，后面接要测试的类或者方法的名字
 
