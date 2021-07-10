@@ -54,7 +54,3 @@ public class DaoTest {
 ![]({{site.url/images\\2021-7-10-junit\\将junit添加到模块中.png}})
 选中junit4.12jar文件并点击右上方的+号并添加到模块依赖中。
 ![]({{site.url/images\\2021-7-10-junit\\选中junit.jar并添加到模块中.png}})
-
-
-添加完毕后便返回到test代码，导入org.junit.testv包后，点击方法左侧的绿色按钮便可以启动测试了。
-![]({{site.url/images/2021-7-10-junit/启动测试.png}})
