@@ -182,6 +182,7 @@ username=zhangsan
 	HttpServletRequest -- 接口
 		| 实现
 	org.apache.catalina.connector.RequestFacade 类(tomcat)
+
 ## 3.request功能
 ### 1获取请求消息数据
 ####  1.获取请求行数据
@@ -247,8 +248,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
         System.out.println(remoteAddr);
     }
 }
-
 ```
+
 #### 2.获取请求头数据
 	方法：
 	* String getHeader(String name):通过请求头的名称获取请求头的值
