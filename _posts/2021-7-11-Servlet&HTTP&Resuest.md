@@ -75,6 +75,7 @@ tags: java 技术
 - user-agent:浏览器告诉服务器，我访问你使用的浏览器版本信息。可以在服务器端获取该头的信息，解决浏览器的兼容性问题
 - Referer: ：http://localhost/login.html
 告诉服务器，我(当前请求)从哪里来？
+
 ```java
   package cn.itcast.web.request;
 
@@ -105,11 +106,13 @@ tags: java 技术
           }
       }
   }
-
 ```
+
+
 ##### 作用：
 
 ###### 防盗链：
+
 
 ```java
   package cn.itcast.web.request;
@@ -157,6 +160,7 @@ tags: java 技术
 ### 4.请求体(正文)
 - 封装POST请求消息的请求参数
 - 字符串格式：
+
 ```
 POST /login.html HTTP/1.1
 Host: localhost
@@ -253,7 +257,8 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 #### 2.获取请求头数据
 	方法：
 	* String getHeader(String name):通过请求头的名称获取请求头的值
- Enumeration<String> getHeaderNames():获取所有的请求头名称  
+ Enumeration<String> getHeaderNames():获取所有的请求头名称   
+
 ```java
 //演示获取请求头数据:reference
 String refer = request.getHeader("referer");
@@ -287,10 +292,11 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 hobby=xx&hobby=game
 #### 3. Enumeration<String> getParameterNames():获取所有请求的参数名称
 #### 4. Map<String,String[]> getParameterMap():获取所有参数的map集合
+
 - 中文乱码问题：
 - get方式：tomcat 8 已经将get方式乱码问题解决了
 - post方式：会乱码
-- 解决：在获取参数前，设置request的编码request.setCharacterEncoding("utf-8");
+- 解决：在获取参数前，设置request的编码request.setCharacterEncoding("utf-8");  
 
 ```java
 package cn.itcast.web.request;
@@ -363,17 +369,18 @@ public class RequestDemo6 extends HttpServlet {
         this.doPost(request,response);
     }
 }
-
 ```
+
 ### 2. 请求转发：一种在服务器内部的资源跳转方式
 #### 1. 步骤：
 - 通过request对象获取请求转发器对象：RequestDispatcher
 getRequestDispatcher(String path)
 - 使用RequestDispatcher对象来进行转发：forward(ServletRequest request,
 ServletResponse response)
+
 ```java
  request.getRequestDispatcher("/requestDemo8").forward(request,response);
-```
+ ```
 #### 2.特点：
 - 浏览器地址栏路径不发生变化
 - 只能转发到当前服务器内部资源中。
