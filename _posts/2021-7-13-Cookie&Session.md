@@ -1,6 +1,6 @@
 ---
 layout: post
-title: javaweb之Servlet&HTTP&Request
+title: javaweb之Cookie&Servlet
 tags: java 技术
 ---
 
