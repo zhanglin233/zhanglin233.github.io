@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://zhanglin233.github.io</id>
+    <title>欢迎来到我的个人博客 • Posts by &#34;爬虫&#34; category</title>
+    <link href="http://zhanglin233.github.io" />
+    <updated>2021-11-26T16:40:53.724Z</updated>
+    <category term="博客" />
+    <category term="前端" />
+    <category term="Nginx" />
+    <category term="前端 React" />
+    <category term="Java JavaWEB" />
+    <category term="Java JavaSE" />
+    <category term="java SpringBoot" />
+    <category term="java springboot" />
+    <category term="Python 爬虫" />
+    <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/python/spider/2020-11-18-pixiv2/</id>
+        <title>爬取p站(pixiv)的图片（二）</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/python/spider/2020-11-18-pixiv2/"/>
+        <content type="html">&lt;h3 id=&#34;成功爬取pixiv上的图片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#成功爬取pixiv上的图片&#34;&gt;#&lt;/a&gt; 成功爬取 pixiv 上的图片&lt;/h3&gt;
+&lt;p&gt;在经过了三天的奋战之后，我终于成功的爬取到了 pixiv 上的图片，看着文件夹里的众多好看的图片的感觉真不错，以后再也不缺壁纸和头像了（hiahiahia）。接下来言归正传，分享一下我是如何爬取到这些图片的。&lt;/p&gt;
+&lt;h3 id=&#34;爬取pixiv上的图片的具体步骤&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#爬取pixiv上的图片的具体步骤&#34;&gt;#&lt;/a&gt; 爬取 pixiv 上的图片的具体步骤&lt;/h3&gt;
+&lt;h4 id=&#34;获取不同照片的id&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#获取不同照片的id&#34;&gt;#&lt;/a&gt; 获取不同照片的 id&lt;/h4&gt;
+&lt;p&gt;我在我的&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3poYW5nbGluLnNwYWNlLzIwMjAvMTEvamVreWxsLw==&#34;&gt;爬取 pixiv 的第一篇博客&lt;/span&gt;中描述了我的初次尝试的爬取思路，虽然思路并没有问题，但是最终因为网站反扒的原因，我并没有成功的将图片爬取下来，本来我是打算等我再看点如何反 “反爬” 的教程之后再动手，但是昨天晚上回去的时候我随机点了几张图片观察它们的详细信息时，才发现他的域名是通过改变图片的 id 值来链接不同的照片，大体都是相同的 (我还是太年轻了，经验不够), 如 https://pixivic.com/illusts/64952228?VNK=f1808200, 其中的 &#39;64952228&#39; 就是图片的 id 值，当我们将它换成其他照片的 id 值就可以访问其他的照片，而我昨天通过访问&#39;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waXguaXB2NC5ob3N0L2lsbHVzdHJhdGlvbnM/aWxsdXN0VHlwZT1pbGx1c3QmYW1wO3NlYXJjaFR5cGU9b3JpZ2luYWwmYW1wO21heFNhbml0eUxldmVsPTQmYW1wO3BhZ2U9NSZhbXA7a2V5d29yZD0lRTYlQTElOUMlRTMlODElQUUlRTglOEElQjEmYW1wO3BhZ2VTaXplPTMw&#34;&gt;https://pix.ipv4.host/illustrations?illustType=illust&amp;amp;searchType=original&amp;amp;maxSanityLevel=4&amp;amp;page=5&amp;amp;keyword = 桜の花 &amp;amp; pageSize=30&lt;/span&gt;&#39; 信息得到了一大串网址，虽然我们不能通过这些网址直接访问到相应的图片，但是我们可以发现这些网址之中也包含了相应的图片的 id 信息，所以如果我们能够将其中的 id 信息提取出来，并套到上面的那个网址中，这样我们就能通过代码批量的访问这些图片的地址并进而进行后面的操作。  (如图所示，只要输入类似图中的网址，我们就可以访问到不同的图片)&lt;br /&gt;
+![](/images/20-11-18_pixiv5.png)&lt;/p&gt;
+&lt;p&gt;我们将得到的一大串不能直接访问的网址保存到本地，得到如图所示的结果&lt;br /&gt;
+！[](/images/20-11-18_pixiv1.png) 要提取・其中的 id 信息最好用的当然是用正则表达式了。&lt;br /&gt;
+![](/images/20-11-18_pixiv2.png)(其中 i 为当前访问的是第几页的内容，后面讲)，这样我们就的到了所有图片的 id 信息，这个时候我们只需要将 id 信息填写到基本 url 中就可以组成能够直接访问到图片的链接。&lt;br /&gt;
+![](/images/20-11-18_pixiv3.png)(其中 idtag 为 id + 页数，所以提取的时候只需要取前 8 位就行 (id 观察后能发现都是 8 位))，这个时候就完成了我们的第一步。&lt;/p&gt;
+&lt;h4 id=&#34;尝试访问图片链接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#尝试访问图片链接&#34;&gt;#&lt;/a&gt; 尝试访问图片链接&lt;/h4&gt;
+&lt;p&gt;正常来说我们获得了可以通过点击便访问到的链接，接下来就是通过代码访问这些链接、获取他们的 html 信息、并提取到其中能够直接下载的图片的链接，&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-18_pixiv6.png)&lt;/p&gt;
+&lt;p&gt;你是不是也是这么想的呢，如果是的话，恭喜你也错了 (hhh), 我们运行一下这部分代码，便会发现它报错了，然后我用 selenium 模仿搜索了一下，便发现无论输入的是什么网址，打开的都是这个网站的首页，所以我们为了访问到图片的地址，应该伪装成我们是登陆状态，但是我在 xhr 翻啊翻，只找到了一个&#39;set-cookie&#39; 信息，并没有找到 cookie 信息，而且当我将 set-cookie 信息加入到 headers 之中后，还是无法访问到图片 (就离谱)，这个时候我实在是没办法了，只能先用 selenium 登录进这个网站之后再进行后续的操作，操作流程为找到登录按钮的标签 -&amp;gt; 点击登录按钮 -&amp;gt; 填写账号、密码和验证码，之后在访问图片的链接。接下来的事情就更离谱了 (我是真不知道一个非赢利的图片网站为什么在反爬上下这么大功夫)，我们用 selenium 打开 pixiv 首页，&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-18_pixiv11.png)&lt;/p&gt;
+&lt;p&gt;直接打开的界面为：&lt;br /&gt;
+![](/images/20-11-19_pixiv5.png)&lt;/p&gt;
+&lt;p&gt;如果这时我们直接用代码寻找登录按钮时找不到的。&lt;br /&gt;
+我们必须手动叉掉广告和二维码后，代码才能找到登录按钮，而且几秒钟之内不点掉的话，你就叉不掉了 (????, 我是懵逼了)。&lt;br /&gt;
+找到之后，我们就将开始输入的账号和密码自动填入，至于验证码自动识别，我还不是很熟，暂且偷下懒，反正输验证码也不要多久。&lt;br /&gt;
+![](/images/20-11-18_pixiv7.png)&lt;/p&gt;
+&lt;h4 id=&#34;下载图片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#下载图片&#34;&gt;#&lt;/a&gt; 下载图片&lt;/h4&gt;
+&lt;p&gt;成功登陆之后，那事情就简单了，获取网页的 html 信息并提取出图片可下载的地址：&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-18_pixiv9.png)&lt;/p&gt;
+&lt;p&gt;保存图片到本地：&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-18_pixiv10.png)&lt;/p&gt;
+&lt;p&gt;接下来打开文件夹就可以找到照片了&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id=&#34;20-11-19的补充代码的部分细节改进&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#20-11-19的补充代码的部分细节改进&#34;&gt;#&lt;/a&gt; 20-11-19 的补充（代码的部分细节改进）&lt;/h3&gt;
+&lt;h4 id=&#34;页数的选取&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#页数的选取&#34;&gt;#&lt;/a&gt; 页数的选取&lt;/h4&gt;
+&lt;p&gt;![](/images/20-11-19_pixiv3.png)&lt;br /&gt;
+ 可以选取下载的初始与终止页，不用每次从第一页下载，但是这种我感觉还是不太好，我是打算在本地再建立一个新文件，自动记录下载过的主题、页数和 id，以后再弄。&lt;/p&gt;
+&lt;h4 id=&#34;id的提取与挑选&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#id的提取与挑选&#34;&gt;#&lt;/a&gt; id 的提取与挑选&lt;/h4&gt;
+&lt;p&gt;原来选取出来的 id 值既包括了作品的 id 值，还包括了部分作者的 id，这次改进之后只剩下了作品的 id。但是这样还是存在另一个问题：&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-19_pixiv1.png)&lt;/p&gt;
+&lt;p&gt;我们可以考到这样提取出来的有些是重复的，如果我们每一个 id 的图片都要检查一下是否已经存在了就会浪费很多时间，所以我就又改进了一下，在组成网址前去掉重复值，最终代码为：&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-19_pixiv4.png)&lt;/p&gt;
+&lt;h4 id=&#34;关键字判断&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#关键字判断&#34;&gt;#&lt;/a&gt; 关键字判断&lt;/h4&gt;
+&lt;p&gt;当输入的关键字找不到相关图片时，提醒用户换个关键字查找并中断程序&lt;/p&gt;
+&lt;p&gt;![](/images/20-11-19_pixiv2.png)&lt;/p&gt;
+&lt;h3 id=&#34;完结撒花&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#完结撒花&#34;&gt;#&lt;/a&gt; 完结撒花&lt;/h3&gt;
+&lt;p&gt;花了四天的时间终于将这个爬虫程序及博客写好了  (&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL3poYW5nbGluMjMzL2NvZGUvYmxvYi9tYXN0ZXIvLnZzY29kZS9weXRob24vJUU3JTg4JUFDJUU1JThGJTk2cGl4aXYlRTUlOUIlQkUlRTclODklODcvJUU3JTg4JUFDJUU1JThGJTk2JUU1JTlCJUJFJUU3JTg5JTg3LnB5&#34;&gt;代码地址&lt;/span&gt;)&lt;br /&gt;
+，真是痛并快乐着，这几天既学到了一些新知识，又复习了一些快忘掉的知识，收获还是很大滴，不枉我这几天没日没夜的改代码、敲博客弄得人都不好了，坐太久了现在脖子都稍微有点痛，这一两天就先休息一下想想下个任务写什么。&lt;/p&gt;
+</content>
+        <category term="Python 爬虫" />
+        <updated>2021-11-26T16:40:53.724Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/python/spider/2020-11-17-pixiv1/</id>
+        <title>爬取p站(pixiv)的图片（一）</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/python/spider/2020-11-17-pixiv1/"/>
+        <content type="html">&lt;p&gt;pixiv(&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cucGl4aXYubmV0Lw==&#34;&gt;地址 1&lt;/span&gt;，翻不了墙的可以通过&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waXhpdmljLmNvbS8=&#34;&gt;地址 2&lt;/span&gt; 访问) 上面有很多非常好看的图片，我也经常在上面寻找一些好看的图片，但自己一个一个下载又太慢了，然后刚好自己学的爬虫忘的差不多了，所以就想写个爬虫自动爬取 pixiv 上的图片，顺带复习一下以前学的知识。&lt;/p&gt;
+&lt;h3 id=&#34;一些图片这谁扛得住呀太好看了&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#一些图片这谁扛得住呀太好看了&#34;&gt;#&lt;/a&gt; 一些图片 (这谁扛得住呀，太好看了)&lt;/h3&gt;
+&lt;p&gt;![](/images/3.jpg)&lt;br /&gt;
+![](/images/2.jpg)&lt;br /&gt;
+![](/images/4.jpg)&lt;/p&gt;
+&lt;h3 id=&#34;第一次尝试失败&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一次尝试失败&#34;&gt;#&lt;/a&gt; 第一次尝试失败&lt;/h3&gt;
+&lt;p&gt;因为我的梯子是白嫖的，直接从原网站下载的话可能速度会过慢，所以我选择从国内地址上下载。&lt;br /&gt;
+打开网站先输入自己喜欢的类型，我找的是樱花类型。打开了网页之后便开始分析网页结构，为后面的编写代码做准备。打开开发者工具 (F12) 后便可以看到整个网页的 html 代码，&lt;br /&gt;
+![](/images/11-17-pixiv.png) 使用工具栏中的小箭头随便点击一张图片便可在结构中定位到该图片的位置，&lt;br /&gt;
+![](/images/11-17-pixiv2.png) 我们仔细观察之后就可以发现所有的图片都是位于 class=&#39;cell-container&#39; 的 div 盒子中，而图片则是位于这个 div 标签下的 img 标签中，而每张图片的链接都储存在 img 标签的，所以理论上接下来我们只需找到每一个 img 标签并取得所有图片的链接就可以批量下载图片。但是这个网页跟一般的网页不同，一般的的网页可以根据改变页数而选择不同的图片，而这个网页采取的是动态刷新的方式来刷新图片，随着滚动条的滚动图片不断发生改变，而整个网页并不会刷新，网址并不会改变，这就给给我们的工作带来了一定的麻烦。&lt;br /&gt;
+这个时候为了能够正常的获取我们所需要的数目的照片，我们就需要继续分析网页。在开发者工具中找到 “网络”（&#39;networks&#39;）, 我们可以观察到随着我们往下滑动页面，网络中的数据也是不断改变的。本来我是打算先找到 post 请求，然后就可以找到真正的请求网址，结果他竟然没有 post 请求！！！networks 中直接给出了返回的照片信息，但是我不知道如何收集开发者工具中的 img 信息，所以只能换个方法。&lt;br /&gt;
+随着我们不断地滑动，networks 中的内容不断改变，通过观察可以观察到每滑动几下，刷新的数据中除了 jpg 信息，还有 2 个&#39;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9waXguaXB2NC5ob3N0L2lsbHVzdHJhdGlvbnM/aWxsdXN0VHlwZT1pbGx1c3QmYW1wO3NlYXJjaFR5cGU9b3JpZ2luYWwmYW1wO21heFNhbml0eUxldmVsPTQmYW1wO3BhZ2U9NSZhbXA7a2V5d29yZD0lRTYlQTElOUMlRTMlODElQUUlRTglOEElQjEmYW1wO3BhZ2VTaXplPTMw&#34;&gt;https://pix.ipv4.host/illustrations?illustType=illust&amp;amp;searchType=original&amp;amp;maxSanityLevel=4&amp;amp;page=5&amp;amp;keyword = 桜の花 &amp;amp; pageSize=30&lt;/span&gt;&#39; 信息，一个是 get 请求，一个是 options 请求 (虽然我不知道这个请求有什么用)。&lt;br /&gt;
+![](/images/20-11-17_pixiv3.png) 我们选中其中一个可以发现一个请求 url, 我通过代码爬取了一下这个网址的源代码 (直接点击这个网址是无用的，我是通过在代码添加请求头访问)，发现其中包含了很多的照片的网址，然后再观察一下这个网址的组成，可以大胆猜测我们只要改变网址中 &#39;page&#39; 的属性值就可以访问到不同的图片组，然后我用代码爬了一下不同的 page 值的网页发现返回值确实不同，就在我以为我要成功的时候，现实又严重的打击了我的自信心。我试着用代码访问获得的众多的图片网址中的一个时，返回了失败的信息，估计是爬虫做的伪装的还不够，还是被认出来了。但是我暂时并不知道如何改进，所以这种方式我就暂时放弃了。&lt;br /&gt;
+接下来继续观察网页返回的信息，可以发现在参数栏中也包含了 page 信息&lt;br /&gt;
+！[](/images/20-11-17_pixiv4.png), 所以我就打算将这些信息打包成 data 信息并作为参数传入请求中&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;import requests
+from lxml import etree
+
+# 网址
+url = &#39;https://pixivic.com/keywords?tag=樱花&amp;amp;illustType=illust&amp;amp;VNK=3fa7b1f4&#39;
+
+# 反爬
+header = &amp;#123;
+    &#39;accept&#39;:
+    &#39;application/json, text/plain, */*&#39;,
+    &#39;accept-encoding&#39;:
+    &#39;gzip, deflate, br&#39;,
+    &#39;accept-language&#39;:
+    &#39;zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6&#39;,
+    &#39;authorization&#39;:
+    &#39;eyJhbGciOiJIUzUxMiJ9.eyJwZXJtaXNzaW9uTGV2ZWwiOjIsInJlZnJlc2hDb3VudCI6MSwiaXNCYW4iOjEsInVzZXJJZCI6NTk3NTIyLCJpYXQiOjE2MDU1MzA4ODEsImV4cCI6MTYwNTcwMzY4MX0.yPa-vDYWgMtp6Mer_Ycgyf4r6i6ZQoHFZJGi1v9CjYH7Q7T9Kz_Coa5PwbtZC0j-AvhRFEWaa5D5jxD8WujxBA&#39;,
+    &#39;dnt&#39;:
+    &#39;1&#39;,
+    &#39;origin&#39;:
+    &#39;https://pixivic.com&#39;,
+    &#39;referer&#39;:
+    &#39;https://pixivic.com/&#39;,
+    &#39;sec-fetch-dest&#39;:
+    &#39;empty&#39;,
+    &#39;sec-fetch-mode&#39;:
+    &#39;cors&#39;,
+    &#39;sec-fetch-site&#39;:
+    &#39;cross-site&#39;,
+    &#39;cookie&#39;:
+    &#39;__cfduid=d9b53ec0583ae0dc116fee426d77c30891605603315; expires=Thu, 17-Dec-20 08:55:15 GMT; path=/; domain=.cheerfun.dev; HttpOnly; SameSite=Lax&#39;,
+    &#39;user-agent&#39;:
+    &#39;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Mobile Safari/537.36 Edg/86.0.622.69&#39;
+&amp;#125;
+# 提交的数据
+dat = &amp;#123;
+    &#39;illustType&#39;: &#39;illust&#39;,
+    &#39;searchType&#39;: &#39;original&#39;,
+    &#39;maxSanityLevel&#39;: &#39;4&#39;,
+    &#39;page&#39;: &#39;2&#39;,
+    &#39;keyword&#39;: &#39;樱花&#39;,
+    &#39;pageSize&#39;: &#39;30&#39;,
+&amp;#125;
+
+r = requests.get(url, data= dat,headers=header, timeout=30)
+print(r.status_code)
+r.raise_for_status()  # 如果状态不是200，则引发HTTPERROE异常
+text = r.content.decode(encoding=&#39;utf-8&#39;, errors=&#39;ignore&#39;)
+print(text)
+html = etree.HTML(text)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;运行完整代码后，我们可以看到成功返回了信息，&lt;br /&gt;
+![](/images/20-11-17_pixiv5.png), 但是这些都是没用的，一个有用的东西都没有！！！明显这是又被认出来是爬虫了，这次人家还客气点没有直接拒绝请求访问，只是给了假的页面而已。&lt;/p&gt;
+&lt;p&gt;所以在折腾了将近一天的时间后还是没有成功的爬取下来图片，只能再去看一些相关的网课来学学怎么更好的伪装骗过系统，太难受了💔。&lt;/p&gt;
+</content>
+        <category term="Python 爬虫" />
+        <updated>2021-11-26T16:40:53.722Z</updated>
+    </entry>
+</feed>

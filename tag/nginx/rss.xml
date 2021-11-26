@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>欢迎来到我的个人博客 • Posts by &#34;nginx&#34; tag</title>
+        <link>http://zhanglin233.github.io</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
+        <lastBuildDate>Sat, 27 Nov 2021 00:40:53 +0800</lastBuildDate>
+        <category>博客</category>
+        <category>前端</category>
+        <category>Nginx</category>
+        <category>前端 React</category>
+        <category>Java JavaWEB</category>
+        <category>Java JavaSE</category>
+        <category>java SpringBoot</category>
+        <category>java springboot</category>
+        <category>Python 爬虫</category>
+        <item>
+            <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/nginx/2021-11-20-Nginx%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
+            <title>Nginx的反向代理与负载均衡</title>
+            <link>http://zhanglin233.github.io/2021/11/27/computer-science/nginx/2021-11-20-Nginx%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
+            <category>Nginx</category>
+            <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;nginx的反向代理与负载均衡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nginx的反向代理与负载均衡&#34;&gt;#&lt;/a&gt; Nginx 的反向代理与负载均衡&lt;/h1&gt;
+&lt;h2 id=&#34;反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理&#34;&gt;#&lt;/a&gt; 反向代理&lt;/h2&gt;
+&lt;h3 id=&#34;什么是反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是反向代理&#34;&gt;#&lt;/a&gt; 什么是反向代理&lt;/h3&gt;
+&lt;p&gt;反向代理（Reverse Proxy）方式是指以代理服务器来接受 Internet 上的连接请求，然 后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给 Internet 上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211120202450.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h4 id=&#34;反向代理的作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理的作用&#34;&gt;#&lt;/a&gt; 反向代理的作用：&lt;/h4&gt;
+&lt;p&gt;（1）保证内网的安全，阻止 web 攻击，大型网站，通常将反向代理作为公网访问地址，Web 服务器是内网&lt;/p&gt;
+&lt;p&gt;（2）负载均衡，通过反向代理服务器来优化网站的负载&lt;/p&gt;
+&lt;h4 id=&#34;反向代理和正向代理的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理和正向代理的区别&#34;&gt;#&lt;/a&gt; 反向代理和正向代理的区别&lt;/h4&gt;
+&lt;p&gt;首先我们先理解正向代理，正向代理类似一个跳板机，代理访问外部资源。比如我们国内访问谷歌，直接访问访问不到，我们可以通过一个正向代理服务器，请求发到代理服，代理服务器能够访问谷歌，这样由代理去谷歌取到返回数据，再返回给我们，这样我们就能访问谷歌了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211120202139.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正向代理的用途：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（1）访问原来无法访问的资源，如 google&lt;/p&gt;
+&lt;p&gt;​    	（2） 可以做缓存，加速访问资源&lt;/p&gt;
+&lt;p&gt;（3）对客户端访问授权，上网进行认证&lt;/p&gt;
+&lt;p&gt;（4）代理可以记录用户访问记录（上网行为管理），对外隐藏用户信息&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;正向代理即是客户端代理，代理客户端，服务端不知道实际发起请求的客户端.&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt; 反向代理即是服务端代理，代理服务端，客户端不知道实际提供服务的服务端&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211120202656.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;正向代理中，proxy 和 client 同属一个 LAN，对 server 透明；&lt;br /&gt;
+反向代理中，proxy 和 server 同属一个 LAN，对 client 透明。&lt;br /&gt;
+实际上 proxy 在两种代理中做的事都是代为收发请求和响应，不过从结构上来看正好左右互换了下，所以把后出现的那种代理方式叫成了反向代理。&lt;/p&gt;
+&lt;p&gt;正向代理：买票的黄牛&lt;/p&gt;
+&lt;p&gt;反向代理：租房的代理&lt;/p&gt;
+&lt;h3 id=&#34;配置反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置反向代理&#34;&gt;#&lt;/a&gt; 配置反向代理&lt;/h3&gt;
+&lt;p&gt;将 travel 案例部署到 tomcat 中（ROOT 目录），上传到服务器。 （2）启动 TOMCAT，输入网址 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovLzE5Mi4xNjguMTc3LjEyOTo4MDgw&#34;&gt;http://192.168.177.129:8080&lt;/span&gt; 可以看到网站首页&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;upstream tomcat-travel&amp;#123; 
+  server 192.168.177.129:8080;  # 修改为你自己的虚拟机的ip地址
+ &amp;#125; 
+ server &amp;#123; 
+   listen 80; # 监听的端口
+   server_name www.hmtravel.com; # 域名或 ip 
+ location / &amp;#123; # 访问路径配置
+   # root index;# 案例的部署路径 默认index
+   proxy_pass http://tomcat-travel;   // 与上方tomcat-travel对应
+   index index.html index.htm; # 默认首页
+ &amp;#125; 
+&amp;#125; 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重新启动 Nginx  然后用浏览器测试：&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3d3dy5obXRyYXZlbC5jb20=&#34;&gt;http://www.hmtravel.com&lt;/span&gt; （此域名须配置域名）&lt;/p&gt;
+&lt;h2 id=&#34;负载均衡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#负载均衡&#34;&gt;#&lt;/a&gt; 负载均衡&lt;/h2&gt;
+&lt;h3 id=&#34;什么是负载均衡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是负载均衡&#34;&gt;#&lt;/a&gt; 什么是负载均衡&lt;/h3&gt;
+&lt;p&gt;负载均衡 建立在现有网络结构之上，它提供了一种廉价有效透明的方法扩展网络设备 和服务器的带宽、增加吞吐量、加强网络数据处理能力、提高网络的灵活性和可用性。  负载均衡，英文名称为 Load Balance，其意思就是分摊到多个操作单元上进行执行， 例如 Web 服务器、FTP 服务器、企业关键应用服务器和其它关键任务服务器等，从而共同完 成工作任务。&lt;/p&gt;
+&lt;h3 id=&#34;负载均衡准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#负载均衡准备工作&#34;&gt;#&lt;/a&gt; 负载均衡准备工作&lt;/h3&gt;
+&lt;p&gt;将相同的工程复制三份或不同的工程部署到服务器上，分别修改他们的端口使端口各不相同，如 80，81，82。分别启动这三个服务。 为了能够区分是访问哪个服务器的网站，可以在首页标题加上标记以便区分&lt;/p&gt;
+&lt;h3 id=&#34;修改nginx配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改nginx配置文件&#34;&gt;#&lt;/a&gt; 修改 Nginx 配置文件&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;upstream tomcat-travel &amp;#123; 
+	server 192.168.177.129:8080; # 项目的部署地址
+	server 192.168.177.129:8081  weight=2; # 不同的权重可以使不同的服务器被访问到的概率不同，权重越高概率越大
+	server 192.168.177.129:8082; 
+ &amp;#125; 
+ server &amp;#123; 
+ 	listen 80; # 监听的端口
+ 	server_name www.hmtravel.com; # 绑定的域名或 ip 
+	location / &amp;#123; # 访问路径配置
+ 		# root index;# 根目录
+ 		proxy_pass http://tomcat-travel; 
+ 		index index.html index.htm; # 默认首页
+ 	&amp;#125; 
+	error_page 500 502 503 504 /50x.html; # 错误页面
+ 	location = /50x.html &amp;#123; 
+ 		root html; 
+ 	&amp;#125; 
+ &amp;#125;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;启动 Nginx 观察结果便可&lt;/p&gt;
+&lt;p&gt;参考文章：[1] &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vdGFvc3Rhcnl1L3AvMTA1NDcxMzIuaHRtbA==&#34;&gt;反向代理和正向代理区别 - 泛夜泰克 - 博客园 (cnblogs.com)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;​					[2] &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuYmlsaWJpbGkuY29tL3ZpZGVvL0JWMXF2NHkxbzc5dD9wPTUzOQ==&#34;&gt;黑马程序员 JavaWeb 全套基础教程，java web 从入门到项目实战（IDEA 版 javaweb）文档资料_哔哩哔哩_bilibili&lt;/span&gt;&lt;/p&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
