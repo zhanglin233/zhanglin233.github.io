@@ -108,6 +108,7 @@ pagination_dir: page
 # Include / Exclude file(s)
 ## include:/exclude: options only apply to the 'source/' folder
 include:
+  - .nojekyll
 exclude:
 ignore:
 
@@ -119,7 +120,10 @@ theme: shoka
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  - type: git
+    repo: https://github.com/name/name.github.io.git
+    branch: master
+    ignore_hidden: false
 
 
 markdown:
