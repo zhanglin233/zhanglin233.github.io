@@ -7,15 +7,15 @@
         <language>zh-CN</language>
         <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
         <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
-        <category>前端</category>
         <category>博客</category>
         <category>Nginx</category>
-        <category>前端 React</category>
-        <category>Python 爬虫</category>
+        <category>前端</category>
         <category>Java JavaWEB</category>
         <category>Java JavaSE</category>
         <category>java SpringBoot</category>
         <category>java springboot</category>
+        <category>前端 React</category>
+        <category>Python 爬虫</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%BB%84%E4%BB%B6/</guid>
             <title>React的组件</title>
