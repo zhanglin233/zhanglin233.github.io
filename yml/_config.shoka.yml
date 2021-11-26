@@ -1,0 +1,149 @@
+alternate: zhanglin
+statics: / #//cdn.jsdelivr.net/gh/amehime/shoka@latest/
+css: css
+js: js
+images: images
+darkmode: # true
+auto_scroll: # false
+# 是否显示页面加载动画 loading-cat
+loader:
+  start: false # 当初次打开页面时，显示加载动画
+  switch: false # tab 切换到其他页面时，显示加载动画
+fireworks:
+  enable: false # 是否启用
+  color: # 烟花颜色
+    - "rgba(255,182,185,.9)"
+    - "rgba(250,227,217,.9)"
+    - "rgba(187,222,214,.9)"
+    - "rgba(138,198,209,.9)"
+
+font:
+  enable: true
+  # Font options:
+  # `external: true` will load this font family from `host` above.
+  # `family: Times New Roman`. Without any quotes.
+  # `size: x.x`. Use `em` as unit. Default: 1 (16px)
+
+  # Global font settings used for all elements inside <body>.
+  global:
+    external: true
+    family: Mulish
+    size:
+
+  # Font settings for alternate title.
+  logo:
+    external: true
+    family: Fredericka the Great
+    size: 3.5
+
+  # Font settings for site title.
+  title:
+    external: true
+    family: Noto Serif JP
+    size: 2.5
+
+  # Font settings for headlines (<h1> to <h6>).
+  headings:
+    external: true
+    family: Noto Serif SC
+    size:
+
+  # Font settings for posts.
+  posts:
+    external: true
+    family:
+
+  # Font settings for <code> and code blocks.
+  codes:
+    external: true
+    family: Inconsolata
+
+# project of https://www.iconfont.cn/
+# //at.alicdn.com/t/font_1832207_c8i9n1ulxlt.css => 1832207_c8i9n1ulxlt
+# iconfont: "1832207_c8i9n1ulxlt"
+menu:
+  home: / || home
+  about: /about/ || user
+  posts:
+    default: / || feather
+    archives: /archives/ || list-alt
+    categories: /categories/ || th
+    tags: /tags/ || tags
+  # friends: /friends/ || heart
+  # links: /links/ || magic
+
+social:
+  github: https://github.com/yourname || github || "#191717"
+  #google: https://plus.google.com/yourname || google
+  twitter: https://twitter.com/yourname || twitter || "#00aff0"
+  zhihu: https://www.zhihu.com/people/yourname || zhihu || "#1e88e5"
+  music: https://music.163.com/#/user/home?id=yourid || cloud-music || "#e60026"
+  weibo: https://weibo.com/yourname || weibo || "#ea716e"
+  about: https://about.me/yourname || address-card || "#3b5998"
+  #email: mailto:yourname@mail.com || envelope || "#55acd5"
+  #facebook: https://www.facebook.com/yourname || facebook
+  #stackoverflow: https://stackoverflow.com/yourname || stack-overflow
+  #youtube: https://youtube.com/yourname || youtube
+  #instagram: https://instagram.com/yourname || instagram
+  #skype: skype:yourname?call|chat || skype
+  #douban: https://www.douban.com/people/yourname/ || douban
+
+sidebar:
+  # Sidebar Position.
+  position: right
+  #position: right
+  # Replace the default avatar image and set the url here.
+  avatar: avatar.jpg
+
+widgets:
+  random_posts: true # 显示随机文章
+  recent_comments: true # 显示最近评论
+
+# 页尾全站统计
+footer:
+  since: 2010
+  count: true
+
+# 文章界面统计
+post:
+  count: true
+
+valine:
+  appId: #Your_appId
+  appKey: #Your_appkey
+  placeholder: ヽ(○´∀`)ﾉ♪ # Comment box placeholder
+  avatar: mp # Gravatar style : mp, identicon, monsterid, wavatar, robohash, retro
+  pageSize: 10 # Pagination size
+  lang: zh-CN
+  visitor: true # 文章访问量统计
+  NoRecordIP: false # 不记录 IP
+  serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)
+  powerMode: true # 默认打开评论框输入特效
+  tagMeta:
+    visitor: 新朋友
+    master: 主人
+    friend: 小伙伴
+    investor: 金主粑粑
+  tagColor:
+    master: "var(--color-orange)"
+    friend: "var(--color-aqua)"
+    investor: "var(--color-pink)"
+  tagMember:
+    master:
+      # - hash of master@email.com
+      # - hash of master2@email.com
+    friend:
+      # - hash of friend@email.com
+      # - hash of friend2@email.com
+    investor:
+      # - hash of investor1@email.com
+
+valine:
+  placeholder: "1. 提问前请先仔细阅读本文档⚡\n2. 页面显示问题💥，请提供控制台截图📸或者您的测试网址\n3. 其他任何报错💣，请提供详细描述和截图📸，祝食用愉快💪"
+---
+
+audio:
+  - https://music.163.com/song?id=1387098940
+  - https://music.163.com/#/playlist?id=2088001742
+  - https://www.xiami.com/collect/250830668
+  - https://y.qq.com/n/yqq/playsquare/3535982902.html
