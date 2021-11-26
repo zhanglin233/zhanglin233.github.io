@@ -121,7 +121,7 @@ theme: shoka
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   - type: git
-    repo: https://github.com/name/name.github.io.git
+    repo: https://github.com/zhanglin233/zhanglin233.github.io.git
     branch: master
     ignore_hidden: false
 
