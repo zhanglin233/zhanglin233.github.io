@@ -38,3 +38,47 @@ on:
 all_branches: true # solve a permission problem
 target_branch: master
 local-dir: public
+
+
+language: node_js #指定使用的语言
+
+node_js: stable  #采用nodejs的最新版本
+
+# 指定缓存模块，可选。缓存可加快编译速度。
+cache:
+  directories:
+    - node_modules
+
+before_install:
+    - export TZ='Asia/Shanghai' # 更改时区    
+
+# Start: Build Lifecycle
+install:
+  - npm install
+
+# 执行清缓存，生成网页操作
+script:
+  - hexo clean
+  - hexo generate
+
+# 指定博客分支
+branches:
+  only:
+    - master #触发持续集成的分支
+
+# 指定博客的仓库地址
+env:
+ global:
+    - GH_REF: git@github.com:zhanglin233/zhanglin233.github.io.git
+    - GE_REF: git@gitee.com:zhanglin233/zhanglin233.github.io.git
+
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+  - cd ./public
+  - git init
+  - git config user.name "zhanglin233"
+  - git config user.email "1257730824@qq.com"
+  - git add .
+  - git commit -m "TravisCI 自动部署"
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages
+  - git push --force --quiet "https://${GH_USERNAME}:${GH_PASSWORD}@${GE_REF}" master:master
