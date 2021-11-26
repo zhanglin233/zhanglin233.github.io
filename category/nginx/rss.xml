@@ -5,23 +5,23 @@
         <link>http://zhanglin233.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
-        <lastBuildDate>Sat, 27 Nov 2021 00:40:53 +0800</lastBuildDate>
-        <category>博客</category>
+        <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
+        <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
         <category>前端</category>
+        <category>博客</category>
         <category>Nginx</category>
         <category>前端 React</category>
+        <category>Python 爬虫</category>
         <category>Java JavaWEB</category>
         <category>Java JavaSE</category>
         <category>java SpringBoot</category>
         <category>java springboot</category>
-        <category>Python 爬虫</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/nginx/2021-11-20-Nginx%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
             <title>Nginx的反向代理与负载均衡</title>
             <link>http://zhanglin233.github.io/2021/11/27/computer-science/nginx/2021-11-20-Nginx%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</link>
             <category>Nginx</category>
-            <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
+            <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;nginx的反向代理与负载均衡&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#nginx的反向代理与负载均衡&#34;&gt;#&lt;/a&gt; Nginx 的反向代理与负载均衡&lt;/h1&gt;
 &lt;h2 id=&#34;反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理&#34;&gt;#&lt;/a&gt; 反向代理&lt;/h2&gt;
 &lt;h3 id=&#34;什么是反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是反向代理&#34;&gt;#&lt;/a&gt; 什么是反向代理&lt;/h3&gt;

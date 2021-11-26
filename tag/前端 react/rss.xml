@@ -5,23 +5,23 @@
         <link>http://zhanglin233.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
-        <lastBuildDate>Sat, 27 Nov 2021 00:40:53 +0800</lastBuildDate>
-        <category>博客</category>
+        <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
+        <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
         <category>前端</category>
+        <category>博客</category>
         <category>Nginx</category>
         <category>前端 React</category>
+        <category>Python 爬虫</category>
         <category>Java JavaWEB</category>
         <category>Java JavaSE</category>
         <category>java SpringBoot</category>
         <category>java springboot</category>
-        <category>Python 爬虫</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%BB%84%E4%BB%B6/</guid>
             <title>React的组件</title>
             <link>http://zhanglin233.github.io/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%BB%84%E4%BB%B6/</link>
             <category>前端 React</category>
-            <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
+            <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;react的组件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#react的组件&#34;&gt;#&lt;/a&gt; React 的组件&lt;/h1&gt;
 &lt;h2 id=&#34;组件的声明方式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#组件的声明方式&#34;&gt;#&lt;/a&gt; 组件的声明方式&lt;/h2&gt;
 &lt;p&gt;在 React 中创建组件的方式有 3 种：&lt;/p&gt;
@@ -65,7 +65,7 @@
             <title></title>
             <link>http://zhanglin233.github.io/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%89%B9%E5%BE%81/</link>
             <category>前端 React</category>
-            <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
+            <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
             <description><![CDATA[ &lt;p&gt;React 具有三大突出特点：组件化、虚拟 DOM 和单向数据流。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;

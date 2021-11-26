@@ -3,16 +3,16 @@
     <id>http://zhanglin233.github.io</id>
     <title>欢迎来到我的个人博客 • Posts by &#34;java&#34; category</title>
     <link href="http://zhanglin233.github.io" />
-    <updated>2021-11-26T16:40:53.641Z</updated>
-    <category term="博客" />
+    <updated>2021-11-26T17:22:09.558Z</updated>
     <category term="前端" />
+    <category term="博客" />
     <category term="Nginx" />
     <category term="前端 React" />
+    <category term="Python 爬虫" />
     <category term="Java JavaWEB" />
     <category term="Java JavaSE" />
     <category term="java SpringBoot" />
     <category term="java springboot" />
-    <category term="Python 爬虫" />
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-7-10-java%E4%B9%8Bjunit%E6%B5%8B%E8%AF%95/</id>
         <title>java之junit测试</title>
@@ -48,7 +48,7 @@
 ![](/images/2021_7_10_junit/7.png)&lt;/p&gt;
 </content>
         <category term="java SpringBoot" />
-        <updated>2021-11-26T16:40:53.641Z</updated>
+        <updated>2021-11-26T17:22:09.558Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E9%85%8D%E7%BD%AE%E9%AB%98%E7%BA%A7/</id>
@@ -109,7 +109,7 @@
 &lt;h2 id=&#34;自定义配置文件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#自定义配置文件&#34;&gt;#&lt;/a&gt; 自定义配置文件&lt;/h2&gt;
 </content>
         <category term="java SpringBoot" />
-        <updated>2021-11-26T16:40:53.639Z</updated>
+        <updated>2021-11-26T17:22:09.557Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E6%89%93%E5%8C%85%E4%B8%8E%E8%BF%90%E8%A1%8C/</id>
@@ -153,7 +153,7 @@
 &lt;/ol&gt;
 </content>
         <category term="java SpringBoot" />
-        <updated>2021-11-26T16:40:53.638Z</updated>
+        <updated>2021-11-26T17:22:09.554Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-18-SpringBoot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/</id>
@@ -295,7 +295,7 @@
 &lt;/ul&gt;
 </content>
         <category term="java SpringBoot" />
-        <updated>2021-11-26T16:40:53.627Z</updated>
+        <updated>2021-11-26T17:22:09.546Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/</id>
@@ -479,7 +479,7 @@
 &lt;/ol&gt;
 </content>
         <category term="java SpringBoot" />
-        <updated>2021-11-26T16:40:53.626Z</updated>
+        <updated>2021-11-26T17:22:09.544Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-15-Filter&amp;Listener/</id>
@@ -595,92 +595,7 @@
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Java JavaWEB" />
-        <updated>2021-11-26T16:40:53.540Z</updated>
-    </entry>
-    <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
-        <title>javaweb之sl&amp;jstl</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
-        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;1. JSP:
-    1. 指令
-    2. 注释
-    3. 内置对象
-2. MVC开发模式
-3. EL表达式
-4. JSTL标签
-5. 三层架构
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 指令
-    * 作用：用于配置JSP页面，导入资源文件
-    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
-    * 分类：
-        1. page：配置JSP页面的
-            * contentType:等同于response.setContentType()
-                1. 设置响应体的mime类型及字符级
-                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
-            * import: 导包
-            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
-            * isErrorPage；标识当前页面是否是错误页面
-                * true:是，可以使用内置对象exception
-                * false: 否。默认值。不可以使用内置对象exception
-        2. include:页面包含的。导入页面的资源文件
-            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
-        3. taglib:导入资源
-          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
-              * prefix：前缀，自定义的
-2. 注释
-    1. html注释
-        &amp;lt;!----&amp;gt;只能注释html代码片段
-    2. jsp注释：推荐使用
-    &amp;lt;%----%&amp;gt;可以注释所有
-3. 内置对象
-    * 在jsp页面中不需要创建，直接使用的对象
-    * 一共有9个：
-              变量名                      真实类型
-          * pageContext                  PageContext
-          * request                      HttpServletRequest
-          * session                      HttpSession
-          * application                  ServletContext
-          * page                         OPbject
-          * response                     HttpServletResponse
-          * out                          JspWriter
-          * config                       ServletConfig
-          * exception                    Throwable
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. jsp演变历史
-    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
-    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
-    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
-2. MVC
-    1. M:Model,模型。JavaBean
-        * 完成具体的业务操作，如：查询数据库，封装对象
-    2. V: View，视图。JSP
-    3. C: Controller,控制器。Servlet
-        * 获取用户的输入
-        * 调用模型
-        * 将数据交给视图展示
-    * 优缺点：
-        1. 优点：
-            1. 耦合性低，方便维护，利于分工协作
-            2. 重用性高
-        2. 缺点
-            1. 使得项目架构变得复杂，对开发人员要求高
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
-2. 作用： 替换和简化jsp页面中java语言代码的编写
-3. 语法：$&amp;#123;表达式&amp;#125;
-4. 注意：
-    * jsp默认支持el表达式。如果要忽略el表达式
-        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
-        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Java JavaWEB" />
-        <updated>2021-11-26T16:40:53.536Z</updated>
+        <updated>2021-11-26T17:22:09.529Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/</id>
@@ -904,7 +819,92 @@ void removeAttribute(String name)&lt;br /&gt;
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Java JavaWEB" />
-        <updated>2021-11-26T16:40:53.534Z</updated>
+        <updated>2021-11-26T17:22:09.527Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
+        <title>javaweb之sl&amp;jstl</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
+        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1. JSP:
+    1. 指令
+    2. 注释
+    3. 内置对象
+2. MVC开发模式
+3. EL表达式
+4. JSTL标签
+5. 三层架构
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 指令
+    * 作用：用于配置JSP页面，导入资源文件
+    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
+    * 分类：
+        1. page：配置JSP页面的
+            * contentType:等同于response.setContentType()
+                1. 设置响应体的mime类型及字符级
+                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
+            * import: 导包
+            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
+            * isErrorPage；标识当前页面是否是错误页面
+                * true:是，可以使用内置对象exception
+                * false: 否。默认值。不可以使用内置对象exception
+        2. include:页面包含的。导入页面的资源文件
+            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
+        3. taglib:导入资源
+          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
+              * prefix：前缀，自定义的
+2. 注释
+    1. html注释
+        &amp;lt;!----&amp;gt;只能注释html代码片段
+    2. jsp注释：推荐使用
+    &amp;lt;%----%&amp;gt;可以注释所有
+3. 内置对象
+    * 在jsp页面中不需要创建，直接使用的对象
+    * 一共有9个：
+              变量名                      真实类型
+          * pageContext                  PageContext
+          * request                      HttpServletRequest
+          * session                      HttpSession
+          * application                  ServletContext
+          * page                         OPbject
+          * response                     HttpServletResponse
+          * out                          JspWriter
+          * config                       ServletConfig
+          * exception                    Throwable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. jsp演变历史
+    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
+    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
+    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
+2. MVC
+    1. M:Model,模型。JavaBean
+        * 完成具体的业务操作，如：查询数据库，封装对象
+    2. V: View，视图。JSP
+    3. C: Controller,控制器。Servlet
+        * 获取用户的输入
+        * 调用模型
+        * 将数据交给视图展示
+    * 优缺点：
+        1. 优点：
+            1. 耦合性低，方便维护，利于分工协作
+            2. 重用性高
+        2. 缺点
+            1. 使得项目架构变得复杂，对开发人员要求高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
+2. 作用： 替换和简化jsp页面中java语言代码的编写
+3. 语法：$&amp;#123;表达式&amp;#125;
+4. 注意：
+    * jsp默认支持el表达式。如果要忽略el表达式
+        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
+        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Java JavaWEB" />
+        <updated>2021-11-26T17:22:09.527Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-11-Servlet&amp;HTTP&amp;Resuest/</id>
@@ -1123,7 +1123,7 @@ ServletResponse response)&lt;/li&gt;
 &lt;/ul&gt;
 </content>
         <category term="Java JavaWEB" />
-        <updated>2021-11-26T16:40:53.532Z</updated>
+        <updated>2021-11-26T17:22:09.525Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaSE/2021-7-8-java%E6%A0%B8%E5%BF%83%E5%8D%B7%E4%B8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B1%BB/</id>
@@ -1173,6 +1173,6 @@ ServletResponse response)&lt;/li&gt;
 &lt;figure class=&#34;highlight java&#34;&gt;&lt;figcaption data-lang=&#34;java&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token keyword&#34;&gt;if&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;(&lt;/span&gt;n&lt;span class=&#34;token operator&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;null&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;)&lt;/span&gt;name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;token string&#34;&gt;&#34;unknow&#34;&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;span class=&#34;token keyword&#34;&gt;else&lt;/span&gt; name &lt;span class=&#34;token operator&#34;&gt;=&lt;/span&gt; n&lt;span class=&#34;token punctuation&#34;&gt;;&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;在 java9 中，Objects 类对此提供了一个便利方法：&lt;/p&gt;
 </content>
         <category term="Java JavaSE" />
-        <updated>2021-11-26T16:40:53.523Z</updated>
+        <updated>2021-11-26T17:22:09.515Z</updated>
     </entry>
 </feed>

@@ -5,23 +5,23 @@
         <link>http://zhanglin233.github.io</link>
         <description></description>
         <language>zh-CN</language>
-        <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
-        <lastBuildDate>Sat, 27 Nov 2021 00:40:53 +0800</lastBuildDate>
-        <category>博客</category>
+        <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
+        <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
         <category>前端</category>
+        <category>博客</category>
         <category>Nginx</category>
         <category>前端 React</category>
+        <category>Python 爬虫</category>
         <category>Java JavaWEB</category>
         <category>Java JavaSE</category>
         <category>java SpringBoot</category>
         <category>java springboot</category>
-        <category>Python 爬虫</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/front-end/2021-9-15-ES6%E7%89%B9%E6%80%A7/</guid>
             <title>ES6特性</title>
             <link>http://zhanglin233.github.io/2021/11/27/computer-science/front-end/2021-9-15-ES6%E7%89%B9%E6%80%A7/</link>
             <category>前端</category>
-            <pubDate>Sat, 27 Nov 2021 00:40:53 +0800</pubDate>
+            <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
             <description><![CDATA[ &lt;h1 id=&#34;es6特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#es6特性&#34;&gt;#&lt;/a&gt; ES6 特性&lt;/h1&gt;
 &lt;h2 id=&#34;1变量声明let和const&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1变量声明let和const&#34;&gt;#&lt;/a&gt; 1. 变量声明 let 和 const&lt;/h2&gt;
 &lt;p&gt;​	    ES6 之前，通常用 var 关键字来声明变量。无论在何处声明，都会被视为在所在函数作用域最顶部（变量提升）。相比于使用 var 来声明变量，使用 let 和 const 声明变量带来了以下好处：&lt;/p&gt;
