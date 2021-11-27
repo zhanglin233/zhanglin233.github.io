@@ -9,13 +9,13 @@
         <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
         <category>博客</category>
         <category>前端</category>
-        <category>前端 React</category>
         <category>Nginx</category>
+        <category>前端 React</category>
+        <category>Python 爬虫</category>
         <category>Java JavaSE</category>
         <category>Java JavaWEB</category>
         <category>java SpringBoot</category>
         <category>java springboot</category>
-        <category>Python 爬虫</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/python/spider/2020-11-18-pixiv2/</guid>
             <title>爬取p站(pixiv)的图片（二）</title>
@@ -1664,6 +1664,9 @@ ServletResponse response)&lt;/li&gt;
 &lt;/li&gt;
 &lt;li&gt;
 &lt;p&gt;RROR Deployer not found: git&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;域名配置&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
  ]]></description>

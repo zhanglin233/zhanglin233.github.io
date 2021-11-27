@@ -6,13 +6,13 @@
     <updated>2021-11-26T17:22:09.574Z</updated>
     <category term="博客" />
     <category term="前端" />
-    <category term="前端 React" />
     <category term="Nginx" />
+    <category term="前端 React" />
+    <category term="Python 爬虫" />
     <category term="Java JavaSE" />
     <category term="Java JavaWEB" />
     <category term="java SpringBoot" />
     <category term="java springboot" />
-    <category term="Python 爬虫" />
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/python/spider/2020-11-18-pixiv2/</id>
         <title>爬取p站(pixiv)的图片（二）</title>
@@ -1543,41 +1543,5 @@ ServletResponse response)&lt;/li&gt;
 </content>
         <category term="前端" />
         <updated>2021-11-26T17:22:09.505Z</updated>
-    </entry>
-    <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/computer-science/blog/hexo-github%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
-        <title>基于hexo框架部署个人博客</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/blog/hexo-github%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/"/>
-        <content type="html">&lt;h1 id=&#34;基于hexo框架部署个人博客&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基于hexo框架部署个人博客&#34;&gt;#&lt;/a&gt; 基于 hexo 框架部署个人博客&lt;/h1&gt;
-&lt;h2 id=&#34;起因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#起因&#34;&gt;#&lt;/a&gt; 起因&lt;/h2&gt;
-&lt;h2 id=&#34;准备工作&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#准备工作&#34;&gt;#&lt;/a&gt; 准备工作&lt;/h2&gt;
-&lt;h3 id=&#34;git&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#git&#34;&gt;#&lt;/a&gt; git&lt;/h3&gt;
-&lt;h3 id=&#34;node&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#node&#34;&gt;#&lt;/a&gt; node&lt;/h3&gt;
-&lt;h3 id=&#34;hexo&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#hexo&#34;&gt;#&lt;/a&gt; hexo&lt;/h3&gt;
-&lt;h2 id=&#34;遇到的坑&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#遇到的坑&#34;&gt;#&lt;/a&gt; 遇到的坑&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;首先遇到的第一个问题是&lt;/p&gt;
-&lt;figure class=&#34;highlight bash&#34;&gt;&lt;figcaption data-lang=&#34;bash&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;The tag &lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;`&lt;/span&gt;linksfile&lt;span class=&#34;token variable&#34;&gt;`&lt;/span&gt;&lt;/span&gt; on line &lt;span class=&#34;token number&#34;&gt;23&lt;/span&gt; &lt;span class=&#34;token keyword&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;token variable&#34;&gt;&lt;span class=&#34;token variable&#34;&gt;`&lt;/span&gt;source/friends/index.md&lt;span class=&#34;token variable&#34;&gt;`&lt;/span&gt;&lt;/span&gt; is not a recognized Liquid tag. For &lt;span class=&#34;token function&#34;&gt;more&lt;/span&gt; information, see https://docs.github.com/github/working-with-github-pages/troubleshooting-jekyll-build-errors-for-github-pages-sites&lt;span class=&#34;token comment&#34;&gt;#unknown-tag-error.&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;p&gt;大概原因是 Jekyll 是一个静态站点生成器，内置 GitHub Pages 支持和简化的构建过程，官方建议将 Jekyll 用于 GitHub Pages。因此如果使用的不是 jekyll 框架，就可能会存在标签无法识别的情况。为了解决这样的问题，我们只需要在配置文件中禁用 jekyll 即可&lt;/p&gt;
-&lt;p&gt;在博客项目根目录下添加空的.nojekyll 文件&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211126221143.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;并在_config.yml 文件中加入以下配置即可：&lt;/p&gt;
-&lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;include&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td data-num=&#34;2&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;  &lt;span class=&#34;token punctuation&#34;&gt;-&lt;/span&gt; .nojekyll&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;第二个问题就是依据 hexo 官方文档&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;spawn failed&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;deploy :https 换 ssh&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;RROR Deployer not found: git&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-</content>
-        <category term="博客" />
-        <updated>2021-11-26T17:22:09.498Z</updated>
     </entry>
 </feed>
