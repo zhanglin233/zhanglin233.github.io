@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<rss version="2.0">
+    <channel>
+        <title>欢迎来到我的个人博客 • Posts by &#34;智能控制&#34; tag</title>
+        <link>http://zhanglin233.github.io</link>
+        <description></description>
+        <language>zh-CN</language>
+        <pubDate>Sun, 28 Nov 2021 02:24:07 +0800</pubDate>
+        <lastBuildDate>Sun, 28 Nov 2021 02:24:07 +0800</lastBuildDate>
+        <category>博客</category>
+        <category>前端</category>
+        <category>智能控制</category>
+        <category>Nginx</category>
+        <category>Java JavaSE</category>
+        <category>Java JavaWEB</category>
+        <category>前端 React</category>
+        <category>java SpringBoot</category>
+        <category>java springboot</category>
+        <category>Python 爬虫</category>
+        <item>
+            <guid isPermalink="true">http://zhanglin233.github.io/2021/11/28/computer-science/course_1/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E9%94%AE%E7%9B%98%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/</guid>
+            <title>键盘输入电路</title>
+            <link>http://zhanglin233.github.io/2021/11/28/computer-science/course_1/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E9%94%AE%E7%9B%98%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/</link>
+            <category>智能控制</category>
+            <pubDate>Sun, 28 Nov 2021 02:24:07 +0800</pubDate>
+            <description><![CDATA[ &lt;h1 id=&#34;键盘输入电路&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#键盘输入电路&#34;&gt;#&lt;/a&gt; 键盘输入电路&lt;/h1&gt;
+&lt;p&gt;计算机控制系统中的键盘通常采用触点式按键，触点式按键是利用机械触点的闭合或断开来输入信息&lt;/p&gt;
+&lt;h2 id=&#34;键盘的抖动干扰&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#键盘的抖动干扰&#34;&gt;#&lt;/a&gt; 键盘的抖动干扰&lt;/h2&gt;
+&lt;p&gt;由于机械触点的弹性振动，按键在按下时不会马上稳定地接通，在谈起时也不能一下子完全断开，因而在按键闭合和断开的瞬间均会出现一连串的抖动，这种抖动称为按键的抖动干扰，其产生的波形如图所示&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211128020838.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;当按键按下时会产生前沿抖动，当按键弹起时会产生后沿抖动。这是所有机械触点式按键在状态输出时的共性问题，抖动的时间长短取决于按键的机械特性与操作状态，一般为 10 ms~100 ms, 这是键处理设计时要考虑的一个重要参数。&lt;/p&gt;
+&lt;h2 id=&#34;抖动干扰的消除&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#抖动干扰的消除&#34;&gt;#&lt;/a&gt; 抖动干扰的消除&lt;/h2&gt;
+&lt;p&gt;按键的抖动会造成按一次产生的开关状态被 CPU 误读几次。为了使 CPU 能正确地读取按键状态，必须在按键闭合或断开时，消除产生的前沿或后沿抖动，去抖动的方法有硬件方法与软件方法。&lt;/p&gt;
+&lt;h3 id=&#34;硬件方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#硬件方法&#34;&gt;#&lt;/a&gt; 硬件方法&lt;/h3&gt;
+&lt;p&gt;硬件方法是设计一个滤波延时电路或单稳态电路等硬件电路来避开按键的抖动时间。滤波延时消抖电路如图所示&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211128021627.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;设置在按键 s 与 CPU 数据线 Di 之间。按键 S 未按下时，电容两端电压为 0，即非门输入 Vi 为 0，输出 V0 为 1。当 S 按下时，由于 C 两端电压不能突变，充电电压 Vi 在充电时间内未达到非门的开启电压，输出 V0 将不会改变，直到充电电压 Vi 大于门的开启电压，其输出 Vi 才变为 0，这段充电延迟时间取决于 R1、R2 和 C 值得大小，电路设计时只需要使之大于等于 100 ms 即可避开按键抖动的影响。同理，按键 S 断开时，即使出现抖动，由于 C 的放电延迟过程，也会消除按键抖动的影响。&lt;/p&gt;
+&lt;h3 id=&#34;软件方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#软件方法&#34;&gt;#&lt;/a&gt; 软件方法&lt;/h3&gt;
+ ]]></description>
+        </item>
+    </channel>
+</rss>
