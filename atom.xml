@@ -4,16 +4,16 @@
     <title>欢迎来到我的个人博客</title>
     <link href="http://zhanglin233.github.io" />
     <updated>2021-11-27T18:24:07.211Z</updated>
+    <category term="博客" />
     <category term="智能控制" />
     <category term="前端" />
-    <category term="博客" />
     <category term="Nginx" />
-    <category term="前端 React" />
     <category term="Java JavaSE" />
+    <category term="前端 React" />
     <category term="Java JavaWEB" />
-    <category term="Python 爬虫" />
     <category term="java SpringBoot" />
     <category term="java springboot" />
+    <category term="Python 爬虫" />
     <entry>
         <id>http://zhanglin233.github.io/2021/11/28/computer-science/course_1/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E9%94%AE%E7%9B%98%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/</id>
         <title>键盘及其接口技术</title>
@@ -45,7 +45,7 @@
 &lt;p&gt;​	有时为了快速判断键盘中是否有键按下，也可先将全部行线同时置为低电平，然后检测列线的电平状态，若所有列线均为高电平，则说明键盘中无键按下，立即返回；若要有一列的电平为低，则表示键盘中有键按下，然后再如上那样逐行扫描。&lt;/p&gt;
 &lt;h2 id=&#34;矩阵式键盘的程序设计&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#矩阵式键盘的程序设计&#34;&gt;#&lt;/a&gt; 矩阵式键盘的程序设计&lt;/h2&gt;
 &lt;p&gt;​	在计算机控制系统中，键盘扫描只是 CPU 工作的一部分。因此在设计键盘扫描程序时，必须保证键盘操作的实时性，又不能占用 CPU 太多的时间，还要充分考虑到抖动干扰的消除，一般可根据情况选用编程扫描、定时扫描或中断扫描中的一种方式。&lt;/p&gt;
-&lt;h4 id=&#34;扫描程序的编写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#扫描程序的编写&#34;&gt;#&lt;/a&gt; 扫描程序的编写&lt;/h4&gt;
+&lt;h3 id=&#34;扫描程序的编写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#扫描程序的编写&#34;&gt;#&lt;/a&gt; 扫描程序的编写&lt;/h3&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211128212635.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;pre&gt;&lt;code class=&#34;language-basH&#34;&gt;key:  # 行值寄存器CL和列值寄存器DL清零
       MOV AL, 0
