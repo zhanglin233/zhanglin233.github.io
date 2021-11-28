@@ -7,8 +7,8 @@
         <language>zh-CN</language>
         <pubDate>Sun, 28 Nov 2021 02:24:07 +0800</pubDate>
         <lastBuildDate>Sun, 28 Nov 2021 02:24:07 +0800</lastBuildDate>
-        <category>博客</category>
         <category>智能控制</category>
+        <category>博客</category>
         <category>前端</category>
         <category>Nginx</category>
         <category>前端 React</category>
@@ -52,51 +52,51 @@
 &lt;p&gt;​	在计算机控制系统中，键盘扫描只是 CPU 工作的一部分。因此在设计键盘扫描程序时，必须保证键盘操作的实时性，又不能占用 CPU 太多的时间，还要充分考虑到抖动干扰的消除，一般可根据情况选用编程扫描、定时扫描或中断扫描中的一种方式。&lt;/p&gt;
 &lt;h4 id=&#34;扫描程序的编写&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#扫描程序的编写&#34;&gt;#&lt;/a&gt; 扫描程序的编写&lt;/h4&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211128212635.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&#34;language-basH&#34;&gt;key:	# 行值寄存器CL和列值寄存器DL清零
-        MOV AL, 0
-        MOV CL, AL
-        MOV DL, AL
-        # 使所有行线为低电平
-        MOV AL, 0FFH
-        OUT PORT1, AL
-        # 读列均值
-        IN AL, PORTQ
-        # 检查是否有键按下
-        CMP AL, 0FFH
-        # 无键按下转返回
-        JZ DONE
-        # 有键按下调延时100 ms子程序
-        CALL DELAY
-        # 重复上述扫描
-        MOV AL, 0FFH
-        OUT PORT1, AL
-        IN AL, 0FFH
-        CMP AL, 0FFH
-        # 无键按下转返回
-        JZ DONE
-        # 行数08送AH
-        MOV AH, 08
-        # 行扫描初值（即X0线）送BL
-        MOV BL, 01H
-        
-key1:   # 输出使某行为低电平
-		MOV AL, BL
-		OUT PORT1, AL  
-		# 读入列值
-		IN AL, PORT1   
-		# 判断此行是否有键按下
-		CMP AL, 0FFH
-		# 有键按下转KEY2
-		JNZ KEY2
-		# 无键按下，行值寄存器加08
-		MOV AL, CL
-		ADD AL, 08H
-		DAA
-		MOV CL, AL
-		# 求下一行为低电平的输出代码
-		RCL	BL, 1
-		DEC AH
-		JNZ KEY1
+&lt;pre&gt;&lt;code class=&#34;language-basH&#34;&gt;key:  # 行值寄存器CL和列值寄存器DL清零
+      MOV AL, 0
+      MOV CL, AL
+      MOV DL, AL
+      # 使所有行线为低电平
+      MOV AL, 0FFH
+      OUT PORT1, AL
+      # 读列均值
+      IN AL, PORTQ
+      # 检查是否有键按下
+      CMP AL, 0FFH
+      # 无键按下转返回
+      JZ DONE
+      # 有键按下调延时100 ms子程序
+      CALL DELAY
+      # 重复上述扫描
+      MOV AL, 0FFH
+      OUT PORT1, AL
+      IN AL, 0FFH
+      CMP AL, 0FFH
+      # 无键按下转返回
+      JZ DONE
+      # 行数08送AH
+      MOV AH, 08
+      # 行扫描初值（即X0线）送BL
+      MOV BL, 01H
+      
+key1: # 输出使某行为低电平
+	  MOV AL, BL
+	  OUT PORT1, AL  
+	  # 读入列值
+	  IN AL, PORT1   
+	  # 判断此行是否有键按下
+	  CMP AL, 0FFH
+	  # 有键按下转KEY2
+	  JNZ KEY2
+	  # 无键按下，行值寄存器加08
+	  MOV AL, CL
+	  ADD AL, 08H
+	  DAA
+	  MOV CL, AL
+	  # 求下一行为低电平的输出代码
+	  RCL	BL, 1
+	  DEC AH
+	  JNZ KEY1
 		
 DONE: IRET
 KEY2: INC DL
