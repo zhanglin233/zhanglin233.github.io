@@ -8,15 +8,15 @@
         <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
         <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
         <category>智能控制</category>
-        <category>博客</category>
         <category>前端</category>
+        <category>博客</category>
         <category>Nginx</category>
         <category>前端 React</category>
         <category>Java JavaSE</category>
         <category>Java JavaWEB</category>
+        <category>Python 爬虫</category>
         <category>java SpringBoot</category>
         <category>java springboot</category>
-        <category>Python 爬虫</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/nginx/2021-11-20-Nginx%E7%9A%84%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E4%B8%8E%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/</guid>
             <title>Nginx的反向代理与负载均衡</title>
