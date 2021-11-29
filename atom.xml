@@ -8,8 +8,8 @@
     <category term="智能控制" />
     <category term="前端" />
     <category term="Nginx" />
-    <category term="Java JavaSE" />
     <category term="前端 React" />
+    <category term="Java JavaSE" />
     <category term="Java JavaWEB" />
     <category term="java SpringBoot" />
     <category term="java springboot" />
@@ -1813,16 +1813,5 @@ ServletResponse response)&lt;/li&gt;
 </content>
         <category term="博客" />
         <updated>2021-11-26T17:22:09.498Z</updated>
-    </entry>
-    <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/2020-11-15-jekyll/</id>
-        <title>张林的第一篇博客</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/2020-11-15-jekyll/"/>
-        <content type="html">&lt;p&gt;&amp;lt;h3&amp;gt; 成功创建博客的喜悦 &amp;lt;/h3&amp;gt;&lt;br /&gt;
- 此刻的我抱着异常激动的心情坐在电脑前敲下这篇文章，因为在花费了非常多的时间后我终于创建好了真正意义上的自己的第一个博客。疫情期间呆在家的时候，我就开始在网上查找创建自己的博客相关的教程，并花了 9.9 元购了买一年的域名，算是迈出了第一步吧，然后又成功的将自己 github 上的仓库绑定到了自己的域名上，但是这个时候的博客只有一个框架，并无任何内容。当时的想法是自己写 html、css、和 js 代码来编写自己的主页，但实在是自己的水平有限，写了很久之后还是只写出了一个非常简陋的页面，所以我就打算找模板，但是因为服务器是白嫖的 GitHub 的仓库，所以用不了 wordpress 模板，所以完善自己的博客就鸽了下来，直到最近了解到了可以用 github+jekyll 编写博客，所以才重拾起了这份未完成的工作，并在花费了大量时间后终于成功的通过 jekyll+github 完善好了自己的博客。虽然创建的过程非常的煎熬，但是成功之后的喜悦也是非常的强烈，让我觉得付出的时间都是值得的，这大概就是理科生的乐趣吧。&lt;/p&gt;
-&lt;p&gt;&amp;lt;h3&amp;gt; 对未来的期望 &amp;lt;/h3&amp;gt;&lt;br /&gt;
- 希望自己能够静下心来学习、变得更优秀吧。&lt;/p&gt;
-</content>
-        <updated>2021-11-26T17:22:09.492Z</updated>
     </entry>
 </feed>
