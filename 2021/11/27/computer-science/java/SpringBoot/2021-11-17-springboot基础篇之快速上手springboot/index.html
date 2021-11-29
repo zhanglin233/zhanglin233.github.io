@@ -1,0 +1,786 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#FFF">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="icon" type="image/ico" sizes="32x32" href="/images/favicon.ico">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+<link rel="alternate" type="application/rss+xml" title="欢迎来到我的个人博客" href="http://zhanglin233.github.io/rss.xml" />
+<link rel="alternate" type="application/atom+xml" title="欢迎来到我的个人博客" href="http://zhanglin233.github.io/atom.xml" />
+<link rel="alternate" type="application/json" title="欢迎来到我的个人博客" href="http://zhanglin233.github.io/feed.json" />
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CFredericka%20the%20Great:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20JP:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CInconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="/css/app.css?v=0.2.5">
+
+  
+  <meta name="keywords" content="java SpringBoot" />
+
+
+<link rel="canonical" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/">
+
+
+
+  <title>
+springboot基础篇之快速上手springboot - SpringBoot - Java - 计算机科学 |
+zhanglin = 欢迎来到我的个人博客</title>
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div id="loading">
+    <div class="cat">
+      <div class="body"></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
+      <div class="foot">
+        <div class="tummy-end"></div>
+        <div class="bottom"></div>
+        <div class="legs left"></div>
+        <div class="legs right"></div>
+      </div>
+      <div class="paw">
+        <div class="hands left"></div>
+        <div class="hands right"></div>
+      </div>
+    </div>
+  </div>
+  <div id="container">
+    <header id="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="inner">
+        <div id="brand">
+          <div class="pjax">
+          
+  <h1 itemprop="name headline">springboot基础篇之快速上手springboot
+  </h1>
+  
+<div class="meta">
+  <span class="item" title="创建时间：2021-11-27 01:22:09">
+    <span class="icon">
+      <i class="ic i-calendar"></i>
+    </span>
+    <span class="text">发表于</span>
+    <time itemprop="dateCreated datePublished" datetime="2021-11-27T01:22:09+08:00">2021-11-27</time>
+  </span>
+  <span class="item" title="本文字数">
+    <span class="icon">
+      <i class="ic i-pen"></i>
+    </span>
+    <span class="text">本文字数</span>
+    <span>4.8k</span>
+    <span class="text">字</span>
+  </span>
+  <span class="item" title="阅读时长">
+    <span class="icon">
+      <i class="ic i-clock"></i>
+    </span>
+    <span class="text">阅读时长</span>
+    <span>4 分钟</span>
+  </span>
+</div>
+
+
+          </div>
+        </div>
+        <nav id="nav">
+  <div class="inner">
+    <div class="toggle">
+      <div class="lines" aria-label="切换导航栏">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </div>
+    </div>
+    <ul class="menu">
+      <li class="item title"><a href="/" rel="start">zhanglin</a></li>
+    </ul>
+    <ul class="right">
+      <li class="item theme">
+        <i class="ic i-sun"></i>
+      </li>
+      <li class="item search">
+        <i class="ic i-search"></i>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+      </div>
+      <div id="imgs" class="pjax">
+        <ul>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevarprfj20zk0m8npd.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesx5fdwj20zk0m81kx.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipesng5oej20zk0m87d4.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitspjpbj20zk0m81ky.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciuja1j1j20zk0m8kjl.jpg"></li>
+        </ul>
+      </div>
+    </header>
+    <div id="waves">
+      <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+        <defs>
+          <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+        </defs>
+        <g class="parallax">
+          <use xlink:href="#gentle-wave" x="48" y="0" />
+          <use xlink:href="#gentle-wave" x="48" y="3" />
+          <use xlink:href="#gentle-wave" x="48" y="5" />
+          <use xlink:href="#gentle-wave" x="48" y="7" />
+        </g>
+      </svg>
+    </div>
+    <main>
+      <div class="inner">
+        <div id="main" class="pjax">
+          
+  <div class="article wrap">
+    
+<div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+<i class="ic i-home"></i>
+<span><a href="/">首页</a></span><i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学"><span itemprop="name">计算机科学</span></a>
+<meta itemprop="position" content="1" /></span>
+<i class="ic i-angle-right"></i>
+<span  itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/java/" itemprop="item" rel="index" title="分类于 Java"><span itemprop="name">Java</span></a>
+<meta itemprop="position" content="2" /></span>
+<i class="ic i-angle-right"></i>
+<span  class="current" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/categories/computer-science/java/SpringBoot/" itemprop="item" rel="index" title="分类于 SpringBoot"><span itemprop="name">SpringBoot</span></a>
+<meta itemprop="position" content="3" /></span>
+</div>
+
+    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+  <link itemprop="mainEntityOfPage" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/">
+
+  <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="image" content="/images/avatar.jpg">
+    <meta itemprop="name" content="张林">
+    <meta itemprop="description" content=", ">
+  </span>
+
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="欢迎来到我的个人博客">
+  </span>
+
+  <div class="body md" itemprop="articleBody">
+    
+
+    <h1 id="快速上手springboot"><a class="anchor" href="#快速上手springboot">#</a> 快速上手 Springboot</h1>
+<h2 id="springboot简介"><a class="anchor" href="#springboot简介">#</a> SpringBoot 简介</h2>
+<ul>
+<li>
+<p>SpringBoot 是由 Pivotal 团队提供的全新框架，其设计目的是用来简化 Spring 应用的初始搭建以及开发过程 。</p>
+</li>
+<li>
+<p>Spring 程序缺点</p>
+</li>
+</ul>
+<blockquote>
+<p>依赖设置繁琐</p>
+</blockquote>
+<blockquote>
+<p>配置繁琐</p>
+</blockquote>
+<ul>
+<li>SpringBoot 程序优点</li>
+</ul>
+<blockquote>
+<p>起步依赖（简化依赖配置）</p>
+</blockquote>
+<blockquote>
+<p>自动配置（简化常用工程相关配置）</p>
+</blockquote>
+<blockquote>
+<p>辅助功能（内置服务器，……</p>
+</blockquote>
+<ul>
+<li>
+<p>Spring 程序与 SpringBoot 程序对比</p>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117200144.png" alt="" /></p>
+</li>
+</ul>
+<h2 id="创建springboot工程的四种方式"><a class="anchor" href="#创建springboot工程的四种方式">#</a> 创建 SpringBoot 工程的四种方式</h2>
+<h3 id="基于idea创建springboot工程"><a class="anchor" href="#基于idea创建springboot工程">#</a> 基于 Idea 创建 SpringBoot 工程</h3>
+<ol>
+<li>创建新模块，选择 Spring Initializr，并配置模块相关基础信息</li>
+</ol>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117200639.png" alt="" /></p>
+<ol start="2">
+<li>选择当前模块需要使用的技术集</li>
+</ol>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117200722.png" alt="" /></p>
+<ol start="3">
+<li>开发控制器类</li>
+</ol>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211119174712.png" alt="" /></p>
+<ol start="4">
+<li>运行自动生成的 Application 类</li>
+</ol>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211119174735.png" alt="" /></p>
+<p>从图中可以看到项目所运行的服务器为 Tomcat 及服务器运行的端口号为 8080.</p>
+<ol start="5">
+<li>小结</li>
+</ol>
+<ul>
+<li>
+<p>开发 SpringBoot 程序可以根据向导进行联网快速制作（基于 idea 开发 SpringBoot 程序需要确保联网且能够加载到程序框架结构）</p>
+</li>
+<li>
+<p>SpringBoot 程序需要基于 JDK8 进行制作</p>
+</li>
+<li>
+<p>SpringBoot 程序中需要使用何种功能通过勾选选择技术</p>
+</li>
+<li>
+<p>运行 SpringBoot 程序通过运行 Application 程序入口进行</p>
+</li>
+</ul>
+<h3 id="于官网创建springboot工程"><a class="anchor" href="#于官网创建springboot工程">#</a> 于官网创建 SpringBoot 工程</h3>
+<p>基于 SpringBoot 官网创建项目，地址 :<span class="exturl" data-url="aHR0cHM6Ly9zdGFydC5zcHJpbmcuaW8=">https://start.spring.io</span></p>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117201433.png" alt="" /></p>
+<p>所填属性与通过 Idea 创建工程相同</p>
+<h3 id="基于阿里云创建springboot工程"><a class="anchor" href="#基于阿里云创建springboot工程">#</a> 基于阿里云创建 SpringBoot 工程</h3>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117201551.png" alt="" /></p>
+<p>基于阿里云创建 springboot 项目只需在第三步中取消勾选默认的 start 来源，改为勾选 Custom 用户自定义，并填入阿里云网址<span class="exturl" data-url="aHR0cDovL3N0YXJ0LmFsaXl1bi5jb20="> http://start.aliyun.com</span> 即可，其它操作与基于 Idea 创建 SpringBoot 工程相同。</p>
+<ul>
+<li>注意事项</li>
+</ul>
+<ol>
+<li>
+<p>阿里云提供的坐标版本较低，如果需要使用高版本，进入工程后手工切换 SpringBoot 版本</p>
+</li>
+<li>
+<p>阿里云提供的工程模板与 Spring 官网提供的工程模板略有不通</p>
+</li>
+</ol>
+<h3 id="手工创建maven工程修改为springboot工程"><a class="anchor" href="#手工创建maven工程修改为springboot工程">#</a> 手工创建 Maven 工程修改为 SpringBoot 工程</h3>
+<ol>
+<li>创建普通 Maven 工程</li>
+<li>继承 spring-boot-starter-parent</li>
+<li>添加依赖 spring-boot-starter-web</li>
+</ol>
+<figure class="highlight xml"><figcaption data-lang="XML"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token prolog">&lt;?xml version="1.0" encoding="UTF-8"?></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>project</span> <span class="token attr-name">xmlns</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0<span class="token punctuation">"</span></span> <span class="token attr-name"><span class="token namespace">xmlns:</span>xsi</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://www.w3.org/2001/XMLSchema-instance<span class="token punctuation">"</span></span></pre></td></tr><tr><td data-num="3"></td><td><pre>         <span class="token attr-name"><span class="token namespace">xsi:</span>schemaLocation</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd<span class="token punctuation">"</span></span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>modelVersion</span><span class="token punctuation">></span></span>4.0.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>modelVersion</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>parent</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-parent<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>2.5.6<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>relativePath</span><span class="token punctuation">/></span></span> <span class="token comment">&lt;!-- lookup parent from repository --></span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>parent</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>com.example<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring_01_01_quickStart<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>0.0.1-SNAPSHOT<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="16"></td><td><pre>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="17"></td><td><pre>            <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependencies</span><span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>project</span><span class="token punctuation">></span></span></pre></td></tr></table></figure><ol start="4">
+<li>制作引导类 Application</li>
+</ol>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token keyword">package</span> <span class="token namespace">com<span class="token punctuation">.</span>example</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="2"></td><td><pre></pre></td></tr><tr><td data-num="3"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span></span><span class="token class-name">SpringApplication</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token keyword">import</span> <span class="token namespace">org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>autoconfigure<span class="token punctuation">.</span></span><span class="token class-name">SpringBootApplication</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="5"></td><td><pre></pre></td></tr><tr><td data-num="6"></td><td><pre><span class="token annotation punctuation">@SpringBootApplication</span></pre></td></tr><tr><td data-num="7"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Spring0101QuickStartApplication</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="8"></td><td><pre></pre></td></tr><tr><td data-num="9"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="10"></td><td><pre>        <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">Spring0101QuickStartApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="12"></td><td><pre></pre></td></tr><tr><td data-num="13"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><h2 id="隐藏指定文件文件夹"><a class="anchor" href="#隐藏指定文件文件夹">#</a> 隐藏指定文件 / 文件夹</h2>
+<ol>
+<li>
+<p>Setting → File Types → Ignored Files and Folders</p>
+</li>
+<li>
+<p>输入要隐藏的文件名，支持 * 号通配符</p>
+</li>
+<li>
+<p>回车确认添加</p>
+</li>
+</ol>
+<h2 id="入门案例解析"><a class="anchor" href="#入门案例解析">#</a> 入门案例解析</h2>
+<h3 id="parent"><a class="anchor" href="#parent">#</a> parent</h3>
+<ul>
+<li>开发 SpringBoot 程序要继承 spring-boot-starter-parent</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">?</span>xml version<span class="token operator">=</span><span class="token string">"1.0"</span> encoding<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">?</span><span class="token operator">></span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token operator">&lt;</span>project xmlns<span class="token operator">=</span><span class="token string">"http://maven.apache.org/POM/4.0.0"</span> xmlns<span class="token operator">:</span>xsi<span class="token operator">=</span><span class="token string">"http://www.w3.org/2001/XMLSchema-instance"</span></pre></td></tr><tr><td data-num="3"></td><td><pre>         xsi<span class="token operator">:</span>schemaLocation<span class="token operator">=</span><span class="token string">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="token operator">></span></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token generics"><span class="token punctuation">&lt;</span>modelVersion<span class="token punctuation">></span></span><span class="token number">4.0</span><span class="token number">.0</span><span class="token operator">&lt;</span><span class="token operator">/</span>modelVersion<span class="token operator">></span></pre></td></tr><tr><td data-num="5"></td><td><pre>    <span class="token generics"><span class="token punctuation">&lt;</span>parent<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>        <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>parent<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="8"></td><td><pre>        <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">></span></span><span class="token number">2.5</span><span class="token number">.6</span><span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span></pre></td></tr><tr><td data-num="9"></td><td><pre>        <span class="token operator">&lt;</span>relativePath<span class="token operator">/</span><span class="token operator">></span> <span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> lookup parent from repository <span class="token operator">--</span><span class="token operator">></span></pre></td></tr><tr><td data-num="10"></td><td><pre>    <span class="token operator">&lt;</span><span class="token operator">/</span>parent<span class="token operator">></span></pre></td></tr><tr><td data-num="11"></td><td><pre>    <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>com<span class="token punctuation">.</span>example<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="12"></td><td><pre>    <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring_01_01_quickStart<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="13"></td><td><pre>    <span class="token generics"><span class="token punctuation">&lt;</span>version<span class="token punctuation">></span></span><span class="token number">0.0</span><span class="token number">.1</span><span class="token operator">-</span>SNAPSHOT<span class="token operator">&lt;</span><span class="token operator">/</span>version<span class="token operator">></span></pre></td></tr><tr><td data-num="14"></td><td><pre>    <span class="token generics"><span class="token punctuation">&lt;</span>dependencies<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="15"></td><td><pre>        <span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="16"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="17"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="18"></td><td><pre>        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></pre></td></tr><tr><td data-num="19"></td><td><pre>    <span class="token operator">&lt;</span><span class="token operator">/</span>dependencies<span class="token operator">></span></pre></td></tr><tr><td data-num="20"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">/</span>project<span class="token operator">></span></pre></td></tr></table></figure><ul>
+<li>
+<p>spring-boot-starter-parent 中定义了若干个依赖管理</p>
+</li>
+<li>
+<p>继承 parent 模块可以避免多个依赖使用相同技术时出现依赖版本冲突</p>
+</li>
+<li>
+<p>继承 parent 的形式也可以采用引入依赖的形式实现效果</p>
+</li>
+</ul>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117203328.png" alt="" /></p>
+<h3 id="starter"><a class="anchor" href="#starter">#</a> starter</h3>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>         <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="3"></td><td><pre>         <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="4"></td><td><pre>     <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></pre></td></tr></table></figure><p>starter 中包含了许多依赖</p>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117203725.png" alt="" /></p>
+<p>将鼠标放在 starter 上按住 Ctrl + 鼠标左击即可查看详细信息。</p>
+<ol>
+<li>
+<p>starter</p>
+<p>SpringBoot 中常见项目名称，定义了当前项目使用的所有依赖坐标，以达到减少依赖配置的目的</p>
+</li>
+<li>
+<p>parent</p>
+<p>所有 SpringBoot 项目要继承的项目，定义了若干个坐标版本号（依赖管理，而非依赖），以达到减少依赖冲突的目的 spring-boot-starter-parent 各版本间存在着诸多坐标版本不同</p>
+</li>
+<li>
+<p>实际开发</p>
+<p>使用任意坐标时，仅书写 GAV 中的 G (groupId) 和 A (artifactId)，V (version) 由 SpringBoot 提供，除非 SpringBoot 未提供对应版本 V，如发生坐标错误 (starter 中未包含当前依赖)，再指定 Version（要小心版本冲突)</p>
+</li>
+</ol>
+<h3 id="引导类"><a class="anchor" href="#引导类">#</a> 引导类</h3>
+<ul>
+<li>
+<p>启动方式</p>
+<p>SpringBoot 的引导类是 Boot 工程的执行入口，运行 main 方法就可以启动项目</p>
+<p>SpringBoot 工程运行后初始化 Spring 容器，扫描引导类所在包加载 bean</p>
+</li>
+</ul>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token annotation punctuation">@SpringBootApplication</span></pre></td></tr><tr><td data-num="2"></td><td><pre><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Spring0101QuickStartApplication</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="3"></td><td><pre></pre></td></tr><tr><td data-num="4"></td><td><pre>    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span></pre></td></tr><tr><td data-num="5"></td><td><pre>        <span class="token class-name">ConfigurableApplicationContext</span> ctx <span class="token operator">=</span> <span class="token class-name">SpringApplication</span><span class="token punctuation">.</span><span class="token function">run</span><span class="token punctuation">(</span><span class="token class-name">Spring0101QuickStartApplication</span><span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="6"></td><td><pre>        bookController bean <span class="token operator">=</span> ctx<span class="token punctuation">.</span><span class="token function">getBean</span><span class="token punctuation">(</span>bookController<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="7"></td><td><pre>        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"=====>"</span><span class="token operator">+</span>bean<span class="token punctuation">)</span><span class="token punctuation">;</span></pre></td></tr><tr><td data-num="8"></td><td><pre>    <span class="token punctuation">&#125;</span></pre></td></tr><tr><td data-num="9"></td><td><pre></pre></td></tr><tr><td data-num="10"></td><td><pre><span class="token punctuation">&#125;</span></pre></td></tr></table></figure><p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117210124.png" alt="" /></p>
+<h3 id="tomcat"><a class="anchor" href="#tomcat">#</a> Tomcat</h3>
+<ol>
+<li>
+<p>内嵌 Tomcat 服务器是 SpringBoot 辅助功能之一</p>
+</li>
+<li>
+<p>内嵌 Tomcat 工作原理是将 Tomcat 服务器作为对象运行，并 将该对象交给 Spring 容器管理</p>
+<p>查看 spring-boot-starter-web 依赖详细信息可以看到其中包括了 Tomcat</p>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117212854.png" alt="" /></p>
+</li>
+<li>
+<p>变更内嵌服务器思想是去除现有服务器，添加全新的服务器</p>
+<p>想要变更服务器只需修改 pom.xml 文件中的相关信息即可。</p>
+<figure class="highlight java"><figcaption data-lang="java"></figcaption><table><tr><td data-num="1"></td><td><pre><span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="2"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="3"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>web<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="4"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>            web起步依赖环境中，排除<span class="token class-name">Tomcat</span>起步依赖<span class="token operator">--</span><span class="token operator">></span></pre></td></tr><tr><td data-num="5"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>exclusions<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="6"></td><td><pre>                <span class="token generics"><span class="token punctuation">&lt;</span>exclusion<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="7"></td><td><pre>                    <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="8"></td><td><pre>                    <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>tomcat<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="9"></td><td><pre>                <span class="token operator">&lt;</span><span class="token operator">/</span>exclusion<span class="token operator">></span></pre></td></tr><tr><td data-num="10"></td><td><pre>            <span class="token operator">&lt;</span><span class="token operator">/</span>exclusions<span class="token operator">></span></pre></td></tr><tr><td data-num="11"></td><td><pre>        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></pre></td></tr><tr><td data-num="12"></td><td><pre><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span>        添加jetty起步依赖，版本由<span class="token class-name">SpringBoot</span>的starter控制<span class="token operator">--</span><span class="token operator">></span></pre></td></tr><tr><td data-num="13"></td><td><pre>        <span class="token generics"><span class="token punctuation">&lt;</span>dependency<span class="token punctuation">></span></span></pre></td></tr><tr><td data-num="14"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>groupId<span class="token punctuation">></span></span>org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token operator">&lt;</span><span class="token operator">/</span>groupId<span class="token operator">></span></pre></td></tr><tr><td data-num="15"></td><td><pre>            <span class="token generics"><span class="token punctuation">&lt;</span>artifactId<span class="token punctuation">></span></span>spring<span class="token operator">-</span>boot<span class="token operator">-</span>starter<span class="token operator">-</span>jetty<span class="token operator">&lt;</span><span class="token operator">/</span>artifactId<span class="token operator">></span></pre></td></tr><tr><td data-num="16"></td><td><pre>        <span class="token operator">&lt;</span><span class="token operator">/</span>dependency<span class="token operator">></span></pre></td></tr></table></figure><p>重新启动程序后，发现服务器相关信息以变为 jetty</p>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211117213752.png" alt="" /></p>
+</li>
+<li>
+<p>内置服务器</p>
+<p>tomcat (默认)   apache 出品，粉丝多，应用面广，负载了若干较重的组件</p>
+<p>jetty     			 更轻量级，负载性能远不及 tomcat</p>
+<p>undertow  	  undertow，负载性能勉强跑赢 tomcat</p>
+</li>
+</ol>
+
+      <div class="tags">
+          <a href="/tags/java-SpringBoot/" rel="tag"><i class="ic i-tag"></i> java SpringBoot</a>
+      </div>
+  </div>
+
+   <footer>
+
+    <div class="meta">
+  <span class="item">
+    <span class="icon">
+      <i class="ic i-calendar-check"></i>
+    </span>
+    <span class="text">更新于</span>
+    <time title="修改时间：2021-11-26 00:55:26" itemprop="dateModified" datetime="2021-11-26T00:55:26+08:00">2021-11-26</time>
+  </span>
+  <span id="2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot基础篇之快速上手springboot/" class="item leancloud_visitors" data-flag-title="springboot基础篇之快速上手springboot" title="阅读次数">
+      <span class="icon">
+        <i class="ic i-eye"></i>
+      </span>
+      <span class="text">阅读次数</span>
+      <span class="leancloud-visitors-count"></span>
+      <span class="text">次</span>
+  </span>
+</div>
+
+      
+<div class="reward">
+  <button><i class="ic i-heartbeat"></i> 赞赏</button>
+  <p>请我喝[茶]~(￣▽￣)~*</p>
+  <div id="qr">
+      
+      <div>
+        <img data-src="/images/wechatpay.png" alt="张林 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/alipay.png" alt="张林 支付宝">
+        <p>支付宝</p>
+      </div>
+      
+      <div>
+        <img data-src="/images/paypal.png" alt="张林 贝宝">
+        <p>贝宝</p>
+      </div>
+  </div>
+</div>
+
+      
+
+<div id="copyright">
+<ul>
+  <li class="author">
+    <strong>本文作者： </strong>张林 <i class="ic i-at"><em>@</em></i>欢迎来到我的个人博客
+  </li>
+  <li class="link">
+    <strong>本文链接：</strong>
+    <a href="http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/" title="springboot基础篇之快速上手springboot">http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot基础篇之快速上手springboot/</a>
+  </li>
+  <li class="license">
+    <strong>版权声明： </strong>本站所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC9kZWVkLnpo"><i class="ic i-creative-commons"><em>(CC)</em></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+  </footer>
+
+</article>
+
+  </div>
+  
+
+<div class="post-nav">
+    <div class="item left">
+      
+
+  <a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-15-Filter&Listener/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipesng5oej20zk0m87d4.jpg" title="JavaWEB之sl&amp;jstl">
+  <span class="type">上一篇</span>
+  <span class="category"><i class="ic i-flag"></i> JavaWEB</span>
+  <h3>JavaWEB之sl&jstl</h3>
+  </a>
+
+    </div>
+    <div class="item right">
+      
+
+  <a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-18-SpringBoot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" itemprop="url" rel="next" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeu7txpzj20zk0m81kx.jpg" title="springboot基础篇之基础配置">
+  <span class="type">下一篇</span>
+  <span class="category"><i class="ic i-flag"></i> SpringBoot</span>
+  <h3>springboot基础篇之基础配置</h3>
+  </a>
+
+    </div>
+</div>
+
+  
+  <div class="wrap" id="comments"></div>
+
+
+        </div>
+        <div id="sidebar">
+          
+
+<div class="inner">
+
+  <div class="panels">
+    <div class="inner">
+      <div class="contents panel pjax" data-title="文章目录">
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot"><span class="toc-number">1.</span> <span class="toc-text"> 快速上手 Springboot</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#springboot%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text"> SpringBoot 简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9B%E5%BB%BAspringboot%E5%B7%A5%E7%A8%8B%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text"> 创建 SpringBoot 工程的四种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8Eidea%E5%88%9B%E5%BB%BAspringboot%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 基于 Idea 创建 SpringBoot 工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8E%E5%AE%98%E7%BD%91%E5%88%9B%E5%BB%BAspringboot%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text"> 于官网创建 SpringBoot 工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E9%98%BF%E9%87%8C%E4%BA%91%E5%88%9B%E5%BB%BAspringboot%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.3.</span> <span class="toc-text"> 基于阿里云创建 SpringBoot 工程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%89%8B%E5%B7%A5%E5%88%9B%E5%BB%BAmaven%E5%B7%A5%E7%A8%8B%E4%BF%AE%E6%94%B9%E4%B8%BAspringboot%E5%B7%A5%E7%A8%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text"> 手工创建 Maven 工程修改为 SpringBoot 工程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%90%E8%97%8F%E6%8C%87%E5%AE%9A%E6%96%87%E4%BB%B6%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="toc-number">1.3.</span> <span class="toc-text"> 隐藏指定文件 &#x2F; 文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A5%E9%97%A8%E6%A1%88%E4%BE%8B%E8%A7%A3%E6%9E%90"><span class="toc-number">1.4.</span> <span class="toc-text"> 入门案例解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#parent"><span class="toc-number">1.4.1.</span> <span class="toc-text"> parent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#starter"><span class="toc-number">1.4.2.</span> <span class="toc-text"> starter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%AF%BC%E7%B1%BB"><span class="toc-number">1.4.3.</span> <span class="toc-text"> 引导类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tomcat"><span class="toc-number">1.4.4.</span> <span class="toc-text"> Tomcat</span></a></li></ol></li></ol></li></ol>
+      </div>
+      <div class="related panel pjax" data-title="系列文章">
+        <ul>
+          <li class="active"><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/" rel="bookmark" title="springboot基础篇之快速上手springboot">springboot基础篇之快速上手springboot</a></li><li><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-18-SpringBoot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" rel="bookmark" title="springboot基础篇之基础配置">springboot基础篇之基础配置</a></li><li><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-18-SpringBoot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/" rel="bookmark" title="springboot基础篇之整合第三方技术">springboot基础篇之整合第三方技术</a></li><li><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E6%89%93%E5%8C%85%E4%B8%8E%E8%BF%90%E8%A1%8C/" rel="bookmark" title="springboot运维实用篇之打包与运行">springboot运维实用篇之打包与运行</a></li><li><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E9%85%8D%E7%BD%AE%E9%AB%98%E7%BA%A7/" rel="bookmark" title="SpringBoot运维实用篇之配置高级">SpringBoot运维实用篇之配置高级</a></li><li><a href="/2021/11/27/computer-science/java/SpringBoot/2021-7-10-java%E4%B9%8Bjunit%E6%B5%8B%E8%AF%95/" rel="bookmark" title="java之junit测试">java之junit测试</a></li>
+        </ul>
+      </div>
+      <div class="overview panel" data-title="站点概览">
+        <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <img class="image" itemprop="image" alt="张林"
+      data-src="/images/avatar.jpg">
+  <p class="name" itemprop="name">张林</p>
+  <div class="description" itemprop="description"></div>
+</div>
+
+<nav class="state">
+    <div class="item posts">
+      <a href="/archives/">
+        <span class="count">19</span>
+        <span class="name">文章</span>
+      </a>
+    </div>
+    <div class="item categories">
+      <a href="/categories/">
+        <span class="count">12</span>
+        <span class="name">分类</span>
+      </a>
+    </div>
+    <div class="item tags">
+      <a href="/tags/">
+        <span class="count">10</span>
+        <span class="name">标签</span>
+      </a>
+    </div>
+</nav>
+
+<div class="social">
+      <span class="exturl item github" data-url="aHR0cHM6Ly9naXRodWIuY29tL3poYW5nbGluMjMz" title="https:&#x2F;&#x2F;github.com&#x2F;zhanglin233"><i class="ic i-github"></i></span>
+      <span class="exturl item music" data-url="aHR0cHM6Ly9tdXNpYy4xNjMuY29tLyMvdXNlci9ob21lP2lkPTMzMDkwMzM3Mg==" title="https:&#x2F;&#x2F;music.163.com&#x2F;#&#x2F;user&#x2F;home?id&#x3D;330903372"><i class="ic i-cloud-music"></i></span>
+</div>
+
+<ul class="menu">
+  
+    
+  <li class="item">
+    <a href="/" rel="section"><i class="ic i-home"></i>首页</a>
+  </li>
+
+        
+  <li class="item dropdown">
+      <a href="javascript:void(0);"><i class="ic i-feather"></i>文章</a>
+    <ul class="submenu">
+
+        
+  <li class="item">
+    <a href="/archives/" rel="section"><i class="ic i-list-alt"></i>归档</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/categories/" rel="section"><i class="ic i-th"></i>分类</a>
+  </li>
+
+        
+  <li class="item">
+    <a href="/tags/" rel="section"><i class="ic i-tags"></i>标签</a>
+  </li>
+
+  </ul>
+    
+  <li class="item">
+    <a href="/friends/" rel="section"><i class="ic i-heart"></i>友链</a>
+  </li>
+
+
+</ul>
+
+      </div>
+    </div>
+  </div>
+
+  <ul id="quick">
+    <li class="prev pjax">
+        <a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-15-Filter&Listener/" rel="prev" title="上一篇"><i class="ic i-chevron-left"></i></a>
+    </li>
+    <li class="up"><i class="ic i-arrow-up"></i></li>
+    <li class="down"><i class="ic i-arrow-down"></i></li>
+    <li class="next pjax">
+        <a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-18-SpringBoot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE/" rel="next" title="下一篇"><i class="ic i-chevron-right"></i></a>
+    </li>
+    <li class="percent"></li>
+  </ul>
+</div>
+
+
+        </div>
+        <div class="dimmer"></div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="inner">
+        <div class="widgets">
+          
+<div class="rpost pjax">
+  <h2>随机文章</h2>
+  <ul>
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/course-1/" title="分类于 智能控制">智能控制</a>
+</div>
+
+    <span><a href="/2021/11/28/computer-science/course_1/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E9%94%AE%E7%9B%98%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/" title="键盘及其接口技术">键盘及其接口技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/SpringBoot/" title="分类于 SpringBoot">SpringBoot</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-18-SpringBoot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E6%95%B4%E5%90%88%E7%AC%AC%E4%B8%89%E6%96%B9%E6%8A%80%E6%9C%AF/" title="springboot基础篇之整合第三方技术">springboot基础篇之整合第三方技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/" title="分类于 前端">前端</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/React/" title="分类于 React">React</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%89%B9%E5%BE%81/" title="未命名">未命名</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/JavaWEB/" title="分类于 JavaWEB">JavaWEB</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&jstl/" title="javaweb之sl&amp;jstl">javaweb之sl&jstl</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/JavaSE/" title="分类于 JavaSE">JavaSE</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/JavaSE/2021-7-8-java%E6%A0%B8%E5%BF%83%E5%8D%B7%E4%B8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B1%BB/" title="java核心卷一第四章对象与类">java核心卷一第四章对象与类</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/SpringBoot/" title="分类于 SpringBoot">SpringBoot</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E6%89%93%E5%8C%85%E4%B8%8E%E8%BF%90%E8%A1%8C/" title="springboot运维实用篇之打包与运行">springboot运维实用篇之打包与运行</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/JavaWEB/" title="分类于 JavaWEB">JavaWEB</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&Session/" title="javaweb之Cookie&amp;Session">javaweb之Cookie&Session</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/spider/" title="分类于 爬虫">爬虫</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/python/spider/2020-11-17-pixiv1/" title="爬取p站(pixiv)的图片（一）">爬取p站(pixiv)的图片（一）</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/" title="分类于 前端">前端</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/front-end/2021-9-15-ES6%E7%89%B9%E6%80%A7/" title="ES6特性">ES6特性</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/" title="分类于 前端">前端</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/React/" title="分类于 React">React</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%BB%84%E4%BB%B6/" title="React的组件">React的组件</a></span>
+  </li>
+
+  </ul>
+</div>
+<div>
+  <h2>最新评论</h2>
+  <ul class="leancloud-recent-comment"></ul>
+</div>
+
+        </div>
+        <div class="status">
+  <div class="copyright">
+    
+    &copy; 2010 – 
+    <span itemprop="copyrightYear">2021</span>
+    <span class="with-love">
+      <i class="ic i-sakura rotate"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">张林 @ zhanglin</span>
+  </div>
+  <div class="count">
+    <span class="post-meta-item-icon">
+      <i class="ic i-chart-area"></i>
+    </span>
+    <span title="站点总字数">61k 字</span>
+
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="ic i-coffee"></i>
+    </span>
+    <span title="站点阅读时长">56 分钟</span>
+  </div>
+  <div class="powered-by">
+    基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>
+  </div>
+</div>
+
+      </div>
+    </footer>
+  </div>
+<script data-config type="text/javascript">
+  var LOCAL = {
+    path: '2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot基础篇之快速上手springboot/',
+    favicon: {
+      show: "（●´3｀●）やれやれだぜ",
+      hide: "(´Д｀)大変だ！"
+    },
+    search : {
+      placeholder: "文章搜索",
+      empty: "关于 「 ${query} 」，什么也没搜到",
+      stats: "${time} ms 内找到 ${hits} 条结果"
+    },
+    valine: true,fancybox: true,
+    copyright: '复制成功，转载请遵守 <i class="ic i-creative-commons"></i>BY-NC-SA 协议。',
+    ignores : [
+      function(uri) {
+        return uri.includes('#');
+      },
+      function(uri) {
+        return new RegExp(LOCAL.path+"$").test(uri);
+      }
+    ]
+  };
+</script>
+
+<script src="https://cdn.polyfill.io/v2/polyfill.js"></script>
+
+<script src="//cdn.jsdelivr.net/combine/npm/pace-js@1.0.2/pace.min.js,npm/pjax@0.2.8/pjax.min.js,npm/whatwg-fetch@3.4.0/dist/fetch.umd.min.js,npm/animejs@3.2.0/lib/anime.min.js,npm/algoliasearch@4/dist/algoliasearch-lite.umd.js,npm/instantsearch.js@4/dist/instantsearch.production.min.js,npm/lozad@1/dist/lozad.min.js,npm/quicklink@2/dist/quicklink.umd.js"></script>
+
+<script src="/js/app.js?v=0.2.5"></script>
+
+
+  <script data-pjax>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?04b474bb6c6910e6b4240a1f2c3028a7";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+</body>
+</html>
