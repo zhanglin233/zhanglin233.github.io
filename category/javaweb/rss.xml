@@ -7,6 +7,7 @@
         <language>zh-CN</language>
         <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
         <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
+        <category>算法</category>
         <category>博客</category>
         <category>智能控制</category>
         <category>前端</category>
@@ -17,7 +18,6 @@
         <category>java SpringBoot</category>
         <category>java springboot</category>
         <category>Python 爬虫</category>
-        <category>算法</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-15-Filter&amp;Listener/</guid>
             <title>JavaWEB之sl&amp;jstl</title>
