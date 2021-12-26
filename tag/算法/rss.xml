@@ -8,9 +8,9 @@
         <pubDate>Sun, 26 Dec 2021 13:59:55 +0800</pubDate>
         <lastBuildDate>Sun, 26 Dec 2021 13:59:55 +0800</lastBuildDate>
         <category>算法</category>
-        <category>前端</category>
         <category>智能控制</category>
         <category>博客</category>
+        <category>前端</category>
         <category>Nginx</category>
         <category>前端 React</category>
         <category>Java JavaSE</category>
@@ -592,20 +592,20 @@
 &lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;死锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#死锁&#34;&gt;#&lt;/a&gt; 死锁&lt;/h2&gt;
-&lt;h4 id=&#34;原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因&#34;&gt;#&lt;/a&gt; 原因&lt;/h4&gt;
+&lt;h3 id=&#34;原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#原因&#34;&gt;#&lt;/a&gt; 原因&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;系统资源不足&lt;/li&gt;
 &lt;li&gt;资源分配不当&lt;/li&gt;
 &lt;li&gt;进程运行推进顺序不合适&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;产生条件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#产生条件&#34;&gt;#&lt;/a&gt; 产生条件&lt;/h4&gt;
+&lt;h3 id=&#34;产生条件&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#产生条件&#34;&gt;#&lt;/a&gt; 产生条件&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;互斥&lt;/li&gt;
 &lt;li&gt;请求和保持&lt;/li&gt;
 &lt;li&gt;不剥夺&lt;/li&gt;
 &lt;li&gt;环路&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;编码时解决死锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#编码时解决死锁&#34;&gt;#&lt;/a&gt; 编码时解决死锁&lt;/h4&gt;
+&lt;h3 id=&#34;编码时解决死锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#编码时解决死锁&#34;&gt;#&lt;/a&gt; 编码时解决死锁&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;死锁的一般解决方案：&lt;/p&gt;
@@ -637,7 +637,7 @@ std::lock_guard&amp;lt;std::mutex&amp;gt;sbgurad2(my_mutex2,std::adopt_lock);
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h4 id=&#34;处理方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#处理方法&#34;&gt;#&lt;/a&gt; 处理方法&lt;/h4&gt;
+&lt;h3 id=&#34;处理方法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#处理方法&#34;&gt;#&lt;/a&gt; 处理方法&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;鸵鸟策略&lt;/strong&gt;：当作没有发生死锁&lt;/p&gt;
