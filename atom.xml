@@ -3,11 +3,11 @@
     <id>http://zhanglin233.github.io</id>
     <title>欢迎来到我的个人博客</title>
     <link href="http://zhanglin233.github.io" />
-    <updated>2021-12-26T05:59:55.365Z</updated>
-    <category term="博客" />
+    <updated>2022-01-06T08:15:49.695Z</updated>
     <category term="算法" />
     <category term="智能控制" />
     <category term="前端" />
+    <category term="博客" />
     <category term="Nginx" />
     <category term="前端 React" />
     <category term="Java JavaWEB" />
@@ -15,6 +15,222 @@
     <category term="java SpringBoot" />
     <category term="java springboot" />
     <category term="Python 爬虫" />
+    <entry>
+        <id>http://zhanglin233.github.io/2022/01/06/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+        <title>后端面试之数据库</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2022/01/06/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+        <content type="html">&lt;h1 id=&#34;事务的概念和特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务的概念和特性&#34;&gt;#&lt;/a&gt; 事务的概念和特性？&lt;/h1&gt;
+&lt;p&gt;概念：事务（Transaction）是一个操作序列，不可分割的工作单位，以 BEGIN TRANSACTION 开始，以 ROLLBACK/COMMIT 结束&lt;/p&gt;
+&lt;p&gt;特性（ACID）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;原子性&lt;/strong&gt;（Atomicity）：逻辑上是不可分割的操作单元，事务的所有操作要么全部提交成功，要么全部失败回滚（用回滚日志实现，反向执行日志中的操作）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一致性&lt;/strong&gt;（Consistency）：事务的执行必须使数据库保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;隔离性&lt;/strong&gt;（Isolation）：一个事务所做的修改在最终提交以前，对其它事务是不可见的（并发执行的事务之间不能相互影响）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;持久性&lt;/strong&gt;（Durability）：一旦事务提交成功，对数据的修改是永久性的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;事务四大特性分别由什么保证&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务四大特性分别由什么保证&#34;&gt;#&lt;/a&gt; 事务四大特性分别由什么保证？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原子性：由 undo log 保证。undo log 记录了需要回滚的日志信息，回滚时根据 undo log 撤销已经执行成功的 sql&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一致性：由其他三大特性保证&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;隔离性：由 MVCC + 锁机制保证&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;持久性：由内存 + redo log 保证&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;事务会出现哪些并发一致性问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务会出现哪些并发一致性问题&#34;&gt;#&lt;/a&gt; 事务会出现哪些并发一致性问题？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;丢失修改&lt;/strong&gt;：一个事务对数据进行了修改，在事务提交之前，另一个事务对同一个数据进行了修改，覆盖了之前的修改；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;脏读&lt;/strong&gt;（Dirty Read）：一个事务读取了被另一个事务修改、但未提交（进行了回滚）的数据，造成两个事务得到的数据不一致；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不可重复读&lt;/strong&gt;（Nonrepeatable Read）：在同一个事务中，某查询操作在一个时间读取某一行数据和之后一个时间读取该行数据，发现数据已经发生修改（针对&lt;strong&gt; update&lt;/strong&gt; 操作）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;幻读&lt;/strong&gt;（Phantom Read）：当同一查询多次执行时，由于其它事务在这个数据范围内执行了插入操作，会导致每次返回不同的结果集（和不可重复读的区别：针对的是一个数据整体 / 范围；并且针对&lt;strong&gt; insert&lt;/strong&gt; 操作）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;数据库的四种隔离级别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库的四种隔离级别&#34;&gt;#&lt;/a&gt; 数据库的四种隔离级别？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;未提交读&lt;/strong&gt;（Read Uncommited）：在一个事务提交之前，它的执行结果对其它事务也是可见的。会导致脏读、不可重复读、幻读；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提交读&lt;/strong&gt;（Read Commited）：一个事务只能看见已经提交的事务所作的改变。可避免脏读问题；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可重复读&lt;/strong&gt;（Repeatable Read）：可以确保同一个事务在多次读取同样的数据时得到相同的结果。（MySQL 的默认隔离级别）。可避免不可重复读；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可串行化&lt;/strong&gt;（Serializable）：强制事务串行执行，使之不可能相互冲突，从而解决幻读问题。可能导致大量的超时现象和锁竞争，实际很少使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;数据库左连接右连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库左连接右连接&#34;&gt;#&lt;/a&gt; 数据库左连接，右连接&lt;/h1&gt;
+&lt;p&gt;左连接 where 只影向右表，右连接 where 只影响左表&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;select * from tbl1 Left Join tbl2 where &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDEuSUQ=&#34;&gt;tbl1.ID&lt;/span&gt; = &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDIuSUQ=&#34;&gt;tbl2.ID&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;左连接后的检索结果是显示 tbl1 的所有数据和 tbl2 中满足 where 条件的数据。&lt;/p&gt;
+&lt;p&gt;简言之 Left Join 影响到的是右边的表&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;select * from tbl1 Right Join tbl2 where &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDEuSUQ=&#34;&gt;tbl1.ID&lt;/span&gt; = &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDIuSUQ=&#34;&gt;tbl2.ID&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;检索结果是 tbl2 的所有数据和 tbl1 中满足 where 条件的数据。&lt;/p&gt;
+&lt;p&gt;简言之 Right Join 影响到的是左边的表。&lt;/p&gt;
+&lt;h1 id=&#34;为什么性别字段不适合建立索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么性别字段不适合建立索引&#34;&gt;#&lt;/a&gt; 为什么性别字段不适合建立索引？&lt;/h1&gt;
+&lt;p&gt;性别字段一般只有两种值，重复率太高，导致索引选择性太低，索引性价比低。&lt;/p&gt;
+&lt;p&gt;因为你访问索引需要付出额外的 IO 开销，你从索引中拿到的只是地址，要想真正访问到数据还是要对表进行一次 IO。&lt;/p&gt;
+&lt;p&gt;假如你要从表的 100 万行数据中取几个数据，那么利用索引迅速定位，访问索引的这 IO 开销就非常值了。但如果你是从 100 万行数据中取 50 万行数据，就比如性别字段，那你相对需要访问 50 万次索引，再访问 50 万次表，加起来的开销并不会比直接对表进行一次完整扫描小。&lt;/p&gt;
+&lt;p&gt;同时，虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行 INSERT、UPDATE 和 DELETE。因为更新表时，MySQL 不仅要保存数据还要更新索引。建立索引会占用磁盘空间。一般情况这个问题不太严重，但如果你在一个大表上创建了多种组合索引，索引文件的会膨胀很快。&lt;/p&gt;
+&lt;h1 id=&#34;什么是乐观锁和悲观锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是乐观锁和悲观锁&#34;&gt;#&lt;/a&gt; 什么是乐观锁和悲观锁？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;悲观锁：认为数据随时会被修改，因此每次读取数据之前都会上锁，防止其它事务读取或修改数据；应用于&lt;strong&gt;数据更新比较频繁&lt;/strong&gt;的场景；&lt;/li&gt;
+&lt;li&gt;乐观锁：操作数据时不会上锁，但是更新时会判断在此期间有没有别的事务更新这个数据，若被更新过，则失败重试；适用于&lt;strong&gt;读多写少&lt;/strong&gt;的场景。乐观锁的实现方式有：&lt;/li&gt;
+&lt;li&gt;加一个版本号或者时间戳字段，每次数据更新时同时更新这个字段；&lt;/li&gt;
+&lt;li&gt;先读取想要更新的字段或者所有字段，更新的时候比较一下，只有字段没有变化才进行更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;封锁粒度的概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#封锁粒度的概念&#34;&gt;#&lt;/a&gt; 封锁粒度的概念&lt;/h1&gt;
+&lt;p&gt;MySQL 中提供了两种封锁粒度：&lt;strong&gt;行级锁&lt;/strong&gt;以及&lt;strong&gt;表级锁&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;封锁粒度小：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;好处：锁定的数据量越少，发生锁争用的可能就越小，系统的&lt;strong&gt;并发程度&lt;/strong&gt;就越高；&lt;/li&gt;
+&lt;li&gt;坏处：&lt;strong&gt;系统开销&lt;/strong&gt;大（加锁、释放锁、检查锁的状态都需要消耗资源）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;什么是存储过程有哪些优缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是存储过程有哪些优缺点&#34;&gt;#&lt;/a&gt; 什么是存储过程？有哪些优缺点？&lt;/h1&gt;
+&lt;p&gt;存储过程是事先经过编译并存储在数据库中的一段 SQL 语句的集合。想要实现相应的功能时，只需要调用这个存储过程就行了（类似于函数，输入具有输出参数）。&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;预先编译，而不需要每次运行时编译，提高了数据库执行&lt;strong&gt;效率&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;封装了一系列操作，对于一些数据交互比较多的操作，相比于单独执行 SQL 语句，可以&lt;strong&gt;减少网络通信量&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;具有&lt;strong&gt;可复用性&lt;/strong&gt;，减少了数据库开发的工作量；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全性高&lt;/strong&gt;，可以让没有权限的用户通过存储过程间接操作数据库；&lt;/li&gt;
+&lt;li&gt;更&lt;strong&gt;易于维护&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可移植性差&lt;/strong&gt;，存储过程将应用程序绑定到了数据库上；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发调试复杂&lt;/strong&gt;：没有好的 IDE；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;修改复杂&lt;/strong&gt;，需要重新编译，有时还需要更新程序中的代码以更新调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;什么是三级封锁协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是三级封锁协议&#34;&gt;#&lt;/a&gt; 什么是三级封锁协议？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;一级封锁协议：事务在修改数据之前必须先对其加 X 锁，直到事务结束才释放。可以解决丢失修改问题（两个事务不能同时对一个数据加 X 锁，避免了修改被覆盖）；&lt;/li&gt;
+&lt;li&gt;二级封锁协议：在一级的基础上，事务在读取数据之前必须先加 S 锁，读完后释放。可以解决脏读问题（如果已经有事务在修改数据，就意味着已经加了 X 锁，此时想要读取数据的事务并不能加 S 锁，也就无法进行读取，避免了读取脏数据）；&lt;/li&gt;
+&lt;li&gt;三级封锁协议：在二级的基础上，事务在读取数据之前必须先加 S 锁，直到事务结束才能释放。可以解决不可重复读问题（避免了在事务结束前其它事务对数据加 X 锁进行修改，保证了事务期间数据不会被其它事务更新）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;介绍acid&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍acid&#34;&gt;#&lt;/a&gt; 介绍 ACID？&lt;/h1&gt;
+&lt;p&gt;**Atomicity：** 事务本身被视为不可分割的最小单元，事务的操作要么全部成功要么全部失败回滚。&lt;/p&gt;
+&lt;p&gt;**Consistency：** 数据库在事务的执行前后都保持一致，&lt;strong&gt;所有事务对同一数据的读取结果都相同&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;**Isolation：** 一个事务的操作在提交之前，对其他事务是不可见的&lt;/p&gt;
+&lt;p&gt;**Durability：** 一旦事务提交之后对于数据库的更改就是永久不可回退的&lt;/p&gt;
+&lt;h1 id=&#34;不符合范式会出现哪些异常&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#不符合范式会出现哪些异常&#34;&gt;#&lt;/a&gt; 不符合范式会出现哪些异常？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;冗余数据：某些同样的数据多次出现（如学生姓名）；&lt;/li&gt;
+&lt;li&gt;修改异常：修改了一个记录中的信息，另一个记录中相同的信息却没有修改；&lt;/li&gt;
+&lt;li&gt;删除异常：删除一个信息，那么也会丢失其它信息（删除一个课程，丢失了一个学生的信息）；&lt;/li&gt;
+&lt;li&gt;插入异常：无法插入（插入一个还没有课程信息的学生）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;事务的-acid-特性在mysql中的实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务的-acid-特性在mysql中的实现&#34;&gt;#&lt;/a&gt; 事务的 ACID 特性在 MySQL 中的实现？&lt;/h1&gt;
+&lt;p&gt;原子性：利用 undo log 实现的&lt;/p&gt;
+&lt;p&gt;持久性：利用 redo log 实现的&lt;/p&gt;
+&lt;p&gt;一致性：是利用 原子性、持久性、隔离性来实现的。事务的四大特性中一致性是目的，其他都是保证一致性的手段。&lt;/p&gt;
+&lt;p&gt;**redo log 😗* 记录了数据操作在物理层面的修改，事务进行中会不断的产生 redo log 在事务进行提交时一次 flush 操作保存到磁盘中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;undo log:&lt;/strong&gt; 记录事务的修改操作，可以实现事务的回滚。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;事务的隔离性由 MVCC（多版本并发控制）与锁实现&lt;/strong&gt;：因而隔离性也可以叫做并发控制。&lt;/p&gt;
+&lt;h1 id=&#34;什么是两段锁协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是两段锁协议&#34;&gt;#&lt;/a&gt; 什么是两段锁协议？&lt;/h1&gt;
+&lt;p&gt;事务必须严格分为两个阶段对数据进行加锁和解锁的操作，第一阶段加锁，第二阶段解锁。也就是说一个事务中一旦释放了锁，就不能再申请新锁了。&lt;/p&gt;
+&lt;p&gt;可串行化调度是指，通过并发控制，使得并发执行的事务结果与某个串行执行的事务结果相同。事务遵循两段锁协议是保证可串行化调度的充分条件。&lt;/p&gt;
+&lt;h1 id=&#34;什么是-mvcc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是-mvcc&#34;&gt;#&lt;/a&gt; 什么是 MVCC？&lt;/h1&gt;
+&lt;p&gt;​	多版本并发控制（Multi-Version Concurrency Control, MVCC），MVCC 在每行记录后面都保存有两个隐藏的列，用来存储&lt;strong&gt;创建版本号&lt;/strong&gt;和&lt;strong&gt;删除版本号&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建版本号：创建一个数据行时的事务版本号（&lt;strong&gt;事务版本号&lt;/strong&gt;：事务开始时的系统版本号；系统版本号：每开始一个新的事务，系统版本号就会自动递增）；&lt;/li&gt;
+&lt;li&gt;删除版本号：删除操作时的事务版本号；&lt;/li&gt;
+&lt;li&gt;各种操作：&lt;/li&gt;
+&lt;li&gt;插入操作时，记录创建版本号；&lt;/li&gt;
+&lt;li&gt;删除操作时，记录删除版本号；&lt;/li&gt;
+&lt;li&gt;更新操作时，先记录删除版本号，再新增一行记录创建版本号；&lt;/li&gt;
+&lt;li&gt;查询操作时，要符合以下条件才能被查询出来：删除版本号未定义或大于当前事务版本号（删除操作是在当前事务启动之后做的）；创建版本号小于或等于当前事务版本号（创建操作是事务完成或者在事务启动之前完成）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​	通过版本号减少了锁的争用，&lt;strong&gt;提高了系统性能&lt;/strong&gt;；可以实现&lt;strong&gt;提交读&lt;/strong&gt;和&lt;strong&gt;可重复读&lt;/strong&gt;两种隔离级别，未提交读无需使用 MVCC&lt;/p&gt;
+&lt;h1 id=&#34;数据库的范式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库的范式&#34;&gt;#&lt;/a&gt; 数据库的范式？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;第一范式&lt;/strong&gt;（1NF，Normal Form）：&lt;strong&gt;属性不应该是可分的&lt;/strong&gt;。举例：如果将 “电话” 作为一个属性（一列），是不符合 1NF 的，因为电话这个属性可以分解为家庭电话和移动电话... 如果将 “移动电话” 作为一个属性，就符合 1NF；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第二范式&lt;/strong&gt; 2NF：每个非主属性&lt;strong&gt;完全依赖&lt;/strong&gt;于主属性集（候选键集）；&lt;/li&gt;
+&lt;li&gt;B 完全依赖于 A，就是说 A 中的所有属性唯一决定 B，属性少了就不能唯一决定，属性多了则有冗余（叫依赖不叫完全依赖）。举例：（学号，课程名）这个主属性集可以唯一决定成绩，但是对于学生姓名这个属性，（学号，课程名）这个属性集就是冗余的，所以学生姓名不完全依赖于（学号，课程名）这一属性集；&lt;/li&gt;
+&lt;li&gt;主属性集 / 候选码集：某一组属性能够唯一确定其它的属性（主键就是从候选键集中选的一个键），而其子集不能，这样的属性组中的属性就是主属性；不在候选码集中的属性成为非主属性；&lt;/li&gt;
+&lt;li&gt;可以通过分解来满足 2NF：将（学号，课程名，成绩）做成一张表；（学号，学生姓名）做成另一张表，避免大量的数据冗余； 满足 1NF 后，要求表中的所有列，都必须依赖于主键，而不能有任何一列与主键没有关系，也就是说一个表只描述一件事情；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第三范式&lt;/strong&gt; 3NF：在 2NF 的基础上，非主属性&lt;strong&gt;不传递依赖&lt;/strong&gt;于主属性&lt;/li&gt;
+&lt;li&gt;传递依赖：如果 C 依赖于 B，B 依赖于 A，那么 C 传递依赖于 A；&lt;/li&gt;
+&lt;li&gt;3NF 在 2NF 的基础上，消除了非主属性之间的依赖；比如一个表中，主属性有（学号），非主属性有（姓名，院系，院长名），可以看到院长名这个非主属性依赖于院系，传递依赖于学号。消除的办法是分解。 必须先满足第二范式（2NF），要求：表中的每一列只与主键直接相关而不是间接相关，（表中的每一列只能依赖于主键）；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;使用索引的优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用索引的优点&#34;&gt;#&lt;/a&gt; 使用索引的优点&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大大加快了数据的&lt;strong&gt;检索速度&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;可以显著减少查询中&lt;strong&gt;分组和排序&lt;/strong&gt;的时间；&lt;/li&gt;
+&lt;li&gt;通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性；&lt;/li&gt;
+&lt;li&gt;将随机 I/O 变为&lt;strong&gt;顺序 I/O&lt;/strong&gt;（B+Tree 索引是有序的，会将相邻的数据都存储在一起）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​	缺点：建立和维护索引耗费时间空间，更新索引很慢。&lt;/p&gt;
+&lt;h1 id=&#34;哪些情况下索引会失效&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#哪些情况下索引会失效&#34;&gt;#&lt;/a&gt; 哪些情况下索引会失效？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以 “%(表示任意 0 个或多个字符)” 开头的 LIKE 语句；&lt;/li&gt;
+&lt;li&gt;OR 语句前后没有同时使用索引；&lt;/li&gt;
+&lt;li&gt;数据类型出现隐式转化（如 varchar 不加单引号的话可能会自动转换为 int 型）；&lt;/li&gt;
+&lt;li&gt;对于多列索引，必须满足 &lt;strong&gt;最左匹配原则&lt;/strong&gt; / 最左前缀原则 (最左优先，eg：多列索引 col1、col2 和 col3，则 索引生效的情形包括 col1 或 col1，col2 或 col1，col2，col3)；&lt;/li&gt;
+&lt;li&gt;如果 MySQL 估计全表扫描比索引快，则不使用索引（比如非常小的表）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;索引的分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#索引的分类&#34;&gt;#&lt;/a&gt; 索引的分类？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;普通索引&lt;/li&gt;
+&lt;li&gt;唯一索引 UNIQUE：索引列的值必须唯一，但允许有空值；&lt;/li&gt;
+&lt;li&gt;主键索引 PRIMARY KEY：必须唯一，不允许空值（是一种特殊的唯一索引；MySQL 创建主键时默认为聚集索引，但主键也可以是非聚集索引）；&lt;/li&gt;
+&lt;li&gt;单列索引和多列索引 / 复合索引（Composite）：索引的列数；&lt;/li&gt;
+&lt;li&gt;覆盖（Covering）索引：索引包含了所有满足查询所需要的数据，查询的时候只需要读取索引而不需要回表读取数据；&lt;/li&gt;
+&lt;li&gt;聚集（Clustered）索引 / 非聚集索引：对磁盘上存放数据的物理地址重新组织以使这些数据按照指定规则排序的一种索引（数据的物理排列顺序和索引排列顺序一致）。因此每张表只能创建一个聚集索引（因为要改变物理存储顺序）。优点是查询速度快，因为可以直接按照顺序得到需要数据的物理地址。缺点是进行修改的速度较慢。对于需要经常搜索范围的值很有效。非聚集索引只记录逻辑顺序，并不改变物理顺序；&lt;/li&gt;
+&lt;li&gt;分区索引（？）&lt;/li&gt;
+&lt;li&gt;虚拟索引（Virtual）：模拟索引的存在而不用真正创建一个索引，用于快速测试创建索引对执行计划的影响。没有相关的索引段，不增加存储空间的使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;mysql的两种存储引擎-innodb-和-myisam-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mysql的两种存储引擎-innodb-和-myisam-的区别&#34;&gt;#&lt;/a&gt; MySQL 的两种存储引擎 InnoDB 和 MyISAM 的区别？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;InnoDB&lt;strong&gt; 支持事务&lt;/strong&gt;，可以进行 Commit 和 Rollback；&lt;/li&gt;
+&lt;li&gt;MyISAM 只支持表级锁，而 InnoDB 还&lt;strong&gt;支持行级锁&lt;/strong&gt;，提高了并发操作的性能；&lt;/li&gt;
+&lt;li&gt;InnoDB &lt;strong&gt;支持外键&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;MyISAM &lt;strong&gt;崩溃&lt;/strong&gt;后发生损坏的概率比 InnoDB 高很多，而且&lt;strong&gt;恢复的速度&lt;/strong&gt;也更慢；&lt;/li&gt;
+&lt;li&gt;MyISAM 支持&lt;strong&gt;压缩&lt;/strong&gt;表和空间数据索引，InnoDB 需要更多的内存和存储；&lt;/li&gt;
+&lt;li&gt;InnoDB 支持在线&lt;strong&gt;热备份&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;为什么用mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么用mysql&#34;&gt;#&lt;/a&gt; 为什么用 MySQL？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mysql 性能卓越，服务稳定，很少出现异常宕机。&lt;/li&gt;
+&lt;li&gt;mysql 开放源代码且无版权制约，自主性及使用成本低。&lt;/li&gt;
+&lt;li&gt;mysql 历史悠久，社区及用户非常活跃，遇到问题，可以寻求帮助。&lt;/li&gt;
+&lt;li&gt;mysql 软件体积小，安装使用简单，并且易于维护，安装及维护成本低。&lt;/li&gt;
+&lt;li&gt;mysql 品牌口碑效应，使得企业无需考虑就直接用之，lamp,lnmp 流行架构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;数据库是怎么去做持久性的做持久性的时候可能会遇到什么问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库是怎么去做持久性的做持久性的时候可能会遇到什么问题&#34;&gt;#&lt;/a&gt; 数据库是怎么去做持久性的，做持久性的时候可能会遇到什么问题？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;利用 redo log 做持久性，redo log 主要记录了 data 在物理层面的修改。redo log 在事务进行提交时&lt;strong&gt;一次 flush 操作保存到磁盘中&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;什么是视图什么是游标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是视图什么是游标&#34;&gt;#&lt;/a&gt; 什么是视图？什么是游标？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;视图：从数据库的基本表中通过查询选取出来的数据组成的&lt;strong&gt;虚拟表&lt;/strong&gt;（数据库中存放视图的定义）。可以对其进行增 / 删 / 改 / 查等操作。视图是对若干张基本表的引用，一张虚表，查询语句执行的结果，不存储具体的数据（基本表数据发生了改变，视图也会跟着改变）；可以跟基本表一样，进行增删改查操作 (ps: 增删改操作有条件限制)；如连表查询产生的视图无法进行，对视图的增删改会影响原表的数据。好处：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过只给用户访问视图的权限，保证数据的&lt;strong&gt;安全性&lt;/strong&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;简化&lt;/strong&gt;复杂的 SQL 操作，隐藏数据的复杂性（比如复杂的连接）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;游标（Cursor）：用于定位在查询返回的&lt;strong&gt;结果集的特定行&lt;/strong&gt;，以对特定行进行操作。使用游标可以方便地对结果集进行移动遍历，根据需要滚动或对浏览 / 修改任意行中的数据。主要用于交互式应用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="算法" />
+        <updated>2022-01-06T08:15:49.695Z</updated>
+    </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/12/26/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</id>
         <title>后端面试之操作系统</title>
@@ -974,175 +1190,6 @@ void writer() &amp;#123;
 </content>
         <category term="算法" />
         <updated>2021-12-26T05:59:55.365Z</updated>
-    </entry>
-    <entry>
-        <id>http://zhanglin233.github.io/2021/12/25/computer-science/algorithm/%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%E9%97%AE%E9%A2%98/</id>
-        <title>后端面试常问问题</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/12/25/computer-science/algorithm/%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%E9%97%AE%E9%A2%98/"/>
-        <content type="html">&lt;h1 id=&#34;java&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java&#34;&gt;#&lt;/a&gt; java&lt;/h1&gt;
-&lt;h2 id=&#34;int和integer的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#int和integer的区别&#34;&gt;#&lt;/a&gt; int 和 Integer 的区别&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Integer 是 int 的包装类，int 则是 java 的一种基本数据类型&lt;/li&gt;
-&lt;li&gt;Integer 变量必须实例化后才能使用，而 int 变量不需要&lt;/li&gt;
-&lt;li&gt;Integer 实际是对象的引用，当 new 一个 Integer 时，实际上是生成一个指针指向此对象；而 int 则是直接存储数据值&lt;/li&gt;
-&lt;li&gt;Integer 的默认值是 null，int 的默认值是 0&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h1 id=&#34;计网&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计网&#34;&gt;#&lt;/a&gt; 计网&lt;/h1&gt;
-&lt;h2 id=&#34;tcpudp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tcpudp&#34;&gt;#&lt;/a&gt; tcp/udp&lt;/h2&gt;
-&lt;h3 id=&#34;1-tcpudp-协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-tcpudp-协议&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. tcp/udp 协议&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;tcp/udp 是传输层协议。是十分常用的网络协议.TCP 面向连接 （三次握手），UDP 是无连接的，即发送数据之前不需要建立连接。&lt;/p&gt;
-&lt;p&gt;TCP 提供可靠的服务。也就是说，通过 TCP 连接传送的数据，无差错，不丢失，不重复，且按序到达；UDP 尽最大努力交付，即不保证可靠交付&lt;/p&gt;
-&lt;p&gt;TCP 面向字节流，实际上是 TCP 把数据看成一连串无结构的字节流；UDP 是面向报文的&lt;/p&gt;
-&lt;p&gt;UDP 没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如 IP 电话，实时视频会议等）&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.1 tcp 三次握手、四次挥手&lt;/strong&gt;&lt;/p&gt;
-&lt;h4 id=&#34;三次握手建立连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三次握手建立连接&#34;&gt;#&lt;/a&gt; &lt;strong&gt;三次握手建立连接&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20200411140619805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDcxMDY4,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
-&lt;h5 id=&#34;第一次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一次握手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第一次握手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 客户端向服务端发送连接请求 SYN 包 (发送连接请求)(SYN=1, 同时选择一个初始序号 seq=x) 后，客户端进入 SYN-SENT 状态，等待服务器确认回复.&lt;/p&gt;
-&lt;p&gt;**server 😗* 当服务端还没有接收到客户端的连接请求时，服务端处于 LISTEN 状态.&lt;/p&gt;
-&lt;h5 id=&#34;第二次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二次握手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第二次握手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 当服务端收到客户端的连接请求时 (收到 syn 包), 为新的连接请求创建新的通信 socket, 此时服务端必须确认客户端的 SYN 请求 (回复确认序号 ack = x + 1), 确认序号有效 ACK=1, 因为连接是双向的，所以服务端也向客户端发送连接请求 SYN 包 (SYN = 1, 为自己选择一个初始序号 seq = y), 即服务端向客户端发送 ACK+SYN 包，服务端进入 SYN_RCVD 状态。当第二次握手完成，还没进行第三次握手时，此时 TCP 连接的状态称之为半连接状态.&lt;/p&gt;
-&lt;h5 id=&#34;第三次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三次握手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第三次握手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;​    &lt;strong&gt;client :&lt;/strong&gt; 当客户端收到服务端回复的 SYN+ACK 包时，确认建立连接 (客户端这边已经没什么问题了，可以通信了), 并回复给服务端确认信息 ACK 包 (seq = x + 1, ack = y+1), 客户端的进入 ESTABLISHED 状态，完成连接&lt;/p&gt;
-&lt;p&gt;​    &lt;strong&gt;server :&lt;/strong&gt; 当服务端收到客户端发送的 ACK 包后，确认客户端连接就绪，可以开始通行，进入 ESTABLISHED 状态&lt;/p&gt;
-&lt;h4 id=&#34;四次挥手断开连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四次挥手断开连接&#34;&gt;#&lt;/a&gt; &lt;strong&gt;四次挥手断开连接&lt;/strong&gt;&lt;/h4&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20200412110254633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDcxMDY4,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34; /&gt; 图片来源于网络&lt;/p&gt;
-&lt;h5 id=&#34;第一次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第一次挥手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 当客户端确定不再需要发送数据时，调用 close (sockfd) /shutdown (sockfd, SHUT_WR) (两者的区别以及用法下面说). 客户端会向服务端发送 FIN 包 (FIN=1, seq = u)(u 就是客户端之前收到的数据的最后一个字节的序号 + 1), 客户端进入 FIN_WAIT1 状态. (注意 : TCP 协议规定，FIN 报文段就算没有数据，也需要消耗一个序号)&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 当服务端未收到客户端发送的 FIN 包时，一直处于 ESTABLISHED 状态&lt;/p&gt;
-&lt;h5 id=&#34;第二次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第二次挥手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 当服务端收到客户端发来的 FIN 包后，知道客户端不会再发送数据了，也就不需要接受，先调用 close (sockfd) /shutdown (sockfd, SHUT_RD), 再确认回复客户端，即 (ACK=1, ack = u+1), 并且带上自己的序列号 seq=v, 此时服务端的进入了 CLOSE_WAIT 状态. TCP 服务端就通知高层的应用进程，客户端不会再向服务端发送数据了，此时 TCP 通信的连接状态就称为半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个 CLOSE_WAIT 状态持续的时间.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 当客户端收到服务器的确认请求 (ACK 包) 后，此时，客户端就进入 FIN_WAIT2 状态，等待服务器发送 FIN (在这之前还需要接收服务器发送的最后的数据)&lt;/p&gt;
-&lt;h5 id=&#34;第三次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第三次挥手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 服务端将最后的数据发送完毕后，再不需要发送数据了，就调用 shutdown (sockfd, SHUT_WR) , 再向客户端发送 FIN 包，由于在半关闭状态，服务器很可能又向客户端发送了一些数据，假定此时的序列号为 seq=w，即 FIN 包 (ACK=1, seq=w, ack=u+1). 此时，服务端就进入了 LAST_ACK (最后确认) 状态，等待客户端的确认.&lt;/p&gt;
-&lt;h5 id=&#34;第四次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第四次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第四次挥手 :&lt;/strong&gt;&lt;/h5&gt;
-&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 当客户端收到服务端的连接释放请求 (FIN 包) 时，必须发出确认，ACK=1，ack=w+1, 而自己的序列号是 seq=u+1, 此时，客户端就进入了 TIME_WAIT 状态。注意：此时 TCP 连接还没有释放，必须经过 2 倍的 MSL (最长报文段寿命) 的时间后，当客户端释放连接后，才进入 CLOSED 状态.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 服务端只要收到了客户端发出的确认 (ACK 包), 立即进入 CLOSED 状态。同样，释放 TCB 连接后，就结束了这次的 TCP 连接。可以看到，服务端结束 TCP 连接的时间要比客户端早一些.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;注意 :&lt;/strong&gt; 需要注意的是，四次挥手可以是由客户端首先发送 FIN 包触发，也可以由服务端首先发送 FIN 包触发.&lt;/p&gt;
-&lt;p&gt;tcp 通过三次握手建立连接，通过四次挥手断开连接. UDP 则是面向无连接的，不需要建立连接.&lt;/p&gt;
-&lt;h3 id=&#34;12-tcp-流控制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-tcp-流控制&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.2 tcp 流控制&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;连续 ARQ 协议使得 TCP 的帧可以在滑动窗口大小范围内连续的流动。通过拥塞窗口、拥塞避免、慢开始等算法控制 TCP 的流.&lt;/p&gt;
-&lt;h3 id=&#34;13-持续计时器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-持续计时器&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.3 持续计时器&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;当发送方接受到窗口值为 0 的 ACK 报文，需要启动一个计时器等待接收方再次发送窗口大小非 0 的 ACK 报文 (TCP 中，仅仅包含确认信息的报文不需要确认和重传). 若没有计时器，可能在窗口非 0 的 ACK 报文丢失后，俩方都处在等待状态中。当持续计时器结束后，发送方会发送一个特殊的探测报文，促使对方重传一个 ACK 报文.&lt;/p&gt;
-&lt;h3 id=&#34;14-停止等待协议-arq-协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#14-停止等待协议-arq-协议&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.4 停止等待协议、ARQ 协议&lt;/strong&gt;&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;停止等待协议&lt;/strong&gt;是数据链路层协议。它规定只有收到正确的确认帧后，才能新发送状态变量以及数据帧.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ARQ 协议 (Automatic Repeat-reQuest)&lt;/strong&gt; 是数据链路层的纠错协议，它有停止等待 ARQ 协议和连续 ARQ 协议.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;停止等待 ARQ 协议&lt;/strong&gt;：每次发送一个报文，确认后发送下一个报文，发送窗口和接受窗口均是 1，停止等待 ARQ 所需缓冲区小但是效率低.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;连续 ARQ 协议&lt;/strong&gt;：即回退 n 帧 GBN 以及选择性重传 ARQ ，是滑动窗口与请求重发技术的结合。它可以连续发送若干信息帧，而不用等前一帧被确认，大大提升了发送效率。但需要发送方设置一个重发表，存放待确认的帧，收到确认帧后从重发表中删除帧，需要更大的存储空间.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;15-滑动窗口-慢开始-拥塞避免-快重传-快恢复-可靠性-顺序传输-tcp-bbr-拥塞算法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#15-滑动窗口-慢开始-拥塞避免-快重传-快恢复-可靠性-顺序传输-tcp-bbr-拥塞算法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.5 滑动窗口、慢开始、拥塞避免、快重传、快恢复、可靠性、顺序传输、TCP BBR 拥塞算法&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://pic2.zhimg.com/80/v2-7b878e527000b4ed0bd6672638249ecd_720w.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;滑动窗口&lt;/strong&gt;：滑动窗口协议是用来改善吞吐量的一种技术，即容许发送方在接收任何应答之前传送附加的包。接收方告诉发送方在某一时刻能送多少包（称窗口尺寸）。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;慢开始&lt;/strong&gt;：将拥塞窗口值设置为 1，发送端每接收到一个 ACK 就将拥塞窗口增加 1 直到达到拥塞门限值 (ssthresh，初始值为 16).&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;拥塞门限 (ssthresh)&lt;/strong&gt;: 慢开始算法的拥塞窗口最大值.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;拥塞窗口 (cwnd)&lt;/strong&gt;: 取决于网络的拥塞程度，且在不断的变化，只要网络没有出现拥塞，发送方就将拥塞窗口调大一些，而只要出现拥塞，则减小一些。发送窗口始终小于拥塞窗口（在接受窗口更小时小于拥塞窗口).&lt;br /&gt;
- 接受窗口 (rwnd): 接受方根据自己的接受能力（缓存限制）设置了接受窗口 rwnd, 并将其写入 tcp 首部字段中.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;拥塞避免算法&lt;/strong&gt;：让拥塞窗口缓慢增长，即每经过一个往返时间 RTT 就把发送方的拥塞窗口 cwnd 加 1，而不是加倍。这样拥塞窗口按线性规律缓慢增长.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;快重传和快恢复 (Fast Retransmit and Recovery)&lt;/strong&gt;: 可以提高网络的吞吐量。接收机接收到一个不按顺序的数据段，它会立即给发送机发送一个重复确认。如果发送机接收到三个重复确认，它会假定确认件指出的数据段丢失了，并立即重传这些丢失的数据段。有了 FRR，就不会因为重传时要求的暂停被耽误。没有 FRR，如果数据包丢失了，TCP 将会使用定时器来要求传输暂停.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;快恢复算法&lt;/strong&gt;：与快重传配合使用，当发送方连续收到三个重复确认时，就执行乘法减小算法，把慢开始门限 ssthresh 减半。这是为了预防网络发生拥塞。请注意，接下去就不再执行慢开始算法了。由于发送方现在认为网络很可能没有发生拥塞，不执行慢开始而是把 cwnd 值设置为慢开始门限 ssthresh 减半后的数值，然后开始执行拥塞避免算法，使拥塞窗口慢慢的线性的增大。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;BBR 拥塞算法&lt;/strong&gt;: Google 的 TCP BBR 算法，优化了 TCP 的吞吐量.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;16-滑动窗口大小怎么确定&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#16-滑动窗口大小怎么确定&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.6 滑动窗口大小怎么确定？&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;分为接受窗口和发送窗口。接受窗口的值根据缓存大小确定。接受方将接受窗口大小放在 TCP 报文首部。发送法根据接受窗口和拥塞窗口的大小（最小值）确定发送窗口的大小。而拥塞窗口的大小则受限于网络情况，根据传输过程动态的确定.&lt;/p&gt;
-&lt;h3 id=&#34;17-tcp-udp-怎么判断客户端关闭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#17-tcp-udp-怎么判断客户端关闭&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.7 tcp、udp 怎么判断客户端关闭？&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;根据接受到的数据包长度判断，如果接受到的报文长度是 0，则意味着客户端已经断开了连接.&lt;/p&gt;
-&lt;h3 id=&#34;18-tcp-udp-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#18-tcp-udp-的区别&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.8 tcp、udp 的区别？&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;tcp 是面向连接的、可靠的，而 udp 是无连接、不可靠的.&lt;/p&gt;
-&lt;p&gt;tcp 保证数据的正确性、顺序性。而 udp 不保证. TCP 是流模式的，而 UDP 是数据包模式的.&lt;/p&gt;
-&lt;h3 id=&#34;19-udp-的实际应用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#19-udp-的实际应用场景&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.9 udp 的实际应用场景？&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;UDP 报文常用于效率要求高，而准确性相对低的场景。如视频直播、聊天等.&lt;/p&gt;
-&lt;h3 id=&#34;110-time_wait-是什么状态它有什么作用为什么持续-2-msl&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#110-time_wait-是什么状态它有什么作用为什么持续-2-msl&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.10 time_wait 是什么状态？它有什么作用？为什么持续 2 MSL？&lt;/strong&gt;&lt;/h3&gt;
-&lt;p&gt;time_wait: tcp 连接后，在四次握手之后，先发 FIN 标志位的一端就会进入 time_wait 状态。它的作用有俩个:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;确保最后一个确认报文能够到达。如果没能到达，服务端会重发 FIN 请求，等待一段时间没有重发，说明服务端已经 CLOSED 了。若有重发，客户端将重发 last ack 报文.&lt;/li&gt;
-&lt;li&gt;等待一段时间 ( 2MSL ），确保此次连接过程中所有报文都从网络中消失。使得新的连接不会出现旧的连接请求报文.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;http&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http&#34;&gt;#&lt;/a&gt; HTTP&lt;/h2&gt;
-&lt;h3 id=&#34;说一下-get-和-post-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说一下-get-和-post-的区别&#34;&gt;#&lt;/a&gt; 说一下 GET 和 POST 的区别？&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;Get 方法的含义是请求从服务器获取资源，这个资源可以是静态的文本、页面、图片视频等。&lt;/li&gt;
-&lt;li&gt;而 POST 方法则是相反操作，它向 URI 指定的资源提交数据，数据就放在报文的 body 里。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h4 id=&#34;get-和-post-方法都是安全和幂等的吗&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#get-和-post-方法都是安全和幂等的吗&#34;&gt;#&lt;/a&gt; GET 和 POST 方法都是安全和幂等的吗？&lt;/h4&gt;
-&lt;p&gt;先说明下安全和幂等的概念：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;在 HTTP 协议里，所谓的「安全」是指请求方法不会「破坏」服务器上的资源。&lt;/li&gt;
-&lt;li&gt;所谓的「幂等」，意思是多次执行相同的操作，结果都是「相同」的。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;那么很明显 GET 方法就是安全且幂等的，因为它是「只读」操作，无论操作多少次，服务器上的数据都是安全的，且每次的结果都是相同的。&lt;/p&gt;
-&lt;p&gt;POST 因为是「新增或提交数据」的操作，会修改服务器上的资源，所以是不安全的，且多次提交数据就会创建多个资源，所以不是幂等的。&lt;/p&gt;
-&lt;h3 id=&#34;http和https的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http和https的区别&#34;&gt;#&lt;/a&gt; Http 和 Https 的区别&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;HTTP 是超文本传输协议，信息是明文传输，存在安全风险的问题。HTTPS 则解决 HTTP 不安全的缺陷，在 TCP 和 HTTP&lt;/li&gt;
-&lt;li&gt;网络层之间加入了 SSL/TLS 安全协议，使得报文能够加密传输。HTTP 连接建立相对简单， TCP 三次握手之后便可进行 HTTP 的报文传输。而 HTTPS 在 TCP 三次握手之后，还需进行 SSL/TLS 的握手过程，才可进入加密报文传输。&lt;/li&gt;
-&lt;li&gt;HTTP 的端口号是 80，HTTPS 的端口号是 443。&lt;/li&gt;
-&lt;li&gt;HTTPS 协议需要向 CA（证书权威机构）申请数字证书，来保证服务器的身份是可信的。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;HTTP 由于是明文传输，所以安全上存在以下三个风险：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;窃听风险，比如通信链路上可以获取通信内容&lt;/li&gt;
-&lt;li&gt;篡改风险&lt;/li&gt;
-&lt;li&gt;冒充风险，比如冒充淘宝网站&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/a7fa82cc355243b8a74f220d085e984c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_20,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
-&lt;p&gt;HTTPS 在 HTTP 与 TCP 层之间加入了 SSL/TLS 协议。&lt;/p&gt;
-&lt;h3 id=&#34;http10-http11-http2-http3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http10-http11-http2-http3&#34;&gt;#&lt;/a&gt; HTTP/1.0 HTTP/1.1、HTTP/2、HTTP/3&lt;/h3&gt;
-&lt;h4 id=&#34;http10&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http10&#34;&gt;#&lt;/a&gt; HTTP/1.0&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;短连接&lt;/li&gt;
-&lt;li&gt;HTTP1.0 中，存在⼀些浪费带宽的现象，例如客户端只是需要某个对象的⼀部分，⽽服务器却将整个对象送过来了&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;http11&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http11&#34;&gt;#&lt;/a&gt; HTTP/1.1&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;HTTP 1.1 起，默认使⽤⻓连接，默认开启 Connection： keep-alive。&lt;/li&gt;
-&lt;li&gt;支持 管道（pipeline）网络传输，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。&lt;/li&gt;
-&lt;li&gt;HTTP1.1 则在请求头引⼊了 range 头域，它允许只请求资源的某个部分&lt;/li&gt;
-&lt;li&gt;Host 是 HTTP 1.1 协议中新增的一个请求头，主要用来实现虚拟主机技术。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;补充：&lt;br /&gt;
-虚拟主机（virtual hosting）即共享主机（shared web hosting），可以利用虚拟技术把一台完整的服务器分成若干个主机，因此可以在单一主机上运行多个网站或服务。&lt;/p&gt;
-&lt;p&gt;举个栗子，有一台 ip 地址为 61.135.169.125 的服务器，在这台服务器上部署着谷歌、百度、淘宝的网站。为什么我们访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==&#34;&gt;https://www.google.com&lt;/span&gt; 时，看到的是 Google 的首页而不是百度或者淘宝的首页？原因就是 Host 请求头决定着访问哪个虚拟主机。&lt;/p&gt;
-&lt;p&gt;缺点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;请求 / 响应头部（Header）未经压缩就发送，首部信息越多延迟越大。只能压缩 Body 的部分；&lt;br /&gt;
-发送冗长的首部。每次互相发送相同的首部造成的浪费较多；&lt;/li&gt;
-&lt;li&gt;服务器是按请求的顺序响应的，如果服务器响应慢，会招致客户端一直请求不到数据，也就是队头阻塞；&lt;/li&gt;
-&lt;li&gt;没有请求优先级控制；&lt;/li&gt;
-&lt;li&gt;请求只能从客户端开始，服务器只能被动响应。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;http2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http2&#34;&gt;#&lt;/a&gt; HTTP/2&lt;/h4&gt;
-&lt;ol&gt;
-&lt;li&gt;头部压缩&lt;br /&gt;
- HTTP/2 会压缩头（Header）如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的分。&lt;/li&gt;
-&lt;li&gt;二进制格式&lt;br /&gt;
- HTTP/2 不再像 HTTP/1.1 里的纯文本形式的报文，而是全面采用了二进制格式。&lt;br /&gt;
-头信息和数据体都是二进制，并且统称为帧（frame）：头信息帧和数据帧。&lt;/li&gt;
-&lt;li&gt;数据流&lt;br /&gt;
- HTTP/2 的数据包不是按顺序发送的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪个回应。&lt;br /&gt;
-每个请求或回应的所有数据包，称为一个数据流（Stream）。&lt;br /&gt;
-每个数据流都标记着一个独一无二的编号，其中规定客户端发出的数据流编号为奇数， 服务器发出的数据流编号为偶数&lt;br /&gt;
-客户端还可以指定数据流的优先级。优先级高的请求，服务器就先响应该请求。&lt;/li&gt;
-&lt;li&gt;多路复用&lt;br /&gt;
- HTTP/2 是可以在一个连接中并发多个请求或回应，而不用按照顺序一一对应。&lt;br /&gt;
-移除了 HTTP/1.1 中的串行请求，不需要排队等待，也就不会再出现「队头阻塞」问题，降低了延迟，大幅度提高了连接的利用率。&lt;br /&gt;
-&lt;img data-src=&#34;https://img-blog.csdnimg.cn/374f4758ba9f4527921b023e6b3b75b5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_12,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;服务器推送&lt;br /&gt;
- HTTP/2 还在一定程度上改善了传统的「请求 - 应答」工作模式，服务不再是被动地响应，也可以主动向客户端发送消息。&lt;br /&gt;
-&lt;img data-src=&#34;https://img-blog.csdnimg.cn/769fa050443d4d67a8121da69534f988.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_13,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h4 id=&#34;http3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http3&#34;&gt;#&lt;/a&gt; HTTP/3&lt;/h4&gt;
-&lt;p&gt;HTTP/2 主要的问题在于：多个 HTTP 请求在复用一个 TCP 连接，下层的 TCP 协议是不知道有多少个 HTTP 请求的。&lt;/p&gt;
-&lt;p&gt;所以一旦发生了丢包现象，就会触发 TCP 的重传机制，这样在一个 TCP 连接中的所有的 HTTP 请求都必须等待这个丢了的包被重传回来。&lt;/p&gt;
-&lt;p&gt;这都是基于 TCP 传输层的问题，所以 HTTP/3 把 HTTP 下层的 TCP 协议改成了 UDP！&lt;br /&gt;
-&lt;img data-src=&#34;https://img-blog.csdnimg.cn/98fd3ea62e094983a18cfa97f0f0ba65.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_20,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;
-大家都知道 UDP 是不可靠传输的，但基于 UDP 的 QUIC 协议 可以实现类似 TCP 的可靠性传输。&lt;/p&gt;
-&lt;h1 id=&#34;操作系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#操作系统&#34;&gt;#&lt;/a&gt; 操作系统&lt;/h1&gt;
-&lt;h1 id=&#34;数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库&#34;&gt;#&lt;/a&gt; 数据库&lt;/h1&gt;
-</content>
-        <category term="算法" />
-        <updated>2021-12-25T13:13:46.552Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/12/23/computer-science/algorithm/%E5%89%91%E6%8C%87offer/</id>
@@ -2653,6 +2700,91 @@ html = etree.HTML(text)
         <updated>2021-11-26T17:22:09.529Z</updated>
     </entry>
     <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
+        <title>javaweb之sl&amp;jstl</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
+        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1. JSP:
+    1. 指令
+    2. 注释
+    3. 内置对象
+2. MVC开发模式
+3. EL表达式
+4. JSTL标签
+5. 三层架构
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 指令
+    * 作用：用于配置JSP页面，导入资源文件
+    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
+    * 分类：
+        1. page：配置JSP页面的
+            * contentType:等同于response.setContentType()
+                1. 设置响应体的mime类型及字符级
+                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
+            * import: 导包
+            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
+            * isErrorPage；标识当前页面是否是错误页面
+                * true:是，可以使用内置对象exception
+                * false: 否。默认值。不可以使用内置对象exception
+        2. include:页面包含的。导入页面的资源文件
+            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
+        3. taglib:导入资源
+          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
+              * prefix：前缀，自定义的
+2. 注释
+    1. html注释
+        &amp;lt;!----&amp;gt;只能注释html代码片段
+    2. jsp注释：推荐使用
+    &amp;lt;%----%&amp;gt;可以注释所有
+3. 内置对象
+    * 在jsp页面中不需要创建，直接使用的对象
+    * 一共有9个：
+              变量名                      真实类型
+          * pageContext                  PageContext
+          * request                      HttpServletRequest
+          * session                      HttpSession
+          * application                  ServletContext
+          * page                         OPbject
+          * response                     HttpServletResponse
+          * out                          JspWriter
+          * config                       ServletConfig
+          * exception                    Throwable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. jsp演变历史
+    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
+    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
+    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
+2. MVC
+    1. M:Model,模型。JavaBean
+        * 完成具体的业务操作，如：查询数据库，封装对象
+    2. V: View，视图。JSP
+    3. C: Controller,控制器。Servlet
+        * 获取用户的输入
+        * 调用模型
+        * 将数据交给视图展示
+    * 优缺点：
+        1. 优点：
+            1. 耦合性低，方便维护，利于分工协作
+            2. 重用性高
+        2. 缺点
+            1. 使得项目架构变得复杂，对开发人员要求高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
+2. 作用： 替换和简化jsp页面中java语言代码的编写
+3. 语法：$&amp;#123;表达式&amp;#125;
+4. 注意：
+    * jsp默认支持el表达式。如果要忽略el表达式
+        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
+        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Java JavaWEB" />
+        <updated>2021-11-26T17:22:09.527Z</updated>
+    </entry>
+    <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/</id>
         <title>javaweb之Cookie&amp;Session</title>
         <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/"/>
@@ -2871,91 +3003,6 @@ void removeAttribute(String name)&lt;br /&gt;
     1. session存储数据在服务器端，Cookie在客户端
     2. session没有数据大小限制。，cookie有
     3. session数据安全，Cookie相对于不安全
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Java JavaWEB" />
-        <updated>2021-11-26T17:22:09.527Z</updated>
-    </entry>
-    <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
-        <title>javaweb之sl&amp;jstl</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
-        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;1. JSP:
-    1. 指令
-    2. 注释
-    3. 内置对象
-2. MVC开发模式
-3. EL表达式
-4. JSTL标签
-5. 三层架构
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 指令
-    * 作用：用于配置JSP页面，导入资源文件
-    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
-    * 分类：
-        1. page：配置JSP页面的
-            * contentType:等同于response.setContentType()
-                1. 设置响应体的mime类型及字符级
-                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
-            * import: 导包
-            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
-            * isErrorPage；标识当前页面是否是错误页面
-                * true:是，可以使用内置对象exception
-                * false: 否。默认值。不可以使用内置对象exception
-        2. include:页面包含的。导入页面的资源文件
-            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
-        3. taglib:导入资源
-          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
-              * prefix：前缀，自定义的
-2. 注释
-    1. html注释
-        &amp;lt;!----&amp;gt;只能注释html代码片段
-    2. jsp注释：推荐使用
-    &amp;lt;%----%&amp;gt;可以注释所有
-3. 内置对象
-    * 在jsp页面中不需要创建，直接使用的对象
-    * 一共有9个：
-              变量名                      真实类型
-          * pageContext                  PageContext
-          * request                      HttpServletRequest
-          * session                      HttpSession
-          * application                  ServletContext
-          * page                         OPbject
-          * response                     HttpServletResponse
-          * out                          JspWriter
-          * config                       ServletConfig
-          * exception                    Throwable
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. jsp演变历史
-    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
-    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
-    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
-2. MVC
-    1. M:Model,模型。JavaBean
-        * 完成具体的业务操作，如：查询数据库，封装对象
-    2. V: View，视图。JSP
-    3. C: Controller,控制器。Servlet
-        * 获取用户的输入
-        * 调用模型
-        * 将数据交给视图展示
-    * 优缺点：
-        1. 优点：
-            1. 耦合性低，方便维护，利于分工协作
-            2. 重用性高
-        2. 缺点
-            1. 使得项目架构变得复杂，对开发人员要求高
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
-2. 作用： 替换和简化jsp页面中java语言代码的编写
-3. 语法：$&amp;#123;表达式&amp;#125;
-4. 注意：
-    * jsp默认支持el表达式。如果要忽略el表达式
-        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
-        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Java JavaWEB" />
