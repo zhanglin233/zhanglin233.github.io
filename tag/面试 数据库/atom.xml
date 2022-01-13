@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://zhanglin233.github.io</id>
+    <title>欢迎来到我的个人博客 • Posts by &#34;面试 数据库&#34; tag</title>
+    <link href="http://zhanglin233.github.io" />
+    <updated>2022-01-06T08:15:49.695Z</updated>
+    <category term="算法" />
+    <category term="博客" />
+    <category term="前端" />
+    <category term="智能控制" />
+    <category term="Nginx" />
+    <category term="前端 React" />
+    <category term="Java JavaSE" />
+    <category term="Java JavaWEB" />
+    <category term="java SpringBoot" />
+    <category term="java springboot" />
+    <category term="Python 爬虫" />
+    <category term="面试 数据库" />
+    <category term="面试" />
+    <entry>
+        <id>http://zhanglin233.github.io/2022/01/06/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+        <title>后端面试之数据库</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2022/01/06/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+        <content type="html">&lt;h1 id=&#34;事务的概念和特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务的概念和特性&#34;&gt;#&lt;/a&gt; 事务的概念和特性？&lt;/h1&gt;
+&lt;p&gt;概念：事务（Transaction）是一个操作序列，不可分割的工作单位，以 BEGIN TRANSACTION 开始，以 ROLLBACK/COMMIT 结束&lt;/p&gt;
+&lt;p&gt;特性（ACID）：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;原子性&lt;/strong&gt;（Atomicity）：逻辑上是不可分割的操作单元，事务的所有操作要么全部提交成功，要么全部失败回滚（用回滚日志实现，反向执行日志中的操作）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;一致性&lt;/strong&gt;（Consistency）：事务的执行必须使数据库保持一致性状态。在一致性状态下，所有事务对一个数据的读取结果都是相同的；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;隔离性&lt;/strong&gt;（Isolation）：一个事务所做的修改在最终提交以前，对其它事务是不可见的（并发执行的事务之间不能相互影响）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;持久性&lt;/strong&gt;（Durability）：一旦事务提交成功，对数据的修改是永久性的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;事务四大特性分别由什么保证&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务四大特性分别由什么保证&#34;&gt;#&lt;/a&gt; 事务四大特性分别由什么保证？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;原子性：由 undo log 保证。undo log 记录了需要回滚的日志信息，回滚时根据 undo log 撤销已经执行成功的 sql&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一致性：由其他三大特性保证&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;隔离性：由 MVCC + 锁机制保证&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;持久性：由内存 + redo log 保证&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;事务会出现哪些并发一致性问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务会出现哪些并发一致性问题&#34;&gt;#&lt;/a&gt; 事务会出现哪些并发一致性问题？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;丢失修改&lt;/strong&gt;：一个事务对数据进行了修改，在事务提交之前，另一个事务对同一个数据进行了修改，覆盖了之前的修改；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;脏读&lt;/strong&gt;（Dirty Read）：一个事务读取了被另一个事务修改、但未提交（进行了回滚）的数据，造成两个事务得到的数据不一致；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;不可重复读&lt;/strong&gt;（Nonrepeatable Read）：在同一个事务中，某查询操作在一个时间读取某一行数据和之后一个时间读取该行数据，发现数据已经发生修改（针对&lt;strong&gt; update&lt;/strong&gt; 操作）；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;幻读&lt;/strong&gt;（Phantom Read）：当同一查询多次执行时，由于其它事务在这个数据范围内执行了插入操作，会导致每次返回不同的结果集（和不可重复读的区别：针对的是一个数据整体 / 范围；并且针对&lt;strong&gt; insert&lt;/strong&gt; 操作）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;数据库的四种隔离级别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库的四种隔离级别&#34;&gt;#&lt;/a&gt; 数据库的四种隔离级别？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;未提交读&lt;/strong&gt;（Read Uncommited）：在一个事务提交之前，它的执行结果对其它事务也是可见的。会导致脏读、不可重复读、幻读；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;提交读&lt;/strong&gt;（Read Commited）：一个事务只能看见已经提交的事务所作的改变。可避免脏读问题；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可重复读&lt;/strong&gt;（Repeatable Read）：可以确保同一个事务在多次读取同样的数据时得到相同的结果。（MySQL 的默认隔离级别）。可避免不可重复读；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;可串行化&lt;/strong&gt;（Serializable）：强制事务串行执行，使之不可能相互冲突，从而解决幻读问题。可能导致大量的超时现象和锁竞争，实际很少使用。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;数据库左连接右连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库左连接右连接&#34;&gt;#&lt;/a&gt; 数据库左连接，右连接&lt;/h1&gt;
+&lt;p&gt;左连接 where 只影向右表，右连接 where 只影响左表&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;select * from tbl1 Left Join tbl2 where &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDEuSUQ=&#34;&gt;tbl1.ID&lt;/span&gt; = &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDIuSUQ=&#34;&gt;tbl2.ID&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;左连接后的检索结果是显示 tbl1 的所有数据和 tbl2 中满足 where 条件的数据。&lt;/p&gt;
+&lt;p&gt;简言之 Left Join 影响到的是右边的表&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;select * from tbl1 Right Join tbl2 where &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDEuSUQ=&#34;&gt;tbl1.ID&lt;/span&gt; = &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3RibDIuSUQ=&#34;&gt;tbl2.ID&lt;/span&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;检索结果是 tbl2 的所有数据和 tbl1 中满足 where 条件的数据。&lt;/p&gt;
+&lt;p&gt;简言之 Right Join 影响到的是左边的表。&lt;/p&gt;
+&lt;h1 id=&#34;为什么性别字段不适合建立索引&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么性别字段不适合建立索引&#34;&gt;#&lt;/a&gt; 为什么性别字段不适合建立索引？&lt;/h1&gt;
+&lt;p&gt;性别字段一般只有两种值，重复率太高，导致索引选择性太低，索引性价比低。&lt;/p&gt;
+&lt;p&gt;因为你访问索引需要付出额外的 IO 开销，你从索引中拿到的只是地址，要想真正访问到数据还是要对表进行一次 IO。&lt;/p&gt;
+&lt;p&gt;假如你要从表的 100 万行数据中取几个数据，那么利用索引迅速定位，访问索引的这 IO 开销就非常值了。但如果你是从 100 万行数据中取 50 万行数据，就比如性别字段，那你相对需要访问 50 万次索引，再访问 50 万次表，加起来的开销并不会比直接对表进行一次完整扫描小。&lt;/p&gt;
+&lt;p&gt;同时，虽然索引大大提高了查询速度，同时却会降低更新表的速度，如对表进行 INSERT、UPDATE 和 DELETE。因为更新表时，MySQL 不仅要保存数据还要更新索引。建立索引会占用磁盘空间。一般情况这个问题不太严重，但如果你在一个大表上创建了多种组合索引，索引文件的会膨胀很快。&lt;/p&gt;
+&lt;h1 id=&#34;什么是乐观锁和悲观锁&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是乐观锁和悲观锁&#34;&gt;#&lt;/a&gt; 什么是乐观锁和悲观锁？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;悲观锁：认为数据随时会被修改，因此每次读取数据之前都会上锁，防止其它事务读取或修改数据；应用于&lt;strong&gt;数据更新比较频繁&lt;/strong&gt;的场景；&lt;/li&gt;
+&lt;li&gt;乐观锁：操作数据时不会上锁，但是更新时会判断在此期间有没有别的事务更新这个数据，若被更新过，则失败重试；适用于&lt;strong&gt;读多写少&lt;/strong&gt;的场景。乐观锁的实现方式有：&lt;/li&gt;
+&lt;li&gt;加一个版本号或者时间戳字段，每次数据更新时同时更新这个字段；&lt;/li&gt;
+&lt;li&gt;先读取想要更新的字段或者所有字段，更新的时候比较一下，只有字段没有变化才进行更新&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;封锁粒度的概念&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#封锁粒度的概念&#34;&gt;#&lt;/a&gt; 封锁粒度的概念&lt;/h1&gt;
+&lt;p&gt;MySQL 中提供了两种封锁粒度：&lt;strong&gt;行级锁&lt;/strong&gt;以及&lt;strong&gt;表级锁&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;封锁粒度小：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;好处：锁定的数据量越少，发生锁争用的可能就越小，系统的&lt;strong&gt;并发程度&lt;/strong&gt;就越高；&lt;/li&gt;
+&lt;li&gt;坏处：&lt;strong&gt;系统开销&lt;/strong&gt;大（加锁、释放锁、检查锁的状态都需要消耗资源）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;什么是存储过程有哪些优缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是存储过程有哪些优缺点&#34;&gt;#&lt;/a&gt; 什么是存储过程？有哪些优缺点？&lt;/h1&gt;
+&lt;p&gt;存储过程是事先经过编译并存储在数据库中的一段 SQL 语句的集合。想要实现相应的功能时，只需要调用这个存储过程就行了（类似于函数，输入具有输出参数）。&lt;/p&gt;
+&lt;p&gt;优点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;预先编译，而不需要每次运行时编译，提高了数据库执行&lt;strong&gt;效率&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;封装了一系列操作，对于一些数据交互比较多的操作，相比于单独执行 SQL 语句，可以&lt;strong&gt;减少网络通信量&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;具有&lt;strong&gt;可复用性&lt;/strong&gt;，减少了数据库开发的工作量；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;安全性高&lt;/strong&gt;，可以让没有权限的用户通过存储过程间接操作数据库；&lt;/li&gt;
+&lt;li&gt;更&lt;strong&gt;易于维护&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;可移植性差&lt;/strong&gt;，存储过程将应用程序绑定到了数据库上；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;开发调试复杂&lt;/strong&gt;：没有好的 IDE；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;修改复杂&lt;/strong&gt;，需要重新编译，有时还需要更新程序中的代码以更新调用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;什么是三级封锁协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是三级封锁协议&#34;&gt;#&lt;/a&gt; 什么是三级封锁协议？&lt;/h1&gt;
+&lt;ul&gt;
+&lt;li&gt;一级封锁协议：事务在修改数据之前必须先对其加 X 锁，直到事务结束才释放。可以解决丢失修改问题（两个事务不能同时对一个数据加 X 锁，避免了修改被覆盖）；&lt;/li&gt;
+&lt;li&gt;二级封锁协议：在一级的基础上，事务在读取数据之前必须先加 S 锁，读完后释放。可以解决脏读问题（如果已经有事务在修改数据，就意味着已经加了 X 锁，此时想要读取数据的事务并不能加 S 锁，也就无法进行读取，避免了读取脏数据）；&lt;/li&gt;
+&lt;li&gt;三级封锁协议：在二级的基础上，事务在读取数据之前必须先加 S 锁，直到事务结束才能释放。可以解决不可重复读问题（避免了在事务结束前其它事务对数据加 X 锁进行修改，保证了事务期间数据不会被其它事务更新）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;介绍acid&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#介绍acid&#34;&gt;#&lt;/a&gt; 介绍 ACID？&lt;/h1&gt;
+&lt;p&gt;**Atomicity：** 事务本身被视为不可分割的最小单元，事务的操作要么全部成功要么全部失败回滚。&lt;/p&gt;
+&lt;p&gt;**Consistency：** 数据库在事务的执行前后都保持一致，&lt;strong&gt;所有事务对同一数据的读取结果都相同&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;**Isolation：** 一个事务的操作在提交之前，对其他事务是不可见的&lt;/p&gt;
+&lt;p&gt;**Durability：** 一旦事务提交之后对于数据库的更改就是永久不可回退的&lt;/p&gt;
+&lt;h1 id=&#34;不符合范式会出现哪些异常&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#不符合范式会出现哪些异常&#34;&gt;#&lt;/a&gt; 不符合范式会出现哪些异常？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;冗余数据：某些同样的数据多次出现（如学生姓名）；&lt;/li&gt;
+&lt;li&gt;修改异常：修改了一个记录中的信息，另一个记录中相同的信息却没有修改；&lt;/li&gt;
+&lt;li&gt;删除异常：删除一个信息，那么也会丢失其它信息（删除一个课程，丢失了一个学生的信息）；&lt;/li&gt;
+&lt;li&gt;插入异常：无法插入（插入一个还没有课程信息的学生）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;事务的-acid-特性在mysql中的实现&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务的-acid-特性在mysql中的实现&#34;&gt;#&lt;/a&gt; 事务的 ACID 特性在 MySQL 中的实现？&lt;/h1&gt;
+&lt;p&gt;原子性：利用 undo log 实现的&lt;/p&gt;
+&lt;p&gt;持久性：利用 redo log 实现的&lt;/p&gt;
+&lt;p&gt;一致性：是利用 原子性、持久性、隔离性来实现的。事务的四大特性中一致性是目的，其他都是保证一致性的手段。&lt;/p&gt;
+&lt;p&gt;**redo log 😗* 记录了数据操作在物理层面的修改，事务进行中会不断的产生 redo log 在事务进行提交时一次 flush 操作保存到磁盘中。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;undo log:&lt;/strong&gt; 记录事务的修改操作，可以实现事务的回滚。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;事务的隔离性由 MVCC（多版本并发控制）与锁实现&lt;/strong&gt;：因而隔离性也可以叫做并发控制。&lt;/p&gt;
+&lt;h1 id=&#34;什么是两段锁协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是两段锁协议&#34;&gt;#&lt;/a&gt; 什么是两段锁协议？&lt;/h1&gt;
+&lt;p&gt;事务必须严格分为两个阶段对数据进行加锁和解锁的操作，第一阶段加锁，第二阶段解锁。也就是说一个事务中一旦释放了锁，就不能再申请新锁了。&lt;/p&gt;
+&lt;p&gt;可串行化调度是指，通过并发控制，使得并发执行的事务结果与某个串行执行的事务结果相同。事务遵循两段锁协议是保证可串行化调度的充分条件。&lt;/p&gt;
+&lt;h1 id=&#34;什么是-mvcc&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是-mvcc&#34;&gt;#&lt;/a&gt; 什么是 MVCC？&lt;/h1&gt;
+&lt;p&gt;​	多版本并发控制（Multi-Version Concurrency Control, MVCC），MVCC 在每行记录后面都保存有两个隐藏的列，用来存储&lt;strong&gt;创建版本号&lt;/strong&gt;和&lt;strong&gt;删除版本号&lt;/strong&gt;。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;创建版本号：创建一个数据行时的事务版本号（&lt;strong&gt;事务版本号&lt;/strong&gt;：事务开始时的系统版本号；系统版本号：每开始一个新的事务，系统版本号就会自动递增）；&lt;/li&gt;
+&lt;li&gt;删除版本号：删除操作时的事务版本号；&lt;/li&gt;
+&lt;li&gt;各种操作：&lt;/li&gt;
+&lt;li&gt;插入操作时，记录创建版本号；&lt;/li&gt;
+&lt;li&gt;删除操作时，记录删除版本号；&lt;/li&gt;
+&lt;li&gt;更新操作时，先记录删除版本号，再新增一行记录创建版本号；&lt;/li&gt;
+&lt;li&gt;查询操作时，要符合以下条件才能被查询出来：删除版本号未定义或大于当前事务版本号（删除操作是在当前事务启动之后做的）；创建版本号小于或等于当前事务版本号（创建操作是事务完成或者在事务启动之前完成）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​	通过版本号减少了锁的争用，&lt;strong&gt;提高了系统性能&lt;/strong&gt;；可以实现&lt;strong&gt;提交读&lt;/strong&gt;和&lt;strong&gt;可重复读&lt;/strong&gt;两种隔离级别，未提交读无需使用 MVCC&lt;/p&gt;
+&lt;h1 id=&#34;数据库的范式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库的范式&#34;&gt;#&lt;/a&gt; 数据库的范式？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;第一范式&lt;/strong&gt;（1NF，Normal Form）：&lt;strong&gt;属性不应该是可分的&lt;/strong&gt;。举例：如果将 “电话” 作为一个属性（一列），是不符合 1NF 的，因为电话这个属性可以分解为家庭电话和移动电话... 如果将 “移动电话” 作为一个属性，就符合 1NF；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第二范式&lt;/strong&gt; 2NF：每个非主属性&lt;strong&gt;完全依赖&lt;/strong&gt;于主属性集（候选键集）；&lt;/li&gt;
+&lt;li&gt;B 完全依赖于 A，就是说 A 中的所有属性唯一决定 B，属性少了就不能唯一决定，属性多了则有冗余（叫依赖不叫完全依赖）。举例：（学号，课程名）这个主属性集可以唯一决定成绩，但是对于学生姓名这个属性，（学号，课程名）这个属性集就是冗余的，所以学生姓名不完全依赖于（学号，课程名）这一属性集；&lt;/li&gt;
+&lt;li&gt;主属性集 / 候选码集：某一组属性能够唯一确定其它的属性（主键就是从候选键集中选的一个键），而其子集不能，这样的属性组中的属性就是主属性；不在候选码集中的属性成为非主属性；&lt;/li&gt;
+&lt;li&gt;可以通过分解来满足 2NF：将（学号，课程名，成绩）做成一张表；（学号，学生姓名）做成另一张表，避免大量的数据冗余； 满足 1NF 后，要求表中的所有列，都必须依赖于主键，而不能有任何一列与主键没有关系，也就是说一个表只描述一件事情；&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第三范式&lt;/strong&gt; 3NF：在 2NF 的基础上，非主属性&lt;strong&gt;不传递依赖&lt;/strong&gt;于主属性&lt;/li&gt;
+&lt;li&gt;传递依赖：如果 C 依赖于 B，B 依赖于 A，那么 C 传递依赖于 A；&lt;/li&gt;
+&lt;li&gt;3NF 在 2NF 的基础上，消除了非主属性之间的依赖；比如一个表中，主属性有（学号），非主属性有（姓名，院系，院长名），可以看到院长名这个非主属性依赖于院系，传递依赖于学号。消除的办法是分解。 必须先满足第二范式（2NF），要求：表中的每一列只与主键直接相关而不是间接相关，（表中的每一列只能依赖于主键）；&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;使用索引的优点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用索引的优点&#34;&gt;#&lt;/a&gt; 使用索引的优点&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;大大加快了数据的&lt;strong&gt;检索速度&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;可以显著减少查询中&lt;strong&gt;分组和排序&lt;/strong&gt;的时间；&lt;/li&gt;
+&lt;li&gt;通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性；&lt;/li&gt;
+&lt;li&gt;将随机 I/O 变为&lt;strong&gt;顺序 I/O&lt;/strong&gt;（B+Tree 索引是有序的，会将相邻的数据都存储在一起）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;​	缺点：建立和维护索引耗费时间空间，更新索引很慢。&lt;/p&gt;
+&lt;h1 id=&#34;哪些情况下索引会失效&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#哪些情况下索引会失效&#34;&gt;#&lt;/a&gt; 哪些情况下索引会失效？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;以 “%(表示任意 0 个或多个字符)” 开头的 LIKE 语句；&lt;/li&gt;
+&lt;li&gt;OR 语句前后没有同时使用索引；&lt;/li&gt;
+&lt;li&gt;数据类型出现隐式转化（如 varchar 不加单引号的话可能会自动转换为 int 型）；&lt;/li&gt;
+&lt;li&gt;对于多列索引，必须满足 &lt;strong&gt;最左匹配原则&lt;/strong&gt; / 最左前缀原则 (最左优先，eg：多列索引 col1、col2 和 col3，则 索引生效的情形包括 col1 或 col1，col2 或 col1，col2，col3)；&lt;/li&gt;
+&lt;li&gt;如果 MySQL 估计全表扫描比索引快，则不使用索引（比如非常小的表）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;索引的分类&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#索引的分类&#34;&gt;#&lt;/a&gt; 索引的分类？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;普通索引&lt;/li&gt;
+&lt;li&gt;唯一索引 UNIQUE：索引列的值必须唯一，但允许有空值；&lt;/li&gt;
+&lt;li&gt;主键索引 PRIMARY KEY：必须唯一，不允许空值（是一种特殊的唯一索引；MySQL 创建主键时默认为聚集索引，但主键也可以是非聚集索引）；&lt;/li&gt;
+&lt;li&gt;单列索引和多列索引 / 复合索引（Composite）：索引的列数；&lt;/li&gt;
+&lt;li&gt;覆盖（Covering）索引：索引包含了所有满足查询所需要的数据，查询的时候只需要读取索引而不需要回表读取数据；&lt;/li&gt;
+&lt;li&gt;聚集（Clustered）索引 / 非聚集索引：对磁盘上存放数据的物理地址重新组织以使这些数据按照指定规则排序的一种索引（数据的物理排列顺序和索引排列顺序一致）。因此每张表只能创建一个聚集索引（因为要改变物理存储顺序）。优点是查询速度快，因为可以直接按照顺序得到需要数据的物理地址。缺点是进行修改的速度较慢。对于需要经常搜索范围的值很有效。非聚集索引只记录逻辑顺序，并不改变物理顺序；&lt;/li&gt;
+&lt;li&gt;分区索引（？）&lt;/li&gt;
+&lt;li&gt;虚拟索引（Virtual）：模拟索引的存在而不用真正创建一个索引，用于快速测试创建索引对执行计划的影响。没有相关的索引段，不增加存储空间的使用&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;mysql的两种存储引擎-innodb-和-myisam-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#mysql的两种存储引擎-innodb-和-myisam-的区别&#34;&gt;#&lt;/a&gt; MySQL 的两种存储引擎 InnoDB 和 MyISAM 的区别？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;InnoDB&lt;strong&gt; 支持事务&lt;/strong&gt;，可以进行 Commit 和 Rollback；&lt;/li&gt;
+&lt;li&gt;MyISAM 只支持表级锁，而 InnoDB 还&lt;strong&gt;支持行级锁&lt;/strong&gt;，提高了并发操作的性能；&lt;/li&gt;
+&lt;li&gt;InnoDB &lt;strong&gt;支持外键&lt;/strong&gt;；&lt;/li&gt;
+&lt;li&gt;MyISAM &lt;strong&gt;崩溃&lt;/strong&gt;后发生损坏的概率比 InnoDB 高很多，而且&lt;strong&gt;恢复的速度&lt;/strong&gt;也更慢；&lt;/li&gt;
+&lt;li&gt;MyISAM 支持&lt;strong&gt;压缩&lt;/strong&gt;表和空间数据索引，InnoDB 需要更多的内存和存储；&lt;/li&gt;
+&lt;li&gt;InnoDB 支持在线&lt;strong&gt;热备份&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;为什么用mysql&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么用mysql&#34;&gt;#&lt;/a&gt; 为什么用 MySQL？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;mysql 性能卓越，服务稳定，很少出现异常宕机。&lt;/li&gt;
+&lt;li&gt;mysql 开放源代码且无版权制约，自主性及使用成本低。&lt;/li&gt;
+&lt;li&gt;mysql 历史悠久，社区及用户非常活跃，遇到问题，可以寻求帮助。&lt;/li&gt;
+&lt;li&gt;mysql 软件体积小，安装使用简单，并且易于维护，安装及维护成本低。&lt;/li&gt;
+&lt;li&gt;mysql 品牌口碑效应，使得企业无需考虑就直接用之，lamp,lnmp 流行架构&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;数据库是怎么去做持久性的做持久性的时候可能会遇到什么问题&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库是怎么去做持久性的做持久性的时候可能会遇到什么问题&#34;&gt;#&lt;/a&gt; 数据库是怎么去做持久性的，做持久性的时候可能会遇到什么问题？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;利用 redo log 做持久性，redo log 主要记录了 data 在物理层面的修改。redo log 在事务进行提交时&lt;strong&gt;一次 flush 操作保存到磁盘中&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;什么是视图什么是游标&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是视图什么是游标&#34;&gt;#&lt;/a&gt; 什么是视图？什么是游标？&lt;/h1&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;视图：从数据库的基本表中通过查询选取出来的数据组成的&lt;strong&gt;虚拟表&lt;/strong&gt;（数据库中存放视图的定义）。可以对其进行增 / 删 / 改 / 查等操作。视图是对若干张基本表的引用，一张虚表，查询语句执行的结果，不存储具体的数据（基本表数据发生了改变，视图也会跟着改变）；可以跟基本表一样，进行增删改查操作 (ps: 增删改操作有条件限制)；如连表查询产生的视图无法进行，对视图的增删改会影响原表的数据。好处：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;通过只给用户访问视图的权限，保证数据的&lt;strong&gt;安全性&lt;/strong&gt;；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;简化&lt;/strong&gt;复杂的 SQL 操作，隐藏数据的复杂性（比如复杂的连接）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;游标（Cursor）：用于定位在查询返回的&lt;strong&gt;结果集的特定行&lt;/strong&gt;，以对特定行进行操作。使用游标可以方便地对结果集进行移动遍历，根据需要滚动或对浏览 / 修改任意行中的数据。主要用于交互式应用。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+        <category term="面试 数据库" />
+        <updated>2022-01-06T08:15:49.695Z</updated>
+    </entry>
+</feed>

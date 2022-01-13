@@ -5,20 +5,22 @@
     <link href="http://zhanglin233.github.io" />
     <updated>2022-01-06T08:15:49.695Z</updated>
     <category term="算法" />
-    <category term="智能控制" />
-    <category term="前端" />
     <category term="博客" />
+    <category term="前端" />
+    <category term="智能控制" />
     <category term="Nginx" />
     <category term="前端 React" />
-    <category term="Java JavaWEB" />
     <category term="Java JavaSE" />
+    <category term="Java JavaWEB" />
     <category term="java SpringBoot" />
     <category term="java springboot" />
     <category term="Python 爬虫" />
+    <category term="面试 数据库" />
+    <category term="面试" />
     <entry>
-        <id>http://zhanglin233.github.io/2022/01/06/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
+        <id>http://zhanglin233.github.io/2022/01/06/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
         <title>后端面试之数据库</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2022/01/06/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+        <link rel="alternate" href="http://zhanglin233.github.io/2022/01/06/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
         <content type="html">&lt;h1 id=&#34;事务的概念和特性&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#事务的概念和特性&#34;&gt;#&lt;/a&gt; 事务的概念和特性？&lt;/h1&gt;
 &lt;p&gt;概念：事务（Transaction）是一个操作序列，不可分割的工作单位，以 BEGIN TRANSACTION 开始，以 ROLLBACK/COMMIT 结束&lt;/p&gt;
 &lt;p&gt;特性（ACID）：&lt;/p&gt;
@@ -228,13 +230,13 @@
 &lt;li&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="算法" />
+        <category term="面试 数据库" />
         <updated>2022-01-06T08:15:49.695Z</updated>
     </entry>
     <entry>
-        <id>http://zhanglin233.github.io/2021/12/26/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</id>
+        <id>http://zhanglin233.github.io/2021/12/26/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</id>
         <title>后端面试之操作系统</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/12/26/computer-science/algorithm/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/12/26/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
         <content type="html">&lt;h1 id=&#34;操作系统基础&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#操作系统基础&#34;&gt;#&lt;/a&gt; 操作系统基础&lt;/h1&gt;
 &lt;h2 id=&#34;基本特征&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#基本特征&#34;&gt;#&lt;/a&gt; 基本特征&lt;/h2&gt;
 &lt;h3 id=&#34;并发和并行&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#并发和并行&#34;&gt;#&lt;/a&gt; 并发和并行&lt;/h3&gt;
@@ -1188,8 +1190,335 @@ void writer() &amp;#123;
 &lt;li&gt;可以对不存在的文件创建软连接，因为保存的只是一个字符串&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-        <category term="算法" />
+        <category term="面试" />
         <updated>2021-12-26T05:59:55.365Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2021/12/25/computer-science/interview/%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%E9%97%AE%E9%A2%98/</id>
+        <title>后端面试常问问题</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/12/25/computer-science/interview/%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE%E9%97%AE%E9%A2%98/"/>
+        <content type="html">&lt;h1 id=&#34;java&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#java&#34;&gt;#&lt;/a&gt; java&lt;/h1&gt;
+&lt;h2 id=&#34;int和integer的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#int和integer的区别&#34;&gt;#&lt;/a&gt; int 和 Integer 的区别&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Integer 是 int 的包装类，int 则是 java 的一种基本数据类型&lt;/li&gt;
+&lt;li&gt;Integer 变量必须实例化后才能使用，而 int 变量不需要&lt;/li&gt;
+&lt;li&gt;Integer 实际是对象的引用，当 new 一个 Integer 时，实际上是生成一个指针指向此对象；而 int 则是直接存储数据值&lt;/li&gt;
+&lt;li&gt;Integer 的默认值是 null，int 的默认值是 0&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;string-是最基本的数据类型吗&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#string-是最基本的数据类型吗&#34;&gt;#&lt;/a&gt; String 是最基本的数据类型吗？&lt;/h2&gt;
+&lt;p&gt;不是，他是引用类型。基本数据类型只有 8 个，char、byte、short、int、long、float、double 和 boolean。&lt;/p&gt;
+&lt;p&gt;【整型】byte、short、int 和 long，分别是 1、2、4 和 8 字节。&lt;/p&gt;
+&lt;p&gt;【浮点型】float 和 double，分别是 4 和 8 字节。&lt;/p&gt;
+&lt;p&gt;【字符型】char，2 字节。&lt;/p&gt;
+&lt;p&gt;【布尔型】boolean，只有 true 和 false。&lt;/p&gt;
+&lt;h2 id=&#34;请问jdk和jre的区别是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#请问jdk和jre的区别是什么&#34;&gt;#&lt;/a&gt; &lt;strong&gt;请问 JDK 和 JRE 的区别是什么？&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;Java 运行时环境 (JRE) 是将要执行 Java 程序的 Java 虚拟机。它同时也包含了执行 applet 需要的浏览器插件。Java 开发工具包 (JDK) 是完整的 Java 软件开发包，包含了 JRE，编译器和其他的工具 (比如：JavaDoc，Java 调试器)，可以让开发者开发、编译、执行 Java 应用程序。&lt;/p&gt;
+&lt;h2 id=&#34;多线程中的i线程安全吗请简述一下原因&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#多线程中的i线程安全吗请简述一下原因&#34;&gt;#&lt;/a&gt; &lt;strong&gt;多线程中的 i++ 线程安全吗？请简述一下原因？&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;不安全。i&lt;ins&gt; 不是原子性操作。i&lt;/ins&gt; 分为读取 i 值，对 i 值加一，再赋值给 i++，执行期中任何一步都是有可能被其他线程抢占的。&lt;/p&gt;
+&lt;h2 id=&#34;深拷贝和浅拷贝是什么&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#深拷贝和浅拷贝是什么&#34;&gt;#&lt;/a&gt; 深拷贝和浅拷贝是什么？&lt;/h2&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;简单来讲就是复制、克隆。&lt;/p&gt;
+&lt;p&gt;Person p=new Person (“张三 &amp;quot;);&lt;/p&gt;
+&lt;p&gt;浅拷贝就是对对象中的数据成员进行简单赋值，如果存在动态成员或者指针就会报错。而且，如果有引用类型的变量，新生成的对象和被拷贝的对象的这个属性会指向同一个地方，没有解耦，会影响对方，2 个对象会拥有一样的值（穿一条裤子）。对基本数据类型来说，两边是独立的。&lt;/p&gt;
+&lt;p&gt;深拷贝就是对对象中存在的动态成员或指针重新开辟内存空间。而且，如果有引用类型的变量，新生成的对象和被拷贝的对象的这个属性会指向 2 个地方，解耦了，不会影响对方，2 个对象分别做修改的话，不会影响到对方。&lt;/p&gt;
+&lt;h2 id=&#34;面向对象的特征有哪些方面&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#面向对象的特征有哪些方面&#34;&gt;#&lt;/a&gt; 面向对象的特征有哪些方面？&lt;/h2&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;面向对象的特征主要有以下几个方面：&lt;/p&gt;
+&lt;p&gt;1) 抽象：抽象就是忽略一个主题中与当前目标无关的那些方面，以便更充分地注意与当前目标有关的方面。抽象并不打算了解全部问题，而只是选择其中的一部分，暂时不用部分细节。抽象包括两个方面，一是过程抽象，二是数据抽象。&lt;/p&gt;
+&lt;p&gt;2) 继承：继承是一种联结类的层次模型，并且允许和鼓励类的重用，它提供了一种明确表述共性的方法。对象的一个新类可以从现有的类中派生，这个过程称为类继承。新类继承了原始类的特性，新类称为原始类的派生类（子类），而原&lt;/p&gt;
+&lt;p&gt;始类称为新类的基类（父类）。派生类可以从它的基类那里继承方法和实例变量，并且类可以修改或增加新的方法使之更适合特殊的需要。&lt;/p&gt;
+&lt;p&gt;3) 封装：封装是把过程和数据包围起来，对数据的访问只能通过已定义的界面。面向对象计算始于这个基本概念，即现实世界可以被描绘成一系列完全自治、封装的对象，这些对象通过一个受保护的接口访问其他对象。&lt;/p&gt;
+&lt;p&gt;4) 多态性：多态性是指允许不同类的对象对同一消息作出响应。多态性包括参数化多态性和包含多态性。多态性语言具有灵活、抽象、行为共享、代码共享的优势，很好的解决了应用程序函数同名问题。&lt;/p&gt;
+&lt;h2 id=&#34;简述mybatis的xml映射文件和mybatis内部数据结构之间的映射关系&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#简述mybatis的xml映射文件和mybatis内部数据结构之间的映射关系&#34;&gt;#&lt;/a&gt; &lt;strong&gt;简述 Mybatis 的 Xml 映射文件和 Mybatis 内部数据结构之间的映射关系？&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;Mybatis 将所有 Xml 配置信息都封装到 All-In-One 重量级对象 Configuration 内部。在 Xml 映射文件中， &lt;code&gt;&amp;lt;parameterMap&amp;gt;&lt;/code&gt;  标签会被解析为 &lt;code&gt;ParameterMap&lt;/code&gt;  对象，其每个子元素会被解析为 &lt;code&gt;ParameterMapping&lt;/code&gt;  对象。 &lt;code&gt;&amp;lt;resultMap&amp;gt;&lt;/code&gt;  标签会被解析为 &lt;code&gt;ResultMap&lt;/code&gt;  对象，其每个子元素会被解析为 &lt;code&gt;ResultMapping&lt;/code&gt;  对象。每一个 &lt;code&gt;&amp;lt;select&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;insert&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;update&amp;gt;&lt;/code&gt; 、 &lt;code&gt;&amp;lt;delete&amp;gt;&lt;/code&gt;  标签均会被解析为 MappedStatement 对象，标签内的 sql 会被解析为 BoundSql 对象。&lt;/p&gt;
+&lt;h1 id=&#34;计网&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#计网&#34;&gt;#&lt;/a&gt; 计网&lt;/h1&gt;
+&lt;h2 id=&#34;tcpudp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#tcpudp&#34;&gt;#&lt;/a&gt; tcp/udp&lt;/h2&gt;
+&lt;h3 id=&#34;1-tcpudp-协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#1-tcpudp-协议&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1. tcp/udp 协议&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;tcp/udp 是传输层协议。是十分常用的网络协议.TCP 面向连接 （三次握手），UDP 是无连接的，即发送数据之前不需要建立连接。&lt;/p&gt;
+&lt;p&gt;TCP 提供可靠的服务。也就是说，通过 TCP 连接传送的数据，无差错，不丢失，不重复，且按序到达；UDP 尽最大努力交付，即不保证可靠交付&lt;/p&gt;
+&lt;p&gt;TCP 面向字节流，实际上是 TCP 把数据看成一连串无结构的字节流；UDP 是面向报文的&lt;/p&gt;
+&lt;p&gt;UDP 没有拥塞控制，因此网络出现拥塞不会使源主机的发送速率降低（对实时应用很有用，如 IP 电话，实时视频会议等）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1.1 tcp 三次握手、四次挥手&lt;/strong&gt;&lt;/p&gt;
+&lt;h4 id=&#34;三次握手建立连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#三次握手建立连接&#34;&gt;#&lt;/a&gt; &lt;strong&gt;三次握手建立连接&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20200411140619805.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDcxMDY4,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;h5 id=&#34;第一次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一次握手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第一次握手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 客户端向服务端发送连接请求 SYN 包 (发送连接请求)(SYN=1, 同时选择一个初始序号 seq=x) 后，客户端进入 SYN-SENT 状态，等待服务器确认回复.&lt;/p&gt;
+&lt;p&gt;**server 😗* 当服务端还没有接收到客户端的连接请求时，服务端处于 LISTEN 状态.&lt;/p&gt;
+&lt;h5 id=&#34;第二次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二次握手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第二次握手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 当服务端收到客户端的连接请求时 (收到 syn 包), 为新的连接请求创建新的通信 socket, 此时服务端必须确认客户端的 SYN 请求 (回复确认序号 ack = x + 1), 确认序号有效 ACK=1, 因为连接是双向的，所以服务端也向客户端发送连接请求 SYN 包 (SYN = 1, 为自己选择一个初始序号 seq = y), 即服务端向客户端发送 ACK+SYN 包，服务端进入 SYN_RCVD 状态。当第二次握手完成，还没进行第三次握手时，此时 TCP 连接的状态称之为半连接状态.&lt;/p&gt;
+&lt;h5 id=&#34;第三次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三次握手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第三次握手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;​    &lt;strong&gt;client :&lt;/strong&gt; 当客户端收到服务端回复的 SYN+ACK 包时，确认建立连接 (客户端这边已经没什么问题了，可以通信了), 并回复给服务端确认信息 ACK 包 (seq = x + 1, ack = y+1), 客户端的进入 ESTABLISHED 状态，完成连接&lt;/p&gt;
+&lt;p&gt;​    &lt;strong&gt;server :&lt;/strong&gt; 当服务端收到客户端发送的 ACK 包后，确认客户端连接就绪，可以开始通行，进入 ESTABLISHED 状态&lt;/p&gt;
+&lt;h4 id=&#34;四次挥手断开连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#四次挥手断开连接&#34;&gt;#&lt;/a&gt; &lt;strong&gt;四次挥手断开连接&lt;/strong&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/20200412110254633.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxMDcxMDY4,size_16,color_FFFFFF,t_70&#34; alt=&#34;img&#34; /&gt; 图片来源于网络&lt;/p&gt;
+&lt;h5 id=&#34;第一次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第一次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第一次挥手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 当客户端确定不再需要发送数据时，调用 close (sockfd) /shutdown (sockfd, SHUT_WR) (两者的区别以及用法下面说). 客户端会向服务端发送 FIN 包 (FIN=1, seq = u)(u 就是客户端之前收到的数据的最后一个字节的序号 + 1), 客户端进入 FIN_WAIT1 状态. (注意 : TCP 协议规定，FIN 报文段就算没有数据，也需要消耗一个序号)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 当服务端未收到客户端发送的 FIN 包时，一直处于 ESTABLISHED 状态&lt;/p&gt;
+&lt;h5 id=&#34;第二次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第二次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第二次挥手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 当服务端收到客户端发来的 FIN 包后，知道客户端不会再发送数据了，也就不需要接受，先调用 close (sockfd) /shutdown (sockfd, SHUT_RD), 再确认回复客户端，即 (ACK=1, ack = u+1), 并且带上自己的序列号 seq=v, 此时服务端的进入了 CLOSE_WAIT 状态. TCP 服务端就通知高层的应用进程，客户端不会再向服务端发送数据了，此时 TCP 通信的连接状态就称为半关闭状态，即客户端已经没有数据要发送了，但是服务器若发送数据，客户端依然要接受。这个状态还要持续一段时间，也就是整个 CLOSE_WAIT 状态持续的时间.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 当客户端收到服务器的确认请求 (ACK 包) 后，此时，客户端就进入 FIN_WAIT2 状态，等待服务器发送 FIN (在这之前还需要接收服务器发送的最后的数据)&lt;/p&gt;
+&lt;h5 id=&#34;第三次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第三次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第三次挥手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 服务端将最后的数据发送完毕后，再不需要发送数据了，就调用 shutdown (sockfd, SHUT_WR) , 再向客户端发送 FIN 包，由于在半关闭状态，服务器很可能又向客户端发送了一些数据，假定此时的序列号为 seq=w，即 FIN 包 (ACK=1, seq=w, ack=u+1). 此时，服务端就进入了 LAST_ACK (最后确认) 状态，等待客户端的确认.&lt;/p&gt;
+&lt;h5 id=&#34;第四次挥手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#第四次挥手&#34;&gt;#&lt;/a&gt; &lt;strong&gt;第四次挥手 :&lt;/strong&gt;&lt;/h5&gt;
+&lt;p&gt;&lt;strong&gt;client :&lt;/strong&gt; 当客户端收到服务端的连接释放请求 (FIN 包) 时，必须发出确认，ACK=1，ack=w+1, 而自己的序列号是 seq=u+1, 此时，客户端就进入了 TIME_WAIT 状态。注意：此时 TCP 连接还没有释放，必须经过 2 倍的 MSL (最长报文段寿命) 的时间后，当客户端释放连接后，才进入 CLOSED 状态.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;server :&lt;/strong&gt; 服务端只要收到了客户端发出的确认 (ACK 包), 立即进入 CLOSED 状态。同样，释放 TCB 连接后，就结束了这次的 TCP 连接。可以看到，服务端结束 TCP 连接的时间要比客户端早一些.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;注意 :&lt;/strong&gt; 需要注意的是，四次挥手可以是由客户端首先发送 FIN 包触发，也可以由服务端首先发送 FIN 包触发.&lt;/p&gt;
+&lt;p&gt;tcp 通过三次握手建立连接，通过四次挥手断开连接. UDP 则是面向无连接的，不需要建立连接.&lt;/p&gt;
+&lt;h3 id=&#34;12-tcp-流控制&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#12-tcp-流控制&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.2 tcp 流控制&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;连续 ARQ 协议使得 TCP 的帧可以在滑动窗口大小范围内连续的流动。通过拥塞窗口、拥塞避免、慢开始等算法控制 TCP 的流.&lt;/p&gt;
+&lt;h3 id=&#34;13-持续计时器&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#13-持续计时器&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.3 持续计时器&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;当发送方接受到窗口值为 0 的 ACK 报文，需要启动一个计时器等待接收方再次发送窗口大小非 0 的 ACK 报文 (TCP 中，仅仅包含确认信息的报文不需要确认和重传). 若没有计时器，可能在窗口非 0 的 ACK 报文丢失后，俩方都处在等待状态中。当持续计时器结束后，发送方会发送一个特殊的探测报文，促使对方重传一个 ACK 报文.&lt;/p&gt;
+&lt;h3 id=&#34;14-停止等待协议-arq-协议&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#14-停止等待协议-arq-协议&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.4 停止等待协议、ARQ 协议&lt;/strong&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;停止等待协议&lt;/strong&gt;是数据链路层协议。它规定只有收到正确的确认帧后，才能新发送状态变量以及数据帧.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ARQ 协议 (Automatic Repeat-reQuest)&lt;/strong&gt; 是数据链路层的纠错协议，它有停止等待 ARQ 协议和连续 ARQ 协议.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;停止等待 ARQ 协议&lt;/strong&gt;：每次发送一个报文，确认后发送下一个报文，发送窗口和接受窗口均是 1，停止等待 ARQ 所需缓冲区小但是效率低.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;连续 ARQ 协议&lt;/strong&gt;：即回退 n 帧 GBN 以及选择性重传 ARQ ，是滑动窗口与请求重发技术的结合。它可以连续发送若干信息帧，而不用等前一帧被确认，大大提升了发送效率。但需要发送方设置一个重发表，存放待确认的帧，收到确认帧后从重发表中删除帧，需要更大的存储空间.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;请你说一下为什么tcp可靠哪些方法保证可靠&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#请你说一下为什么tcp可靠哪些方法保证可靠&#34;&gt;#&lt;/a&gt; 请你说一下为什么 tcp 可靠，哪些方法保证可靠&lt;/h3&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;[1] 确认和重传机制&lt;/p&gt;
+&lt;p&gt;建立连接时三次握手同步双方的 “序列号 + 确认号 + 窗口大小信息”，是确认重传、流控的基础&lt;/p&gt;
+&lt;p&gt;传输过程中，如果 Checksum 校验失败、丢包或延时，发送端重传。&lt;/p&gt;
+&lt;p&gt;[2] 数据排序&lt;/p&gt;
+&lt;p&gt;TCP 有专门的序列号 SN 字段，可提供数据 re-order&lt;/p&gt;
+&lt;p&gt;[3] 流量控制&lt;/p&gt;
+&lt;p&gt;滑动窗口和计时器的使用。TCP 窗口中会指明双方能够发送接收的最大数据量，发送方通过维持一个发送滑动窗口来确保不会发生由于发送方报文发送太快接收方无法及时处理的问题。&lt;/p&gt;
+&lt;p&gt;[4] 拥塞控制&lt;/p&gt;
+&lt;p&gt;TCP 的拥塞控制由 4 个核心算法组成：&lt;/p&gt;
+&lt;p&gt;“慢启动”（Slow Start）&lt;/p&gt;
+&lt;p&gt;“拥塞避免”（Congestion avoidance）&lt;/p&gt;
+&lt;p&gt;“快速重传”（Fast Retransmit）&lt;/p&gt;
+&lt;p&gt;“快速恢复”（Fast Recovery）&lt;/p&gt;
+&lt;h3 id=&#34;15-滑动窗口-慢开始-拥塞避免-快重传-快恢复-可靠性-顺序传输-tcp-bbr-拥塞算法&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#15-滑动窗口-慢开始-拥塞避免-快重传-快恢复-可靠性-顺序传输-tcp-bbr-拥塞算法&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.5 滑动窗口、慢开始、拥塞避免、快重传、快恢复、可靠性、顺序传输、TCP BBR 拥塞算法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://pic2.zhimg.com/80/v2-7b878e527000b4ed0bd6672638249ecd_720w.jpg&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;滑动窗口&lt;/strong&gt;：滑动窗口协议是用来改善吞吐量的一种技术，即容许发送方在接收任何应答之前传送附加的包。接收方告诉发送方在某一时刻能送多少包（称窗口尺寸）。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;慢开始&lt;/strong&gt;：将拥塞窗口值设置为 1，发送端每接收到一个 ACK 就将拥塞窗口增加 1 直到达到拥塞门限值 (ssthresh，初始值为 16).&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拥塞门限 (ssthresh)&lt;/strong&gt;: 慢开始算法的拥塞窗口最大值.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拥塞窗口 (cwnd)&lt;/strong&gt;: 取决于网络的拥塞程度，且在不断的变化，只要网络没有出现拥塞，发送方就将拥塞窗口调大一些，而只要出现拥塞，则减小一些。发送窗口始终小于拥塞窗口（在接受窗口更小时小于拥塞窗口).&lt;br /&gt;
+ 接受窗口 (rwnd): 接受方根据自己的接受能力（缓存限制）设置了接受窗口 rwnd, 并将其写入 tcp 首部字段中.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;拥塞避免算法&lt;/strong&gt;：让拥塞窗口缓慢增长，即每经过一个往返时间 RTT 就把发送方的拥塞窗口 cwnd 加 1，而不是加倍。这样拥塞窗口按线性规律缓慢增长.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;快重传和快恢复 (Fast Retransmit and Recovery)&lt;/strong&gt;: 可以提高网络的吞吐量。接收机接收到一个不按顺序的数据段，它会立即给发送机发送一个重复确认。如果发送机接收到三个重复确认，它会假定确认件指出的数据段丢失了，并立即重传这些丢失的数据段。有了 FRR，就不会因为重传时要求的暂停被耽误。没有 FRR，如果数据包丢失了，TCP 将会使用定时器来要求传输暂停.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;快恢复算法&lt;/strong&gt;：与快重传配合使用，当发送方连续收到三个重复确认时，就执行乘法减小算法，把慢开始门限 ssthresh 减半。这是为了预防网络发生拥塞。请注意，接下去就不再执行慢开始算法了。由于发送方现在认为网络很可能没有发生拥塞，不执行慢开始而是把 cwnd 值设置为慢开始门限 ssthresh 减半后的数值，然后开始执行拥塞避免算法，使拥塞窗口慢慢的线性的增大。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;BBR 拥塞算法&lt;/strong&gt;: Google 的 TCP BBR 算法，优化了 TCP 的吞吐量.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;16-滑动窗口大小怎么确定&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#16-滑动窗口大小怎么确定&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.6 滑动窗口大小怎么确定？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;分为接受窗口和发送窗口。接受窗口的值根据缓存大小确定。接受方将接受窗口大小放在 TCP 报文首部。发送法根据接受窗口和拥塞窗口的大小（最小值）确定发送窗口的大小。而拥塞窗口的大小则受限于网络情况，根据传输过程动态的确定.&lt;/p&gt;
+&lt;h3 id=&#34;17-tcp-udp-怎么判断客户端关闭&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#17-tcp-udp-怎么判断客户端关闭&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.7 tcp、udp 怎么判断客户端关闭？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;根据接受到的数据包长度判断，如果接受到的报文长度是 0，则意味着客户端已经断开了连接.&lt;/p&gt;
+&lt;h3 id=&#34;18-tcp-udp-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#18-tcp-udp-的区别&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.8 tcp、udp 的区别？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;tcp 是面向连接的、可靠的，而 udp 是无连接、不可靠的.&lt;/p&gt;
+&lt;p&gt;tcp 保证数据的正确性、顺序性。而 udp 不保证. TCP 是流模式的，而 UDP 是数据包模式的.&lt;/p&gt;
+&lt;h3 id=&#34;19-udp-的实际应用场景&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#19-udp-的实际应用场景&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.9 udp 的实际应用场景？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;UDP 报文常用于效率要求高，而准确性相对低的场景。如视频直播、聊天等.&lt;/p&gt;
+&lt;h3 id=&#34;110-time_wait-是什么状态它有什么作用为什么持续-2-msl&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#110-time_wait-是什么状态它有什么作用为什么持续-2-msl&#34;&gt;#&lt;/a&gt; &lt;strong&gt;1.10 time_wait 是什么状态？它有什么作用？为什么持续 2 MSL？&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;time_wait: tcp 连接后，在四次握手之后，先发 FIN 标志位的一端就会进入 time_wait 状态。它的作用有俩个:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;确保最后一个确认报文能够到达。如果没能到达，服务端会重发 FIN 请求，等待一段时间没有重发，说明服务端已经 CLOSED 了。若有重发，客户端将重发 last ack 报文.&lt;/li&gt;
+&lt;li&gt;等待一段时间 ( 2MSL ），确保此次连接过程中所有报文都从网络中消失。使得新的连接不会出现旧的连接请求报文.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;111-请你说一说tcp的三次握手&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#111-请你说一说tcp的三次握手&#34;&gt;#&lt;/a&gt; 1.11 请你说一说 TCP 的三次握手？&lt;/h3&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://uploadfiles.nowcoder.com/images/20190314/311436_1552561665620_E7A5C9C77901F4FC171124336780AA75&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;第一次握手：建立连接时，客户端发送 syn 包（syn=j）到服务器，并进入 SYN_SENT 状态，等待服务器确认；SYN：同步序列编号（Synchronize Sequence Numbers）。&lt;/p&gt;
+&lt;p&gt;第二次握手：服务器收到 syn 包，必须确认客户的 SYN（ack=j+1），同时自己也发送一个 SYN 包（syn=k），即 SYN+ACK 包，此时服务器进入 SYN_RECV 状态；&lt;/p&gt;
+&lt;p&gt;第三次握手：客户端收到服务器的 SYN+ACK 包，向服务器发送确认包 ACK (ack=k+1），此包发送完毕，客户端和服务器进入 ESTABLISHED（TCP 连接成功）状态，完成三次握手。&lt;/p&gt;
+&lt;h3 id=&#34;请你说一下在浏览器中输入一个网址它的运行过程是怎样的&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#请你说一下在浏览器中输入一个网址它的运行过程是怎样的&#34;&gt;#&lt;/a&gt; 请你说一下在浏览器中输入一个网址它的运行过程是怎样的？&lt;/h3&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;1、查询 DNS，获取域名对应的 IP。&lt;/p&gt;
+&lt;p&gt;​	（1）检查浏览器缓存、检查本地 hosts 文件是否有这个网址的映射，如果有，就调用这个 IP 地址映射，解析完成。&lt;/p&gt;
+&lt;p&gt;​	（2）如果没有，则查找本地 DNS 解析器缓存是否有这个网址的映射，如果有，返回映射，解析完成。&lt;/p&gt;
+&lt;p&gt;​	（3）如果没有，则查找填写或分配的首选 DNS 服务器，称为本地 DNS 服务器。服务器接收到查询时：&lt;/p&gt;
+&lt;p&gt;​	如果要查询的域名包含在本地配置区域资源中，返回解析结果，查询结束，此解析具有权威性。&lt;/p&gt;
+&lt;p&gt;​	如果要查询的域名不由本地 DNS 服务器区域解析，但服务器缓存了此网址的映射关系，返回解析结果，查询结束，此解析不具有权威性。&lt;/p&gt;
+&lt;p&gt;​	（4）如果本地 DNS 服务器也失效：&lt;/p&gt;
+&lt;p&gt;​	如果未采用转发模式（迭代），本地 DNS 就把请求发至 13 台根 DNS，根 DNS 服务器收到请求后，会判断这个域名（&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL3huLS1idnMuY29t&#34;&gt;如.com&lt;/span&gt;）是谁来授权管理，并返回一个负责该顶级域名服务器的 IP，本地 DNS 服务器收到顶级域名服务器 IP 信息后，继续向该顶级域名服务器 IP 发送请求，该服务器如果无法解析，则会找到负责这个域名的下一级 DNS 服务器（如&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2JhaWR1LmNvbS8=&#34;&gt; http://baidu.com&lt;/span&gt;）的 IP 给本地 DNS 服务器，循环往复直至查询到映射，将解析结果返回本地 DNS 服务器，再由本地 DNS 服务器返回解析结果，查询完成。&lt;/p&gt;
+&lt;p&gt;​	如果采用转发模式（递归），则此 DNS 服务器就会把请求转发至上一级 DNS 服务器，如果上一级 DNS 服务器不能解析，则继续向上请求。最终将解析结果依次返回本地 DNS 服务器，本地 DNS 服务器再返回给客户机，查询完成。&lt;/p&gt;
+&lt;p&gt;​	2、得到目标服务器的 IP 地址及端口号（http 80 端口，https 443 端口），会调用系统库函数 socket，请求一个 TCP 流套接字。客户端向服务器发送 HTTP 请求报文：&lt;/p&gt;
+&lt;p&gt;​	（1）应用层：客户端发送 HTTP 请求报文。&lt;/p&gt;
+&lt;p&gt;​	（2）传输层：（加入源端口、目的端口）建立连接。实际发送数据之前，三次握手客户端和服务器建立起一个 TCP 连接。&lt;/p&gt;
+&lt;p&gt;​	（3）网络层：（加入 IP 头）路由寻址。&lt;/p&gt;
+&lt;p&gt;​	（4）数据链路层：（加入 frame 头）传输数据。&lt;/p&gt;
+&lt;p&gt;​	（5）物理层：物理传输 bit。&lt;/p&gt;
+&lt;p&gt;​	3、服务器端经过物理层→数据链路层→网络层→传输层→应用层，解析请求报文，发送 HTTP 响应报文。&lt;/p&gt;
+&lt;p&gt;​	4、关闭连接，TCP 四次挥手。&lt;/p&gt;
+&lt;p&gt;​	5、客户端解析 HTTP 响应报文，浏览器开始显示 HTML&lt;/p&gt;
+&lt;h2 id=&#34;http&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http&#34;&gt;#&lt;/a&gt; HTTP&lt;/h2&gt;
+&lt;h3 id=&#34;请你说一说http请求报文&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#请你说一说http请求报文&#34;&gt;#&lt;/a&gt; 请你说一说 http 请求报文&lt;/h3&gt;
+&lt;p&gt;解析：&lt;/p&gt;
+&lt;p&gt;http 请求报文：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://uploadfiles.nowcoder.com/images/20190314/311436_1552561821939_7986A5D29E20ECF79B0DB0AB97F16945&#34; alt=&#34;img&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;1、请求方法&lt;/p&gt;
+&lt;p&gt;GET：请求获取 Request——URL 所标识的资源&lt;/p&gt;
+&lt;p&gt;POST：在 Request——URL 所标识的资源后附加资源&lt;/p&gt;
+&lt;p&gt;HEAD：请求获取由 Request——URL 所标识的资源的响应消息报头&lt;/p&gt;
+&lt;p&gt;PUT：请求服务器存储一个资源，由 Request——URL 作为其标识&lt;/p&gt;
+&lt;p&gt;DELETE：请求服务器删除由 Request——URL 所标识的资源&lt;/p&gt;
+&lt;p&gt;TRACE：请求服务器回送收到的请求信息（用于测试和诊断）&lt;/p&gt;
+&lt;p&gt;CONNECT：保留&lt;/p&gt;
+&lt;p&gt;OPTIONS：请求查询服务器性能&lt;/p&gt;
+&lt;p&gt;2、URL&lt;/p&gt;
+&lt;p&gt;URI 全名为 Uniform Resource Indentifier（统一资源标识），用来唯一的标识一个资源，是一个通用的概念，URI 由两个主要的子集 URL 和 URN 组成。URL 全名为 Uniform Resource Locator（统一资源定位），通过描述资源的位置来标识资源。URN 全名为 Uniform Resource Name（统一资源命名），通过资源的名字来标识资源，与其所处的位置无关，这样即使资源的位置发生变动，其 URN 也不会变化。0.&lt;/p&gt;
+&lt;p&gt;3、协议版本&lt;/p&gt;
+&lt;p&gt;格式为 HTTP / 主版本号。次版本号，常用为：HTTP/1.1 HTTP/1.0&lt;/p&gt;
+&lt;p&gt;4、请求头部&lt;/p&gt;
+&lt;p&gt;Host：接受请求的服务器地址，可以是 IP 或者是域名&lt;/p&gt;
+&lt;p&gt;User-Agent：发送请求的应用名称&lt;/p&gt;
+&lt;p&gt;Connection：指定与连接相关的属性，例如（Keep_Alive，长连接）&lt;/p&gt;
+&lt;p&gt;Accept-Charset：通知服务器端可以发送的编码格式&lt;/p&gt;
+&lt;p&gt;Accept-Encoding：通知服务器端可以发送的数据压缩格式&lt;/p&gt;
+&lt;p&gt;Accept-Language：通知服务器端可以发送的语言&lt;/p&gt;
+&lt;h3 id=&#34;说一下-get-和-post-的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#说一下-get-和-post-的区别&#34;&gt;#&lt;/a&gt; 说一下 GET 和 POST 的区别？&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Get 方法的含义是请求从服务器获取资源，这个资源可以是静态的文本、页面、图片视频等。&lt;/li&gt;
+&lt;li&gt;而 POST 方法则是相反操作，它向 URI 指定的资源提交数据，数据就放在报文的 body 里。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;GET 在浏览器回退时是无害的，而 POST 会再次提交请求。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 产生的 URL 地址可以被 Bookmark，而 POST 不可以。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 请求会被浏览器主动 cache，而 POST 不会，除非手动设置。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 请求只能进行 url 编码，而 POST 支持多种编码方式。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 请求参数会被完整保留在浏览器历史记录里，而 POST 中的参数不会被保留。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 请求在 URL 中传送的参数是有长度限制的，而 POST 么有。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对参数的数据类型，GET 只接受 ASCII 字符，而 POST 没有限制。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 比 POST 更不安全，因为参数直接暴露在 URL 上，所以不能用来传递敏感信息。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 参数通过 URL 传递，POST 放在 Request body 中。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 和 POST 还有一个重大区别，简单的说：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;GET 产生一个 TCP 数据包；POST 产生两个 TCP 数据包。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;长的说：&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;对于 GET 方式的请求，浏览器会把 http header 和 data 一并发送出去，服务器响应 200（返回数据）；&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;而对于 POST，浏览器先发送 header，服务器响应 100 continue，浏览器再发送 data，服务器响应 200 ok（返回数据）。&lt;/p&gt;
+&lt;p&gt;也就是说，GET 只需要汽车跑一趟就把货送到了，而 POST 得跑两趟，第一趟，先去和服务器打个招呼 “嗨，我等下要送一批货来，你们打开门迎接我”，然后再回头把货送过去。&lt;/p&gt;
+&lt;p&gt;因为 POST 需要两步，时间上消耗的要多一点，看起来 GET 比 POST 更有效。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4 id=&#34;get-和-post-方法都是安全和幂等的吗&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#get-和-post-方法都是安全和幂等的吗&#34;&gt;#&lt;/a&gt; GET 和 POST 方法都是安全和幂等的吗？&lt;/h4&gt;
+&lt;p&gt;先说明下安全和幂等的概念：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在 HTTP 协议里，所谓的「安全」是指请求方法不会「破坏」服务器上的资源。&lt;/li&gt;
+&lt;li&gt;所谓的「幂等」，意思是多次执行相同的操作，结果都是「相同」的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;那么很明显 GET 方法就是安全且幂等的，因为它是「只读」操作，无论操作多少次，服务器上的数据都是安全的，且每次的结果都是相同的。&lt;/p&gt;
+&lt;p&gt;POST 因为是「新增或提交数据」的操作，会修改服务器上的资源，所以是不安全的，且多次提交数据就会创建多个资源，所以不是幂等的。&lt;/p&gt;
+&lt;h3 id=&#34;http和https的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http和https的区别&#34;&gt;#&lt;/a&gt; Http 和 Https 的区别&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;HTTP 是超文本传输协议，信息是明文传输，存在安全风险的问题。HTTPS 则解决 HTTP 不安全的缺陷，在 TCP 和 HTTP&lt;/li&gt;
+&lt;li&gt;网络层之间加入了 SSL/TLS 安全协议，使得报文能够加密传输。HTTP 连接建立相对简单， TCP 三次握手之后便可进行 HTTP 的报文传输。而 HTTPS 在 TCP 三次握手之后，还需进行 SSL/TLS 的握手过程，才可进入加密报文传输。&lt;/li&gt;
+&lt;li&gt;HTTP 的端口号是 80，HTTPS 的端口号是 443。&lt;/li&gt;
+&lt;li&gt;HTTPS 协议需要向 CA（证书权威机构）申请数字证书，来保证服务器的身份是可信的。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;HTTP 由于是明文传输，所以安全上存在以下三个风险：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;窃听风险，比如通信链路上可以获取通信内容&lt;/li&gt;
+&lt;li&gt;篡改风险&lt;/li&gt;
+&lt;li&gt;冒充风险，比如冒充淘宝网站&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://img-blog.csdnimg.cn/a7fa82cc355243b8a74f220d085e984c.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_20,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;HTTPS 在 HTTP 与 TCP 层之间加入了 SSL/TLS 协议。&lt;/p&gt;
+&lt;h3 id=&#34;http10-http11-http2-http3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http10-http11-http2-http3&#34;&gt;#&lt;/a&gt; HTTP/1.0 HTTP/1.1、HTTP/2、HTTP/3&lt;/h3&gt;
+&lt;h4 id=&#34;http10&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http10&#34;&gt;#&lt;/a&gt; HTTP/1.0&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;短连接&lt;/li&gt;
+&lt;li&gt;HTTP1.0 中，存在⼀些浪费带宽的现象，例如客户端只是需要某个对象的⼀部分，⽽服务器却将整个对象送过来了&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;http11&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http11&#34;&gt;#&lt;/a&gt; HTTP/1.1&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;HTTP 1.1 起，默认使⽤⻓连接，默认开启 Connection： keep-alive。&lt;/li&gt;
+&lt;li&gt;支持 管道（pipeline）网络传输，只要第一个请求发出去了，不必等其回来，就可以发第二个请求出去，可以减少整体的响应时间。&lt;/li&gt;
+&lt;li&gt;HTTP1.1 则在请求头引⼊了 range 头域，它允许只请求资源的某个部分&lt;/li&gt;
+&lt;li&gt;Host 是 HTTP 1.1 协议中新增的一个请求头，主要用来实现虚拟主机技术。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;补充：&lt;br /&gt;
+虚拟主机（virtual hosting）即共享主机（shared web hosting），可以利用虚拟技术把一台完整的服务器分成若干个主机，因此可以在单一主机上运行多个网站或服务。&lt;/p&gt;
+&lt;p&gt;举个栗子，有一台 ip 地址为 61.135.169.125 的服务器，在这台服务器上部署着谷歌、百度、淘宝的网站。为什么我们访问 &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==&#34;&gt;https://www.google.com&lt;/span&gt; 时，看到的是 Google 的首页而不是百度或者淘宝的首页？原因就是 Host 请求头决定着访问哪个虚拟主机。&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;请求 / 响应头部（Header）未经压缩就发送，首部信息越多延迟越大。只能压缩 Body 的部分；&lt;br /&gt;
+发送冗长的首部。每次互相发送相同的首部造成的浪费较多；&lt;/li&gt;
+&lt;li&gt;服务器是按请求的顺序响应的，如果服务器响应慢，会招致客户端一直请求不到数据，也就是队头阻塞；&lt;/li&gt;
+&lt;li&gt;没有请求优先级控制；&lt;/li&gt;
+&lt;li&gt;请求只能从客户端开始，服务器只能被动响应。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;http2&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http2&#34;&gt;#&lt;/a&gt; HTTP/2&lt;/h4&gt;
+&lt;ol&gt;
+&lt;li&gt;头部压缩&lt;br /&gt;
+ HTTP/2 会压缩头（Header）如果你同时发出多个请求，他们的头是一样的或是相似的，那么，协议会帮你消除重复的分。&lt;/li&gt;
+&lt;li&gt;二进制格式&lt;br /&gt;
+ HTTP/2 不再像 HTTP/1.1 里的纯文本形式的报文，而是全面采用了二进制格式。&lt;br /&gt;
+头信息和数据体都是二进制，并且统称为帧（frame）：头信息帧和数据帧。&lt;/li&gt;
+&lt;li&gt;数据流&lt;br /&gt;
+ HTTP/2 的数据包不是按顺序发送的，同一个连接里面连续的数据包，可能属于不同的回应。因此，必须要对数据包做标记，指出它属于哪个回应。&lt;br /&gt;
+每个请求或回应的所有数据包，称为一个数据流（Stream）。&lt;br /&gt;
+每个数据流都标记着一个独一无二的编号，其中规定客户端发出的数据流编号为奇数， 服务器发出的数据流编号为偶数&lt;br /&gt;
+客户端还可以指定数据流的优先级。优先级高的请求，服务器就先响应该请求。&lt;/li&gt;
+&lt;li&gt;多路复用&lt;br /&gt;
+ HTTP/2 是可以在一个连接中并发多个请求或回应，而不用按照顺序一一对应。&lt;br /&gt;
+移除了 HTTP/1.1 中的串行请求，不需要排队等待，也就不会再出现「队头阻塞」问题，降低了延迟，大幅度提高了连接的利用率。&lt;br /&gt;
+&lt;img data-src=&#34;https://img-blog.csdnimg.cn/374f4758ba9f4527921b023e6b3b75b5.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_12,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/li&gt;
+&lt;li&gt;服务器推送&lt;br /&gt;
+ HTTP/2 还在一定程度上改善了传统的「请求 - 应答」工作模式，服务不再是被动地响应，也可以主动向客户端发送消息。&lt;br /&gt;
+&lt;img data-src=&#34;https://img-blog.csdnimg.cn/769fa050443d4d67a8121da69534f988.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_13,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id=&#34;http3&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#http3&#34;&gt;#&lt;/a&gt; HTTP/3&lt;/h4&gt;
+&lt;p&gt;HTTP/2 主要的问题在于：多个 HTTP 请求在复用一个 TCP 连接，下层的 TCP 协议是不知道有多少个 HTTP 请求的。&lt;/p&gt;
+&lt;p&gt;所以一旦发生了丢包现象，就会触发 TCP 的重传机制，这样在一个 TCP 连接中的所有的 HTTP 请求都必须等待这个丢了的包被重传回来。&lt;/p&gt;
+&lt;p&gt;这都是基于 TCP 传输层的问题，所以 HTTP/3 把 HTTP 下层的 TCP 协议改成了 UDP！&lt;br /&gt;
+&lt;img data-src=&#34;https://img-blog.csdnimg.cn/98fd3ea62e094983a18cfa97f0f0ba65.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBALSDlnIjlnIjnmoTnp5HnoJTml6XorrA=,size_20,color_FFFFFF,t_70,g_se,x_16&#34; alt=&#34;在这里插入图片描述&#34; /&gt;&lt;br /&gt;
+大家都知道 UDP 是不可靠传输的，但基于 UDP 的 QUIC 协议 可以实现类似 TCP 的可靠性传输。&lt;/p&gt;
+&lt;h2 id=&#34;请你谈谈cookie&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#请你谈谈cookie&#34;&gt;#&lt;/a&gt; 请你谈谈 Cookie&lt;/h2&gt;
+&lt;p&gt;cookie 虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的。&lt;/p&gt;
+&lt;p&gt;第一：每个特定的域名下最多生成 20 个 cookie&lt;/p&gt;
+&lt;p&gt;1.IE6 或更低版本最多 20 个 cookie&lt;/p&gt;
+&lt;p&gt;2.IE7 和之后的版本最后可以有 50 个 cookie。&lt;/p&gt;
+&lt;p&gt;3.Firefox 最多 50 个 cookie&lt;/p&gt;
+&lt;p&gt;4.chrome 和 Safari 没有做硬性限制&lt;/p&gt;
+&lt;p&gt;IE 和 Opera 会清理近期最少使用的 cookie，Firefox 会随机清理 cookie。&lt;/p&gt;
+&lt;p&gt;cookie 的最大大约为 4096 字节，为了兼容性，一般不能超过 4095 字节。&lt;/p&gt;
+&lt;p&gt;IE 提供了一种存储可以持久化用户数据，叫做 userData，从 IE5.0 就开始支持。每个数据最多 128K，每个域名下最多 1M。这个持久化数据放在缓存中，如果缓存没有清理，那么会一直存在。&lt;/p&gt;
+&lt;p&gt;优点：极高的扩展性和可用性&lt;/p&gt;
+&lt;p&gt;1. 通过良好的编程，控制保存在 cookie 中的 session 对象的大小。&lt;/p&gt;
+&lt;p&gt;2. 通过加密和安全传输技术（SSL），减少 cookie 被破解的可能性。&lt;/p&gt;
+&lt;p&gt;3. 只在 cookie 中存放不敏感数据，即使被盗也不会有重大损失。&lt;/p&gt;
+&lt;p&gt;4. 控制 cookie 的生命期，使之不会永远有效。偷盗者很可能拿到一个过期的 cookie。&lt;/p&gt;
+&lt;p&gt;缺点：&lt;/p&gt;
+&lt;p&gt;1. &lt;code&gt;Cookie&lt;/code&gt;  数量和长度的限制。每个 domain 最多只能有 20 条 cookie，每个 cookie 长度不能超过 4KB，否则会被截掉。&lt;/p&gt;
+&lt;p&gt;2. 安全性问题。如果 cookie 被人拦截了，那人就可以取得所有的 session 信息。即使加密也与事无补，因为拦截者并不需要知道 cookie 的意义，他只要原样转发 cookie 就可以达到目的了。&lt;/p&gt;
+&lt;p&gt;3. 有些状态不可能保存在客户端。例如，为了防止重复提交表单，我们需要在服务器端保存一个计数器。如果我们把这个计数器保存在客户端，那么它起不到任何作用。&lt;/p&gt;
+&lt;h1 id=&#34;操作系统&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#操作系统&#34;&gt;#&lt;/a&gt; 操作系统&lt;/h1&gt;
+&lt;h1 id=&#34;数据库&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#数据库&#34;&gt;#&lt;/a&gt; 数据库&lt;/h1&gt;
+</content>
+        <category term="面试" />
+        <updated>2021-12-25T13:13:46.552Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/12/23/computer-science/algorithm/%E5%89%91%E6%8C%87offer/</id>
@@ -2700,91 +3029,6 @@ html = etree.HTML(text)
         <updated>2021-11-26T17:22:09.529Z</updated>
     </entry>
     <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
-        <title>javaweb之sl&amp;jstl</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
-        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;1. JSP:
-    1. 指令
-    2. 注释
-    3. 内置对象
-2. MVC开发模式
-3. EL表达式
-4. JSTL标签
-5. 三层架构
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 指令
-    * 作用：用于配置JSP页面，导入资源文件
-    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
-    * 分类：
-        1. page：配置JSP页面的
-            * contentType:等同于response.setContentType()
-                1. 设置响应体的mime类型及字符级
-                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
-            * import: 导包
-            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
-            * isErrorPage；标识当前页面是否是错误页面
-                * true:是，可以使用内置对象exception
-                * false: 否。默认值。不可以使用内置对象exception
-        2. include:页面包含的。导入页面的资源文件
-            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
-        3. taglib:导入资源
-          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
-              * prefix：前缀，自定义的
-2. 注释
-    1. html注释
-        &amp;lt;!----&amp;gt;只能注释html代码片段
-    2. jsp注释：推荐使用
-    &amp;lt;%----%&amp;gt;可以注释所有
-3. 内置对象
-    * 在jsp页面中不需要创建，直接使用的对象
-    * 一共有9个：
-              变量名                      真实类型
-          * pageContext                  PageContext
-          * request                      HttpServletRequest
-          * session                      HttpSession
-          * application                  ServletContext
-          * page                         OPbject
-          * response                     HttpServletResponse
-          * out                          JspWriter
-          * config                       ServletConfig
-          * exception                    Throwable
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. jsp演变历史
-    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
-    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
-    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
-2. MVC
-    1. M:Model,模型。JavaBean
-        * 完成具体的业务操作，如：查询数据库，封装对象
-    2. V: View，视图。JSP
-    3. C: Controller,控制器。Servlet
-        * 获取用户的输入
-        * 调用模型
-        * 将数据交给视图展示
-    * 优缺点：
-        1. 优点：
-            1. 耦合性低，方便维护，利于分工协作
-            2. 重用性高
-        2. 缺点
-            1. 使得项目架构变得复杂，对开发人员要求高
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
-2. 作用： 替换和简化jsp页面中java语言代码的编写
-3. 语法：$&amp;#123;表达式&amp;#125;
-4. 注意：
-    * jsp默认支持el表达式。如果要忽略el表达式
-        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
-        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Java JavaWEB" />
-        <updated>2021-11-26T17:22:09.527Z</updated>
-    </entry>
-    <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/</id>
         <title>javaweb之Cookie&amp;Session</title>
         <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/"/>
@@ -3003,6 +3247,91 @@ void removeAttribute(String name)&lt;br /&gt;
     1. session存储数据在服务器端，Cookie在客户端
     2. session没有数据大小限制。，cookie有
     3. session数据安全，Cookie相对于不安全
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Java JavaWEB" />
+        <updated>2021-11-26T17:22:09.527Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
+        <title>javaweb之sl&amp;jstl</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
+        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1. JSP:
+    1. 指令
+    2. 注释
+    3. 内置对象
+2. MVC开发模式
+3. EL表达式
+4. JSTL标签
+5. 三层架构
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 指令
+    * 作用：用于配置JSP页面，导入资源文件
+    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
+    * 分类：
+        1. page：配置JSP页面的
+            * contentType:等同于response.setContentType()
+                1. 设置响应体的mime类型及字符级
+                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
+            * import: 导包
+            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
+            * isErrorPage；标识当前页面是否是错误页面
+                * true:是，可以使用内置对象exception
+                * false: 否。默认值。不可以使用内置对象exception
+        2. include:页面包含的。导入页面的资源文件
+            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
+        3. taglib:导入资源
+          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
+              * prefix：前缀，自定义的
+2. 注释
+    1. html注释
+        &amp;lt;!----&amp;gt;只能注释html代码片段
+    2. jsp注释：推荐使用
+    &amp;lt;%----%&amp;gt;可以注释所有
+3. 内置对象
+    * 在jsp页面中不需要创建，直接使用的对象
+    * 一共有9个：
+              变量名                      真实类型
+          * pageContext                  PageContext
+          * request                      HttpServletRequest
+          * session                      HttpSession
+          * application                  ServletContext
+          * page                         OPbject
+          * response                     HttpServletResponse
+          * out                          JspWriter
+          * config                       ServletConfig
+          * exception                    Throwable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. jsp演变历史
+    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
+    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
+    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
+2. MVC
+    1. M:Model,模型。JavaBean
+        * 完成具体的业务操作，如：查询数据库，封装对象
+    2. V: View，视图。JSP
+    3. C: Controller,控制器。Servlet
+        * 获取用户的输入
+        * 调用模型
+        * 将数据交给视图展示
+    * 优缺点：
+        1. 优点：
+            1. 耦合性低，方便维护，利于分工协作
+            2. 重用性高
+        2. 缺点
+            1. 使得项目架构变得复杂，对开发人员要求高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
+2. 作用： 替换和简化jsp页面中java语言代码的编写
+3. 语法：$&amp;#123;表达式&amp;#125;
+4. 注意：
+    * jsp默认支持el表达式。如果要忽略el表达式
+        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
+        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Java JavaWEB" />
