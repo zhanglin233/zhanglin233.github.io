@@ -9,12 +9,12 @@
         <lastBuildDate>Tue, 01 Nov 2022 22:36:06 +0800</lastBuildDate>
         <category>C++</category>
         <category>算法</category>
-        <category>博客</category>
         <category>智能控制</category>
+        <category>博客</category>
         <category>前端</category>
         <category>面试</category>
-        <category>linux</category>
         <category>Nginx</category>
+        <category>linux</category>
         <category>前端 React</category>
         <category>Java JavaSE</category>
         <category>Java JavaWEB</category>
@@ -35,6 +35,76 @@
 &lt;h3 id=&#34;删除目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除目录&#34;&gt;#&lt;/a&gt; 删除目录&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;rmdir&lt;/strong&gt; 命令：删除目录。rmdir 命令的执行条件是用户在要被删除目录的父母录下具有写权限，并且被删除目录是空目录（即除。和。。 意外没有其他文件）&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101225715.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改该当前目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改该当前目录&#34;&gt;#&lt;/a&gt; 修改该当前目录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;cd&lt;/strong&gt; 命令：其后的命令行参数可以是目录的相对路径和绝对路径，默认的状态下返回用户主目录&lt;/p&gt;
+&lt;h3 id=&#34;查看当前目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看当前目录&#34;&gt;#&lt;/a&gt; 查看当前目录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pwd&lt;/strong&gt; 命令：查看当前目录&lt;/p&gt;
+&lt;h3 id=&#34;列出指定目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#列出指定目录&#34;&gt;#&lt;/a&gt; 列出指定目录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ls&lt;/strong&gt; 命令：列出指定目录。用户在任何一个目录下执行 ls -l, 就能将当前目录中的所有文件、子目录、符号链接等一列表的方式显示出来，同时还可以借助 ls -l 命令了解到文件类型、权限等一些重要的文件属性。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101234011.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;可以看出显示内容分为两大部分，第一部分是文件属性，第二部分是文件名（当然也包括子目录名）。如果继续对文件属性进行划分，那么最左边的是文件类型；其次是三个权限域；在权限域之后是文件硬链接数或目录的子目录数；剩下的四个域分别是文件所有者、文件所有者所在组、文件大小（以字节为单位）以及文件最后修改时间。&lt;/p&gt;
+&lt;p&gt;Linux 操作系统有一个特点，那就是 “一切都是文件”，所有资源都尽可能映射成文件来管理（网络设备例外）。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;标识&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;文件类型&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;普通文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;d&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;目录文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;c&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;字符设备文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;b&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;块设备文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;p&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;管道文件或 FIFO 文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;l&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;符号链接文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;s&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;套接字文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Linux 操作系统还对文件实施完善的访问权限管理吗，普通用户要对某个文件进行相关操作，必须具备对该文件的对应操作权限。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;标识&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;文件访问权限&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;r&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;读权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;w&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;写权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;x&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;执行权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
  ]]></description>
         </item>
     </channel>

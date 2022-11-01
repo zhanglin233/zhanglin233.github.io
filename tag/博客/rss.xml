@@ -9,12 +9,12 @@
         <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
         <category>C++</category>
         <category>算法</category>
-        <category>博客</category>
         <category>智能控制</category>
+        <category>博客</category>
         <category>前端</category>
         <category>面试</category>
-        <category>linux</category>
         <category>Nginx</category>
+        <category>linux</category>
         <category>前端 React</category>
         <category>Java JavaSE</category>
         <category>Java JavaWEB</category>
@@ -97,6 +97,26 @@
 &lt;p&gt;检查 themes 文件夹下的主题名字是否和项目根目录下_config.yml 配置中的 theme 属性一样，如此次使用的主题为 shoka，则项目根目录下_config.yml 文件对应的部分为&lt;/p&gt;
 &lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; shoka&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;github上配置域名失效每次提交之后都要重新在github仓库的配置里重新设置域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#github上配置域名失效每次提交之后都要重新在github仓库的配置里重新设置域名&#34;&gt;#&lt;/a&gt; github 上配置域名失效，每次提交之后都要重新在 github 仓库的配置里重新设置域名‘&lt;/h3&gt;
 &lt;p&gt;在项目 source 文件夹下新增 CNAME 文件，在 CNAME 文件里写入你想要绑定的域名即可。&lt;/p&gt;
+&lt;h3 id=&#34;git上传代码报错ssh-connect-to-host-githubcom-port-22-connection-timed-out&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#git上传代码报错ssh-connect-to-host-githubcom-port-22-connection-timed-out&#34;&gt;#&lt;/a&gt; git 上传代码报错 ssh: connect to host &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dpdGh1Yi5jb20=&#34;&gt;github.com&lt;/span&gt; port 22: Connection timed out&lt;/h3&gt;
+&lt;p&gt;进入～/.ssh&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd ~/.ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101232757.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果没有后三个文件，参考网上帖子配置 ssh&lt;/p&gt;
+&lt;p&gt;若存在后三个文件则在当前目录下新建 config 文件&lt;/p&gt;
+&lt;p&gt;并写入以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;Host github.com
+User YourEmail@qq.com   # 你本人的邮箱
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后测试是否生效：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;出现下列画面则说明配置成功&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101233422.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
  ]]></description>
         </item>
     </channel>

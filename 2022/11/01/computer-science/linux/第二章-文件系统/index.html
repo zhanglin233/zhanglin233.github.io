@@ -76,7 +76,7 @@ zhanglin = 欢迎来到我的个人博客</title>
       <i class="ic i-pen"></i>
     </span>
     <span class="text">本文字数</span>
-    <span>138</span>
+    <span>646</span>
     <span class="text">字</span>
   </span>
   <span class="item" title="阅读时长">
@@ -117,12 +117,12 @@ zhanglin = 欢迎来到我的个人博客</title>
       </div>
       <div id="imgs" class="pjax">
         <ul>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicm0fdw5cj20zk0m8hdt.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclj61ylzj20zk0m8b29.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giciundwu5j20zk0m8n9e.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclx6phq6j20zk0m8e36.jpg"></li>
-          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevgoki5j20zk0m84qp.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipet4bz0yj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gicitcxhpij20zk0m8hdt.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclh5u05ej20zk0m87df.jpg"></li>
           <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipevo9j1jj20zk0m8e81.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1gipewf5l51j20zk0m8b29.jpg"></li>
+          <li class="item" data-background-image="https://tva2.sinaimg.cn/large/6833939bly1giclxp31goj20zk0m8qv5.jpg"></li>
         </ul>
       </div>
     </header>
@@ -178,6 +178,76 @@ zhanglin = 欢迎来到我的个人博客</title>
 <h3 id="删除目录"><a class="anchor" href="#删除目录">#</a> 删除目录</h3>
 <p><strong>rmdir</strong> 命令：删除目录。rmdir 命令的执行条件是用户在要被删除目录的父母录下具有写权限，并且被删除目录是空目录（即除。和。。 意外没有其他文件）</p>
 <p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101225715.png" alt="" /></p>
+<h3 id="修改该当前目录"><a class="anchor" href="#修改该当前目录">#</a> 修改该当前目录</h3>
+<p><strong>cd</strong> 命令：其后的命令行参数可以是目录的相对路径和绝对路径，默认的状态下返回用户主目录</p>
+<h3 id="查看当前目录"><a class="anchor" href="#查看当前目录">#</a> 查看当前目录</h3>
+<p><strong>pwd</strong> 命令：查看当前目录</p>
+<h3 id="列出指定目录"><a class="anchor" href="#列出指定目录">#</a> 列出指定目录</h3>
+<p><strong>ls</strong> 命令：列出指定目录。用户在任何一个目录下执行 ls -l, 就能将当前目录中的所有文件、子目录、符号链接等一列表的方式显示出来，同时还可以借助 ls -l 命令了解到文件类型、权限等一些重要的文件属性。</p>
+<p><img data-src="https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101234011.png" alt="" /></p>
+<p>可以看出显示内容分为两大部分，第一部分是文件属性，第二部分是文件名（当然也包括子目录名）。如果继续对文件属性进行划分，那么最左边的是文件类型；其次是三个权限域；在权限域之后是文件硬链接数或目录的子目录数；剩下的四个域分别是文件所有者、文件所有者所在组、文件大小（以字节为单位）以及文件最后修改时间。</p>
+<p>Linux 操作系统有一个特点，那就是 “一切都是文件”，所有资源都尽可能映射成文件来管理（网络设备例外）。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标识</th>
+<th style="text-align:center">文件类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-</td>
+<td style="text-align:center">普通文件</td>
+</tr>
+<tr>
+<td style="text-align:center">d</td>
+<td style="text-align:center">目录文件</td>
+</tr>
+<tr>
+<td style="text-align:center">c</td>
+<td style="text-align:center">字符设备文件</td>
+</tr>
+<tr>
+<td style="text-align:center">b</td>
+<td style="text-align:center">块设备文件</td>
+</tr>
+<tr>
+<td style="text-align:center">p</td>
+<td style="text-align:center">管道文件或 FIFO 文件</td>
+</tr>
+<tr>
+<td style="text-align:center">l</td>
+<td style="text-align:center">符号链接文件</td>
+</tr>
+<tr>
+<td style="text-align:center">s</td>
+<td style="text-align:center">套接字文件</td>
+</tr>
+</tbody>
+</table>
+<p>Linux 操作系统还对文件实施完善的访问权限管理吗，普通用户要对某个文件进行相关操作，必须具备对该文件的对应操作权限。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标识</th>
+<th style="text-align:center">文件访问权限</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">r</td>
+<td style="text-align:center">读权限</td>
+</tr>
+<tr>
+<td style="text-align:center">w</td>
+<td style="text-align:center">写权限</td>
+</tr>
+<tr>
+<td style="text-align:center">x</td>
+<td style="text-align:center">执行权限</td>
+</tr>
+</tbody>
+</table>
 
       <div class="tags">
           <a href="/tags/linux/" rel="tag"><i class="ic i-tag"></i> linux</a>
@@ -192,7 +262,7 @@ zhanglin = 欢迎来到我的个人博客</title>
       <i class="ic i-calendar-check"></i>
     </span>
     <span class="text">更新于</span>
-    <time title="修改时间：2022-11-01 23:24:19" itemprop="dateModified" datetime="2022-11-01T23:24:19+08:00">2022-11-01</time>
+    <time title="修改时间：2022-11-01 23:50:44" itemprop="dateModified" datetime="2022-11-01T23:50:44+08:00">2022-11-01</time>
   </span>
   <span id="2022/11/01/computer-science/linux/第二章-文件系统/" class="item leancloud_visitors" data-flag-title="linux之文件系统" title="阅读次数">
       <span class="icon">
@@ -255,7 +325,7 @@ zhanglin = 欢迎来到我的个人博客</title>
     <div class="item left">
       
 
-  <a href="/2022/09/11/computer-science/interview/docker%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gipeyonbf9j20zk0m8e81.jpg" title="docker面试常问">
+  <a href="/2022/09/11/computer-science/interview/docker%E9%9D%A2%E8%AF%95%E5%B8%B8%E9%97%AE/" itemprop="url" rel="prev" data-background-image="https:&#x2F;&#x2F;tva2.sinaimg.cn&#x2F;mw690&#x2F;6833939bly1gicitht3xtj20zk0m8k5v.jpg" title="docker面试常问">
   <span class="type">上一篇</span>
   <span class="category"><i class="ic i-flag"></i> 面试</span>
   <h3>docker面试常问</h3>
@@ -279,7 +349,7 @@ zhanglin = 欢迎来到我的个人博客</title>
   <div class="panels">
     <div class="inner">
       <div class="contents panel pjax" data-title="文章目录">
-          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> 文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text"> 目录操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 删除目录</span></a></li></ol></li></ol></li></ol>
+          <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.</span> <span class="toc-text"> 文件系统</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text"> 目录操作命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.1.</span> <span class="toc-text"> 创建目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.2.</span> <span class="toc-text"> 删除目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E8%AF%A5%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.3.</span> <span class="toc-text"> 修改该当前目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E7%9C%8B%E5%BD%93%E5%89%8D%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.4.</span> <span class="toc-text"> 查看当前目录</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%97%E5%87%BA%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95"><span class="toc-number">1.1.5.</span> <span class="toc-text"> 列出指定目录</span></a></li></ol></li></ol></li></ol>
       </div>
       <div class="related panel pjax" data-title="系列文章">
         <ul>
@@ -389,86 +459,12 @@ zhanglin = 欢迎来到我的个人博客</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/linux/" title="分类于 linux">linux</a>
+<a href="/categories/computer-science/python/" title="分类于 Python">Python</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/python/spider/" title="分类于 爬虫">爬虫</a>
 </div>
 
-    <span><a href="/2022/11/01/computer-science/linux/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/" title="linux之文件系统">linux之文件系统</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/algorithm/" title="分类于 算法">算法</a>
-</div>
-
-    <span><a href="/2022/09/04/computer-science/algorithm/lettcode%20100%20%E9%A2%98/" title="leetcode 100题">leetcode 100题</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/course-1/" title="分类于 智能控制">智能控制</a>
-</div>
-
-    <span><a href="/2021/11/28/computer-science/course_1/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E9%94%AE%E7%9B%98%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/" title="键盘及其接口技术">键盘及其接口技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/course-1/" title="分类于 智能控制">智能控制</a>
-</div>
-
-    <span><a href="/2021/11/29/computer-science/course_1/%E7%AC%AC%E5%85%AD%E7%AB%A0%20%E6%98%BE%E7%A4%BA%E5%99%A8%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/" title="显示器及其接口技术">显示器及其接口技术</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/SpringBoot/" title="分类于 SpringBoot">SpringBoot</a>
-</div>
-
-    <span><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/" title="springboot基础篇之快速上手springboot">springboot基础篇之快速上手springboot</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/SpringBoot/" title="分类于 SpringBoot">SpringBoot</a>
-</div>
-
-    <span><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E9%85%8D%E7%BD%AE%E9%AB%98%E7%BA%A7/" title="SpringBoot运维实用篇之配置高级">SpringBoot运维实用篇之配置高级</a></span>
-  </li>
-
-      
-  <li class="item">
-    
-<div class="breadcrumb">
-<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/blog/" title="分类于 博客">博客</a>
-</div>
-
-    <span><a href="/2021/11/27/computer-science/blog/hexo-github%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" title="基于hexo框架部署个人博客">基于hexo框架部署个人博客</a></span>
+    <span><a href="/2021/11/27/computer-science/python/spider/2020-11-17-pixiv1/" title="爬取p站(pixiv)的图片（一）">爬取p站(pixiv)的图片（一）</a></span>
   </li>
 
       
@@ -491,12 +487,64 @@ zhanglin = 欢迎来到我的个人博客</title>
 <div class="breadcrumb">
 <a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
 <i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
-<i class="ic i-angle-right"></i>
-<a href="/categories/computer-science/java/JavaSE/" title="分类于 JavaSE">JavaSE</a>
+<a href="/categories/computer-science/algorithm/" title="分类于 算法">算法</a>
 </div>
 
-    <span><a href="/2021/11/27/computer-science/java/JavaSE/2021-7-8-java%E6%A0%B8%E5%BF%83%E5%8D%B7%E4%B8%80%E7%AC%AC%E5%9B%9B%E7%AB%A0%E5%AF%B9%E8%B1%A1%E4%B8%8E%E7%B1%BB/" title="java核心卷一第四章对象与类">java核心卷一第四章对象与类</a></span>
+    <span><a href="/2021/12/12/computer-science/algorithm/LeetCode%E5%B7%A6%E7%A8%8B%E4%BA%91%E7%AE%97%E6%B3%95%E8%AF%BE%E7%AC%94%E8%AE%B0/" title="LeetCode左程云算法课笔记">LeetCode左程云算法课笔记</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/JavaWEB/" title="分类于 JavaWEB">JavaWEB</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&jstl/" title="javaweb之sl&amp;jstl">javaweb之sl&jstl</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/course-1/" title="分类于 智能控制">智能控制</a>
+</div>
+
+    <span><a href="/2021/11/28/computer-science/course_1/%E7%AC%AC%E4%BA%94%E7%AB%A0%20%E9%94%AE%E7%9B%98%E5%8F%8A%E5%85%B6%E6%8E%A5%E5%8F%A3%E6%8A%80%E6%9C%AF/" title="键盘及其接口技术">键盘及其接口技术</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/JavaWEB/" title="分类于 JavaWEB">JavaWEB</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-11-Servlet&HTTP&Resuest/" title="JavaWEB之Servlet&amp;HTTP&amp;Request">JavaWEB之Servlet&HTTP&Request</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/" title="分类于 Java">Java</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/java/JavaWEB/" title="分类于 JavaWEB">JavaWEB</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&Session/" title="javaweb之Cookie&amp;Session">javaweb之Cookie&Session</a></span>
   </li>
 
       
@@ -510,7 +558,33 @@ zhanglin = 欢迎来到我的个人博客</title>
 <a href="/categories/computer-science/java/SpringBoot/" title="分类于 SpringBoot">SpringBoot</a>
 </div>
 
-    <span><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-19-SpringBoot%E8%BF%90%E7%BB%B4%E5%AE%9E%E7%94%A8%E7%AF%87%E4%B9%8B%E6%89%93%E5%8C%85%E4%B8%8E%E8%BF%90%E8%A1%8C/" title="springboot运维实用篇之打包与运行">springboot运维实用篇之打包与运行</a></span>
+    <span><a href="/2021/11/27/computer-science/java/SpringBoot/2021-11-17-springboot%E5%9F%BA%E7%A1%80%E7%AF%87%E4%B9%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8Bspringboot/" title="springboot基础篇之快速上手springboot">springboot基础篇之快速上手springboot</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/" title="分类于 前端">前端</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/front-end/React/" title="分类于 React">React</a>
+</div>
+
+    <span><a href="/2021/11/27/computer-science/front-end/React/2021-9-16-React%E7%9A%84%E7%BB%84%E4%BB%B6/" title="React的组件">React的组件</a></span>
+  </li>
+
+      
+  <li class="item">
+    
+<div class="breadcrumb">
+<a href="/categories/computer-science/" title="分类于 计算机科学">计算机科学</a>
+<i class="ic i-angle-right"></i>
+<a href="/categories/computer-science/algorithm/" title="分类于 算法">算法</a>
+</div>
+
+    <span><a href="/2021/12/23/computer-science/algorithm/%E5%89%91%E6%8C%87offer/" title="剑指offer">剑指offer</a></span>
   </li>
 
   </ul>
@@ -535,13 +609,13 @@ zhanglin = 欢迎来到我的个人博客</title>
     <span class="post-meta-item-icon">
       <i class="ic i-chart-area"></i>
     </span>
-    <span title="站点总字数">185k 字</span>
+    <span title="站点总字数">186k 字</span>
 
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="ic i-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:48</span>
+    <span title="站点阅读时长">2:49</span>
   </div>
   <div class="powered-by">
     基于 <span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> & Theme.<span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2FtZWhpbWUvaGV4by10aGVtZS1zaG9rYQ==">Shoka</span>

@@ -6,12 +6,12 @@
     <updated>2022-11-01T14:36:06.737Z</updated>
     <category term="C++" />
     <category term="算法" />
-    <category term="博客" />
     <category term="智能控制" />
+    <category term="博客" />
     <category term="前端" />
     <category term="面试" />
-    <category term="linux" />
     <category term="Nginx" />
+    <category term="linux" />
     <category term="前端 React" />
     <category term="Java JavaSE" />
     <category term="Java JavaWEB" />
@@ -30,6 +30,76 @@
 &lt;h3 id=&#34;删除目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#删除目录&#34;&gt;#&lt;/a&gt; 删除目录&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;rmdir&lt;/strong&gt; 命令：删除目录。rmdir 命令的执行条件是用户在要被删除目录的父母录下具有写权限，并且被删除目录是空目录（即除。和。。 意外没有其他文件）&lt;/p&gt;
 &lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101225715.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;修改该当前目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#修改该当前目录&#34;&gt;#&lt;/a&gt; 修改该当前目录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;cd&lt;/strong&gt; 命令：其后的命令行参数可以是目录的相对路径和绝对路径，默认的状态下返回用户主目录&lt;/p&gt;
+&lt;h3 id=&#34;查看当前目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#查看当前目录&#34;&gt;#&lt;/a&gt; 查看当前目录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;pwd&lt;/strong&gt; 命令：查看当前目录&lt;/p&gt;
+&lt;h3 id=&#34;列出指定目录&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#列出指定目录&#34;&gt;#&lt;/a&gt; 列出指定目录&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;ls&lt;/strong&gt; 命令：列出指定目录。用户在任何一个目录下执行 ls -l, 就能将当前目录中的所有文件、子目录、符号链接等一列表的方式显示出来，同时还可以借助 ls -l 命令了解到文件类型、权限等一些重要的文件属性。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101234011.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;可以看出显示内容分为两大部分，第一部分是文件属性，第二部分是文件名（当然也包括子目录名）。如果继续对文件属性进行划分，那么最左边的是文件类型；其次是三个权限域；在权限域之后是文件硬链接数或目录的子目录数；剩下的四个域分别是文件所有者、文件所有者所在组、文件大小（以字节为单位）以及文件最后修改时间。&lt;/p&gt;
+&lt;p&gt;Linux 操作系统有一个特点，那就是 “一切都是文件”，所有资源都尽可能映射成文件来管理（网络设备例外）。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;标识&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;文件类型&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;-&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;普通文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;d&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;目录文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;c&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;字符设备文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;b&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;块设备文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;p&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;管道文件或 FIFO 文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;l&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;符号链接文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;s&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;套接字文件&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Linux 操作系统还对文件实施完善的访问权限管理吗，普通用户要对某个文件进行相关操作，必须具备对该文件的对应操作权限。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;标识&lt;/th&gt;
+&lt;th style=&#34;text-align:center&#34;&gt;文件访问权限&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;r&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;读权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;w&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;写权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;x&lt;/td&gt;
+&lt;td style=&#34;text-align:center&#34;&gt;执行权限&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 </content>
         <category term="linux" />
         <updated>2022-11-01T14:36:06.737Z</updated>
@@ -3743,91 +3813,6 @@ html = etree.HTML(text)
         <updated>2021-11-26T17:22:09.529Z</updated>
     </entry>
     <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
-        <title>javaweb之sl&amp;jstl</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
-        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;1. JSP:
-    1. 指令
-    2. 注释
-    3. 内置对象
-2. MVC开发模式
-3. EL表达式
-4. JSTL标签
-5. 三层架构
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 指令
-    * 作用：用于配置JSP页面，导入资源文件
-    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
-    * 分类：
-        1. page：配置JSP页面的
-            * contentType:等同于response.setContentType()
-                1. 设置响应体的mime类型及字符级
-                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
-            * import: 导包
-            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
-            * isErrorPage；标识当前页面是否是错误页面
-                * true:是，可以使用内置对象exception
-                * false: 否。默认值。不可以使用内置对象exception
-        2. include:页面包含的。导入页面的资源文件
-            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
-        3. taglib:导入资源
-          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
-              * prefix：前缀，自定义的
-2. 注释
-    1. html注释
-        &amp;lt;!----&amp;gt;只能注释html代码片段
-    2. jsp注释：推荐使用
-    &amp;lt;%----%&amp;gt;可以注释所有
-3. 内置对象
-    * 在jsp页面中不需要创建，直接使用的对象
-    * 一共有9个：
-              变量名                      真实类型
-          * pageContext                  PageContext
-          * request                      HttpServletRequest
-          * session                      HttpSession
-          * application                  ServletContext
-          * page                         OPbject
-          * response                     HttpServletResponse
-          * out                          JspWriter
-          * config                       ServletConfig
-          * exception                    Throwable
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. jsp演变历史
-    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
-    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
-    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
-2. MVC
-    1. M:Model,模型。JavaBean
-        * 完成具体的业务操作，如：查询数据库，封装对象
-    2. V: View，视图。JSP
-    3. C: Controller,控制器。Servlet
-        * 获取用户的输入
-        * 调用模型
-        * 将数据交给视图展示
-    * 优缺点：
-        1. 优点：
-            1. 耦合性低，方便维护，利于分工协作
-            2. 重用性高
-        2. 缺点
-            1. 使得项目架构变得复杂，对开发人员要求高
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
-2. 作用： 替换和简化jsp页面中java语言代码的编写
-3. 语法：$&amp;#123;表达式&amp;#125;
-4. 注意：
-    * jsp默认支持el表达式。如果要忽略el表达式
-        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
-        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Java JavaWEB" />
-        <updated>2021-11-26T17:22:09.527Z</updated>
-    </entry>
-    <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/</id>
         <title>javaweb之Cookie&amp;Session</title>
         <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/"/>
@@ -4046,6 +4031,91 @@ void removeAttribute(String name)&lt;br /&gt;
     1. session存储数据在服务器端，Cookie在客户端
     2. session没有数据大小限制。，cookie有
     3. session数据安全，Cookie相对于不安全
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Java JavaWEB" />
+        <updated>2021-11-26T17:22:09.527Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
+        <title>javaweb之sl&amp;jstl</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
+        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1. JSP:
+    1. 指令
+    2. 注释
+    3. 内置对象
+2. MVC开发模式
+3. EL表达式
+4. JSTL标签
+5. 三层架构
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 指令
+    * 作用：用于配置JSP页面，导入资源文件
+    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
+    * 分类：
+        1. page：配置JSP页面的
+            * contentType:等同于response.setContentType()
+                1. 设置响应体的mime类型及字符级
+                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
+            * import: 导包
+            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
+            * isErrorPage；标识当前页面是否是错误页面
+                * true:是，可以使用内置对象exception
+                * false: 否。默认值。不可以使用内置对象exception
+        2. include:页面包含的。导入页面的资源文件
+            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
+        3. taglib:导入资源
+          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
+              * prefix：前缀，自定义的
+2. 注释
+    1. html注释
+        &amp;lt;!----&amp;gt;只能注释html代码片段
+    2. jsp注释：推荐使用
+    &amp;lt;%----%&amp;gt;可以注释所有
+3. 内置对象
+    * 在jsp页面中不需要创建，直接使用的对象
+    * 一共有9个：
+              变量名                      真实类型
+          * pageContext                  PageContext
+          * request                      HttpServletRequest
+          * session                      HttpSession
+          * application                  ServletContext
+          * page                         OPbject
+          * response                     HttpServletResponse
+          * out                          JspWriter
+          * config                       ServletConfig
+          * exception                    Throwable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. jsp演变历史
+    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
+    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
+    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
+2. MVC
+    1. M:Model,模型。JavaBean
+        * 完成具体的业务操作，如：查询数据库，封装对象
+    2. V: View，视图。JSP
+    3. C: Controller,控制器。Servlet
+        * 获取用户的输入
+        * 调用模型
+        * 将数据交给视图展示
+    * 优缺点：
+        1. 优点：
+            1. 耦合性低，方便维护，利于分工协作
+            2. 重用性高
+        2. 缺点
+            1. 使得项目架构变得复杂，对开发人员要求高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
+2. 作用： 替换和简化jsp页面中java语言代码的编写
+3. 语法：$&amp;#123;表达式&amp;#125;
+4. 注意：
+    * jsp默认支持el表达式。如果要忽略el表达式
+        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
+        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Java JavaWEB" />
@@ -4559,6 +4629,26 @@ ServletResponse response)&lt;/li&gt;
 &lt;p&gt;检查 themes 文件夹下的主题名字是否和项目根目录下_config.yml 配置中的 theme 属性一样，如此次使用的主题为 shoka，则项目根目录下_config.yml 文件对应的部分为&lt;/p&gt;
 &lt;figure class=&#34;highlight yaml&#34;&gt;&lt;figcaption data-lang=&#34;YAML&#34;&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td data-num=&#34;1&#34;&gt;&lt;/td&gt;&lt;td&gt;&lt;pre&gt;&lt;span class=&#34;token key atrule&#34;&gt;theme&lt;/span&gt;&lt;span class=&#34;token punctuation&#34;&gt;:&lt;/span&gt; shoka&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;h3 id=&#34;github上配置域名失效每次提交之后都要重新在github仓库的配置里重新设置域名&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#github上配置域名失效每次提交之后都要重新在github仓库的配置里重新设置域名&#34;&gt;#&lt;/a&gt; github 上配置域名失效，每次提交之后都要重新在 github 仓库的配置里重新设置域名‘&lt;/h3&gt;
 &lt;p&gt;在项目 source 文件夹下新增 CNAME 文件，在 CNAME 文件里写入你想要绑定的域名即可。&lt;/p&gt;
+&lt;h3 id=&#34;git上传代码报错ssh-connect-to-host-githubcom-port-22-connection-timed-out&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#git上传代码报错ssh-connect-to-host-githubcom-port-22-connection-timed-out&#34;&gt;#&lt;/a&gt; git 上传代码报错 ssh: connect to host &lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cDovL2dpdGh1Yi5jb20=&#34;&gt;github.com&lt;/span&gt; port 22: Connection timed out&lt;/h3&gt;
+&lt;p&gt;进入～/.ssh&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;cd ~/.ssh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101232757.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;如果没有后三个文件，参考网上帖子配置 ssh&lt;/p&gt;
+&lt;p&gt;若存在后三个文件则在当前目录下新建 config 文件&lt;/p&gt;
+&lt;p&gt;并写入以下内容&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;Host github.com
+User YourEmail@qq.com   # 你本人的邮箱
+Hostname ssh.github.com
+PreferredAuthentications publickey
+IdentityFile ~/.ssh/id_rsa
+Port 443
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;保存后测试是否生效：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-sh&#34;&gt;ssh -T git@github.com
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;出现下列画面则说明配置成功&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20221101233422.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 </content>
         <category term="博客" />
         <updated>2021-11-26T17:22:09.498Z</updated>
