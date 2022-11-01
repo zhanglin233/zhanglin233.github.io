@@ -4,10 +4,10 @@
     <title>欢迎来到我的个人博客</title>
     <link href="http://zhanglin233.github.io" />
     <updated>2022-11-01T14:36:06.737Z</updated>
-    <category term="算法" />
     <category term="C++" />
-    <category term="博客" />
+    <category term="算法" />
     <category term="智能控制" />
+    <category term="博客" />
     <category term="前端" />
     <category term="面试" />
     <category term="Nginx" />
@@ -670,6 +670,57 @@ fastlane/readme.md
 </content>
         <category term="C++" />
         <updated>2022-01-15T07:17:12.708Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2022/01/12/computer-science/interview/HR%20%E9%9D%A2/</id>
+        <title>hr面常问问题</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2022/01/12/computer-science/interview/HR%20%E9%9D%A2/"/>
+        <content type="html">&lt;h1 id=&#34;为什么选择我们公司&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#为什么选择我们公司&#34;&gt;#&lt;/a&gt; 为什么选择我们公司&lt;/h1&gt;
+&lt;p&gt;1. 从自身角度出发，可以结合自己的专业和兴趣来扩招；&lt;/p&gt;
+&lt;p&gt;2. 从行业、企业角度出发，想要在这个行业长期发展；&lt;/p&gt;
+&lt;p&gt;3. 最后可以说说，相较于行业内其他公司（竞争对手），该公司对你有哪些吸引点或优势。&lt;/p&gt;
+&lt;h1 id=&#34;你最大的缺点&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#你最大的缺点&#34;&gt;#&lt;/a&gt; 你最大的缺点&lt;/h1&gt;
+&lt;p&gt;** 问题分析：** 考察候选人的自我认知能力，个人优点是否符合岗位要求。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;参考建议：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;第一，不宜说自己没有缺点，只要是人就有缺点，这么说一定会令人反感。&lt;/p&gt;
+&lt;p&gt;第二，年轻经验不足、缺乏磨炼、有些着急、对待效率低下的人缺乏耐心等&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;根据以上的关键点，缺点参考回复：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;首先，我刚毕业，经验方面不足，我会在工作中积极完成工作，积累各方面经验&lt;/p&gt;
+&lt;p&gt;其次，性子急，对待效率低下的人缺乏耐心，但是我平时和别人聊天的时候会控制自己语速和讲话，慢慢培养自己耐心，避免浮躁。（&lt;strong&gt;遵循一个原则避重就轻&lt;/strong&gt;）&lt;/p&gt;
+&lt;p&gt;**Tips：** 利用你的优点改正你的缺点，比如，工作追求细节极致，导致项目无法按时完成，通过时间管理，得以解决。一定不能说对应聘岗位的硬伤的缺点，以及无法弥补的缺点。&lt;/p&gt;
+&lt;h1 id=&#34;你还有什么要问我的吗&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#你还有什么要问我的吗&#34;&gt;#&lt;/a&gt; 你还有什么要问我的吗？&lt;/h1&gt;
+&lt;p&gt;当你听到 HR 这样问你时，也差不多快结束了，但千万不要觉得可以放松了&lt;/p&gt;
+&lt;p&gt;如果你回答 “没有”，会让面试官觉得你对应聘公司、工作岗位没有太大的兴趣，会让面试官产生误解，影响面试评判&lt;/p&gt;
+&lt;p&gt;这个时候面试官将问题抛出，你必须把握住主动权，让面试官知道你是认真对待这次面试，而不是敷衍的流水线面试&lt;/p&gt;
+&lt;p&gt;提出来的问题要问到 “点子” 上，要能展现你是不是有思考带着问题来的，有没有提前做好功课，对公司企业背景、文化有没有了解等等&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;回答技巧：&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;提问的时候要表现这个岗位对我的吸引力，以及我非常想进这家公司，表达诚意&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;死亡回答&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;️我没什么要问的&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;️薪资：请问该岗位薪资多少？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;️规章制度类：需不需要打卡？有多少带薪年假？需不需要加班？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;️&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly93d3cuemhpaHUuY29tL3NlYXJjaD9xPSVFNSVBNSVCRCVFOSVBQiU5OCVFOSVBQSU5QiVFOCVCRiU5QyZhbXA7c2VhcmNoX3NvdXJjZT1FbnRpdHkmYW1wO2h5YnJpZF9zZWFyY2hfc291cmNlPUVudGl0eSZhbXA7aHlicmlkX3NlYXJjaF9leHRyYT0lN0IlMjJzb3VyY2VUeXBlJTIyJTNBJTIyYW5zd2VyJTIyJTJDJTIyc291cmNlSWQlMjIlM0EyMDAxMDI1NjIzJTdE&#34;&gt;好高骛远&lt;/span&gt;类：请问贵公司未来 10 年的发展规划是什么？请问贵司现在面临的最大挑战是什么？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;️个人问题类：今晚能出结果吗？我面试成功了吗？多久可以升职？&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;️网上一搜就有类：请问公司 / 这个岗位是干什么的？&lt;/p&gt;
+&lt;p&gt;正确回答：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请问贵司的培训机制 / 晋升机制是什么样的？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️请问这个岗位工作内容的侧重点是哪一块？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️请问这个岗位的工作日常大概是什么样的？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️您认为胜任该岗位的人选需要具备哪些核心能力？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️如果我得以加入这个团队，贵司对我有什么期望？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️这个岗位的部门人员 / 部门定位是怎么样的呢？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️为了胜任该岗位，我需要提前学习哪些技术知识？&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;️这个岗位的晋升路线是什么样的？&lt;/strong&gt;&lt;/p&gt;
+&lt;h1 id=&#34;你有什么兴趣爱好&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#你有什么兴趣爱好&#34;&gt;#&lt;/a&gt; 你有什么兴趣爱好&lt;/h1&gt;
+&lt;p&gt;分析：你以为面试官问你兴趣爱好只是想跟你闲聊找话题吗？Too Simple! 从兴趣爱好入手可以对人才进行全面的评估。表现出一个工作狂形象，或者只是喜欢刷微博微信等对工作毫无帮助的社交狂人，是很难获得好感的。&lt;/p&gt;
+&lt;p&gt;✕ 错误回答：&lt;/p&gt;
+&lt;p&gt;范例 1：我工作太忙了，实在没时间发展什么兴趣爱好。&lt;/p&gt;
+&lt;p&gt;范例 2：我喜欢看电视剧，和闺蜜喝下午茶，还喜欢研究星座……&lt;/p&gt;
+&lt;p&gt;✔正确回答：&lt;/p&gt;
+&lt;p&gt;根据你应聘的职位酌情回答你的爱好。如果你应聘设计师，那你肯定热爱画画和与艺术有关的活动；如果你应聘一个高管职位，那么在徒步旅行的团体中充当积极活跃的角色，肯定证明你具有团队号召力。当然，这些都要建立在实话实说的基础上。&lt;/p&gt;
+</content>
+        <category term="面试" />
+        <updated>2022-01-12T06:32:32.678Z</updated>
     </entry>
     <entry>
         <id>http://zhanglin233.github.io/2022/01/06/computer-science/interview/%E5%90%8E%E7%AB%AF%E9%9D%A2%E8%AF%95%E4%B9%8B%E6%95%B0%E6%8D%AE%E5%BA%93/</id>
@@ -3689,91 +3740,6 @@ html = etree.HTML(text)
         <updated>2021-11-26T17:22:09.529Z</updated>
     </entry>
     <entry>
-        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
-        <title>javaweb之sl&amp;jstl</title>
-        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
-        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
-&lt;pre&gt;&lt;code&gt;1. JSP:
-    1. 指令
-    2. 注释
-    3. 内置对象
-2. MVC开发模式
-3. EL表达式
-4. JSTL标签
-5. 三层架构
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 指令
-    * 作用：用于配置JSP页面，导入资源文件
-    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
-    * 分类：
-        1. page：配置JSP页面的
-            * contentType:等同于response.setContentType()
-                1. 设置响应体的mime类型及字符级
-                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
-            * import: 导包
-            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
-            * isErrorPage；标识当前页面是否是错误页面
-                * true:是，可以使用内置对象exception
-                * false: 否。默认值。不可以使用内置对象exception
-        2. include:页面包含的。导入页面的资源文件
-            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
-        3. taglib:导入资源
-          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
-              * prefix：前缀，自定义的
-2. 注释
-    1. html注释
-        &amp;lt;!----&amp;gt;只能注释html代码片段
-    2. jsp注释：推荐使用
-    &amp;lt;%----%&amp;gt;可以注释所有
-3. 内置对象
-    * 在jsp页面中不需要创建，直接使用的对象
-    * 一共有9个：
-              变量名                      真实类型
-          * pageContext                  PageContext
-          * request                      HttpServletRequest
-          * session                      HttpSession
-          * application                  ServletContext
-          * page                         OPbject
-          * response                     HttpServletResponse
-          * out                          JspWriter
-          * config                       ServletConfig
-          * exception                    Throwable
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. jsp演变历史
-    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
-    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
-    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
-2. MVC
-    1. M:Model,模型。JavaBean
-        * 完成具体的业务操作，如：查询数据库，封装对象
-    2. V: View，视图。JSP
-    3. C: Controller,控制器。Servlet
-        * 获取用户的输入
-        * 调用模型
-        * 将数据交给视图展示
-    * 优缺点：
-        1. 优点：
-            1. 耦合性低，方便维护，利于分工协作
-            2. 重用性高
-        2. 缺点
-            1. 使得项目架构变得复杂，对开发人员要求高
-&lt;/code&gt;&lt;/pre&gt;
-&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
-&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
-2. 作用： 替换和简化jsp页面中java语言代码的编写
-3. 语法：$&amp;#123;表达式&amp;#125;
-4. 注意：
-    * jsp默认支持el表达式。如果要忽略el表达式
-        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
-        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
-&lt;/code&gt;&lt;/pre&gt;
-</content>
-        <category term="Java JavaWEB" />
-        <updated>2021-11-26T17:22:09.527Z</updated>
-    </entry>
-    <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/</id>
         <title>javaweb之Cookie&amp;Session</title>
         <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-Cookie&amp;Session/"/>
@@ -3992,6 +3958,91 @@ void removeAttribute(String name)&lt;br /&gt;
     1. session存储数据在服务器端，Cookie在客户端
     2. session没有数据大小限制。，cookie有
     3. session数据安全，Cookie相对于不安全
+&lt;/code&gt;&lt;/pre&gt;
+</content>
+        <category term="Java JavaWEB" />
+        <updated>2021-11-26T17:22:09.527Z</updated>
+    </entry>
+    <entry>
+        <id>http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/</id>
+        <title>javaweb之sl&amp;jstl</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2021/11/27/computer-science/java/JavaWEB/2021-7-13-sl&amp;jstl/"/>
+        <content type="html">&lt;h1 id=&#34;今日内容&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#今日内容&#34;&gt;#&lt;/a&gt; 今日内容&lt;/h1&gt;
+&lt;pre&gt;&lt;code&gt;1. JSP:
+    1. 指令
+    2. 注释
+    3. 内置对象
+2. MVC开发模式
+3. EL表达式
+4. JSTL标签
+5. 三层架构
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;jsp&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#jsp&#34;&gt;#&lt;/a&gt; JSP:&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 指令
+    * 作用：用于配置JSP页面，导入资源文件
+    * 格式：&amp;lt;%@ 指令名称 属性名1=属性值1 属性名2=属性值2...%&amp;gt;
+    * 分类：
+        1. page：配置JSP页面的
+            * contentType:等同于response.setContentType()
+                1. 设置响应体的mime类型及字符级
+                2. 设置当前JSP页面的编码（只能是高级的IDE才能生效，如果使用低级工具，则需要设置pageEncoding属性设置当前页面的字符集）
+            * import: 导包
+            * errorPage: 当前页面发生异常后，会自动跳转到指定的错误页面
+            * isErrorPage；标识当前页面是否是错误页面
+                * true:是，可以使用内置对象exception
+                * false: 否。默认值。不可以使用内置对象exception
+        2. include:页面包含的。导入页面的资源文件
+            * &amp;lt;%@include file=&amp;quot;top.jsp&amp;quot;%&amp;gt;
+        3. taglib:导入资源
+          * &amp;lt;%@ taglib prefix=&amp;quot;c&amp;quot; uri=&amp;quot;http://java.sun.com/jsp/jstl/core&amp;quot;%&amp;gt;
+              * prefix：前缀，自定义的
+2. 注释
+    1. html注释
+        &amp;lt;!----&amp;gt;只能注释html代码片段
+    2. jsp注释：推荐使用
+    &amp;lt;%----%&amp;gt;可以注释所有
+3. 内置对象
+    * 在jsp页面中不需要创建，直接使用的对象
+    * 一共有9个：
+              变量名                      真实类型
+          * pageContext                  PageContext
+          * request                      HttpServletRequest
+          * session                      HttpSession
+          * application                  ServletContext
+          * page                         OPbject
+          * response                     HttpServletResponse
+          * out                          JspWriter
+          * config                       ServletConfig
+          * exception                    Throwable
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;开发模式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#开发模式&#34;&gt;#&lt;/a&gt; 开发模式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. jsp演变历史
+    1. 早期只有servlet,只能使用response输出标签数据，非常麻烦
+    2. 后来又有JSP,简化了Servlet的开发，如果过度使用了jsp，在jsp中既写大量的java代码，又写html表，造成难于维护，难以分工协作
+    3. 再后来，java的web开发，借鉴MVC开发模式，使得程序的设计更加合理
+2. MVC
+    1. M:Model,模型。JavaBean
+        * 完成具体的业务操作，如：查询数据库，封装对象
+    2. V: View，视图。JSP
+    3. C: Controller,控制器。Servlet
+        * 获取用户的输入
+        * 调用模型
+        * 将数据交给视图展示
+    * 优缺点：
+        1. 优点：
+            1. 耦合性低，方便维护，利于分工协作
+            2. 重用性高
+        2. 缺点
+            1. 使得项目架构变得复杂，对开发人员要求高
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&#34;el表达式&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#el表达式&#34;&gt;#&lt;/a&gt; EL 表达式&lt;/h2&gt;
+&lt;pre&gt;&lt;code&gt;1. 概念：Expression Language  表达式语言
+2. 作用： 替换和简化jsp页面中java语言代码的编写
+3. 语法：$&amp;#123;表达式&amp;#125;
+4. 注意：
+    * jsp默认支持el表达式。如果要忽略el表达式
+        1. 设置jsp中page指令中:isElIgnored = &amp;quot;true&amp;quot; 忽略当前jsp页面中所有的el表达式
+        2. \$&amp;#123;表达式&amp;#125;： 忽略当前这个el表达式
 &lt;/code&gt;&lt;/pre&gt;
 </content>
         <category term="Java JavaWEB" />
