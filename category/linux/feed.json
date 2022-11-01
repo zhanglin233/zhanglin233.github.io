@@ -1,0 +1,18 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "欢迎来到我的个人博客 • All posts by \"linux\" category",
+    "description": "",
+    "home_page_url": "http://zhanglin233.github.io",
+    "items": [
+        {
+            "id": "http://zhanglin233.github.io/2022/11/01/computer-science/linux/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/",
+            "url": "http://zhanglin233.github.io/2022/11/01/computer-science/linux/%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/",
+            "title": "linux之文件系统",
+            "date_published": "2022-11-01T14:36:06.737Z",
+            "content_html": "<h1 id=\"文件系统\"><a class=\"anchor\" href=\"#文件系统\">#</a> 文件系统</h1>\n<h2 id=\"目录操作命令\"><a class=\"anchor\" href=\"#目录操作命令\">#</a> 目录操作命令</h2>\n<h3 id=\"创建目录\"><a class=\"anchor\" href=\"#创建目录\">#</a> 创建目录</h3>\n<p>mkdir 命令：创建目录，其后的命令参数可以是目录的绝对路径和相对路径，以及多个目录。</p>\n<h3 id=\"删除目录\"><a class=\"anchor\" href=\"#删除目录\">#</a> 删除目录</h3>\n",
+            "tags": [
+                "面试"
+            ]
+        }
+    ]
+}
