@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>http://zhanglin233.github.io</id>
-    <title>欢迎来到我的个人博客 • Posts by &#34;linux&#34; category</title>
+    <title>欢迎来到我的个人博客 • Posts by &#34;linux&#34; tag</title>
     <link href="http://zhanglin233.github.io" />
     <updated>2022-11-01T14:36:06.737Z</updated>
     <category term="C++" />
