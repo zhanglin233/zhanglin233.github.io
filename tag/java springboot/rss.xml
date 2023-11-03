@@ -7,13 +7,10 @@
         <language>zh-CN</language>
         <pubDate>Sat, 27 Nov 2021 01:22:09 +0800</pubDate>
         <lastBuildDate>Sat, 27 Nov 2021 01:22:09 +0800</lastBuildDate>
-        <category>C++</category>
+        <category>智能控制</category>
         <category>算法</category>
         <category>博客</category>
-        <category>智能控制</category>
         <category>前端</category>
-        <category>面试</category>
-        <category>linux</category>
         <category>Nginx</category>
         <category>前端 React</category>
         <category>Java JavaWEB</category>
@@ -21,7 +18,6 @@
         <category>java SpringBoot</category>
         <category>java springboot</category>
         <category>Python 爬虫</category>
-        <category>面试 数据库</category>
         <item>
             <guid isPermalink="true">http://zhanglin233.github.io/2021/11/27/computer-science/java/SpringBoot/2021-7-10-java%E4%B9%8Bjunit%E6%B5%8B%E8%AF%95/</guid>
             <title>java之junit测试</title>
