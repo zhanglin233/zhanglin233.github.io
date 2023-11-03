@@ -23,13 +23,13 @@
 &lt;h2 id=&#34;反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理&#34;&gt;#&lt;/a&gt; 反向代理&lt;/h2&gt;
 &lt;h3 id=&#34;什么是反向代理&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#什么是反向代理&#34;&gt;#&lt;/a&gt; 什么是反向代理&lt;/h3&gt;
 &lt;p&gt;反向代理（Reverse Proxy）方式是指以代理服务器来接受 Internet 上的连接请求，然 后将请求转发给内部网络上的服务器，并将从服务器上得到的结果返回给 Internet 上请求连接的客户端，此时代理服务器对外就表现为一个反向代理服务器。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211120202450.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com/20211120202450.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;h4 id=&#34;反向代理的作用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理的作用&#34;&gt;#&lt;/a&gt; 反向代理的作用：&lt;/h4&gt;
 &lt;p&gt;（1）保证内网的安全，阻止 web 攻击，大型网站，通常将反向代理作为公网访问地址，Web 服务器是内网&lt;/p&gt;
 &lt;p&gt;（2）负载均衡，通过反向代理服务器来优化网站的负载&lt;/p&gt;
 &lt;h4 id=&#34;反向代理和正向代理的区别&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#反向代理和正向代理的区别&#34;&gt;#&lt;/a&gt; 反向代理和正向代理的区别&lt;/h4&gt;
 &lt;p&gt;首先我们先理解正向代理，正向代理类似一个跳板机，代理访问外部资源。比如我们国内访问谷歌，直接访问访问不到，我们可以通过一个正向代理服务器，请求发到代理服，代理服务器能够访问谷歌，这样由代理去谷歌取到返回数据，再返回给我们，这样我们就能访问谷歌了。&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211120202139.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com/20211120202139.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;正向代理的用途：&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;（1）访问原来无法访问的资源，如 google&lt;/p&gt;
 &lt;p&gt;​    	（2） 可以做缓存，加速访问资源&lt;/p&gt;
@@ -37,7 +37,7 @@
 &lt;p&gt;（4）代理可以记录用户访问记录（上网行为管理），对外隐藏用户信息&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;正向代理即是客户端代理，代理客户端，服务端不知道实际发起请求的客户端.&lt;/strong&gt;&lt;br /&gt;
 &lt;strong&gt; 反向代理即是服务端代理，代理服务端，客户端不知道实际提供服务的服务端&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img data-src=&#34;https://gitee.com/nobody_heard_of_it/pic-md1/raw/master/image/20211120202656.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com/20211120202656.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
 &lt;p&gt;正向代理中，proxy 和 client 同属一个 LAN，对 server 透明；&lt;br /&gt;
 反向代理中，proxy 和 server 同属一个 LAN，对 client 透明。&lt;br /&gt;
 实际上 proxy 在两种代理中做的事都是代为收发请求和响应，不过从结构上来看正好左右互换了下，所以把后出现的那种代理方式叫成了反向代理。&lt;/p&gt;
