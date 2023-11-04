@@ -3,18 +3,64 @@
     <id>http://zhanglin233.github.io</id>
     <title>欢迎来到我的个人博客 • Posts by &#34;博客&#34; category</title>
     <link href="http://zhanglin233.github.io" />
-    <updated>2021-11-26T17:22:09.498Z</updated>
+    <updated>2023-11-03T17:17:25.218Z</updated>
     <category term="智能控制" />
     <category term="算法" />
     <category term="博客" />
     <category term="前端" />
+    <category term="git" />
     <category term="Nginx" />
     <category term="前端 React" />
-    <category term="Java JavaWEB" />
     <category term="Java JavaSE" />
+    <category term="Java JavaWEB" />
     <category term="java SpringBoot" />
     <category term="java springboot" />
     <category term="Python 爬虫" />
+    <entry>
+        <id>http://zhanglin233.github.io/2023/11/04/computer-science/blog/%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/</id>
+        <title>搭建图床</title>
+        <link rel="alternate" href="http://zhanglin233.github.io/2023/11/04/computer-science/blog/%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/"/>
+        <content type="html">&lt;h1 id=&#34;搭建图床&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#搭建图床&#34;&gt;#&lt;/a&gt; 搭建图床&lt;/h1&gt;
+&lt;p&gt;原来是白嫖的码云仓库当做图床村放位置，后来被禁了就改用了将图片存放在七牛云上，七牛云每个月有免费额度，作为个人博客的图床还是够用的。&lt;/p&gt;
+&lt;h2 id=&#34;七牛云创建存储空间&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#七牛云创建存储空间&#34;&gt;#&lt;/a&gt; 七牛云创建存储空间&lt;/h2&gt;
+&lt;p&gt;首先进入空间管理页面&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wb3J0YWwucWluaXUuY29tL2tvZG8vYnVja2V0&#34;&gt;七牛云 - 对象存储 - 空间管理&lt;/span&gt;）（没有账号的先注册账号并实名认证）&lt;/p&gt;
+&lt;p&gt;点击新建空间，空间名称去个自己喜欢的就行，区域选个离自己近的，访问控制记得选择公开，然后确定即可。然后就会发现你的空间名称下面出现了刚刚新加的空间。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104165833.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;点击想要管理的空间名称，选择文件管理就可以上传文件以及创建目录了。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104170231.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;点击文件右侧的详情便能预览图片及获取用来访问的外链&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104170355.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104170509.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用picgo快捷上传图片并获取连接&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用picgo快捷上传图片并获取连接&#34;&gt;#&lt;/a&gt; 使用 PicGo 快捷上传图片并获取连接&lt;/h2&gt;
+&lt;p&gt;手动上传图片效率太慢，写博客时这样搞肯定不现实，借助 PicGo 工具可以极大的提升效率，谁用谁知道&lt;/p&gt;
+&lt;h3 id=&#34;安装picgo&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#安装picgo&#34;&gt;#&lt;/a&gt; 安装 PicGo&lt;/h3&gt;
+&lt;p&gt;&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9naXRodWIuY29tL01vbHVuZXJmaW5uL1BpY0dvL3JlbGVhc2Vz&#34;&gt;PicGo 下载地址&lt;/span&gt;，下载后安装即可。打开后长这样：&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231104170946818.png&#34; alt=&#34;image-20231104170946818&#34; /&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置picgo&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#配置picgo&#34;&gt;#&lt;/a&gt; 配置 PIcGo&lt;/h3&gt;
+&lt;p&gt;首先点击左侧的 PicGo 设置选项，再将滚动条拉到底，可以看到有很多支持的图床，将七牛云勾上即可，剩下的图床够不够无所谓了，想研究的可以自己勾上玩一玩。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104171032.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;勾上之后回到图床设置页面，会发现出现了刚刚勾选的图床，选择七牛云， 进入配置页面&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231104171512582.png&#34; alt=&#34;image-20231104171512582&#34; /&gt;1&lt;/p&gt;
+&lt;p&gt;AccessKey 和 SecretKe（分别对应 AK 和 SK）进入这个页面获取&lt;span class=&#34;exturl&#34; data-url=&#34;aHR0cHM6Ly9wb3J0YWwucWluaXUuY29tL2RldmVsb3Blci91c2VyL2tleQ==&#34;&gt;七牛云 - 密钥管理 (qiniu.com)&lt;/span&gt;, 选择一组的内容填入设置中即可&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104171601.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;Bucket 就是你创建空间时候的空间名，至于访问地址就是你要放到哪个存储空间以及哪个目录下面，不知道怎么获取的可以在在七牛云的网站上，进入到你想要存放的空间及目录，然后手动上传一张图片，待图片上传完成后点击详情页，拿到外链，再将外链末尾的文件名去掉就是这里设置中要填入的设定访问网址了。比如你上传的图片的外链为 http://xxxx.com/dirname/xxx.png, 则访问网址为 http://xxxx.com/dirname/。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104170509.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;获取存储区域的话，首先在浏览器上进入你的存储空间，然后通过 F12 打开开发人员工具，打开不了的网上搜一下 你的浏览器怎么打开开发人员工具。&lt;/p&gt;
+&lt;p&gt;打开之后找到网络（network）那一栏，没有的可以选择 “+” 号打开更多，选择网络那一栏即可&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104173027.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;打开后 F5 刷新页面，会发现多了很多东西&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104173224.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;在筛选器里面输入 bucketinfo，点击筛选出来的那一项，查看预览那一栏的信息，zone 里面的值就是你的存储区域。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104173330.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;p&gt;配置完成后回到上传区，选择七牛云及配置完成，后续上传的图片就会自动上传到七牛云对应存储空间上。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;http://s3k1abi6b.hd-bkt.clouddn.com//20231104173725.png&#34; alt=&#34;&#34; /&gt;&lt;/p&gt;
+&lt;h2 id=&#34;使用&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#使用&#34;&gt;#&lt;/a&gt; 使用&lt;/h2&gt;
+&lt;h4 id=&#34;上传图片&#34;&gt;&lt;a class=&#34;anchor&#34; href=&#34;#上传图片&#34;&gt;#&lt;/a&gt; 上传图片&lt;/h4&gt;
+&lt;p&gt;图片上传支持拖拽上传、点击上传、剪贴板图片上传以及 URL 上传，写博客最方便的肯定是剪贴板上传，上传完图片后会自动将图片访问链接复制到剪贴板中。如果你是写博客的话，选择 Markdown，获取的就是 md 语法的图片格式。&lt;/p&gt;
+&lt;p&gt;&lt;img data-src=&#34;C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231104173542632.png&#34; alt=&#34;image-20231104173542632&#34; /&gt;&lt;/p&gt;
+</content>
+        <category term="博客" />
+        <updated>2023-11-03T17:17:25.218Z</updated>
+    </entry>
     <entry>
         <id>http://zhanglin233.github.io/2021/11/27/computer-science/blog/hexo-github%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</id>
         <title>基于hexo框架部署个人博客</title>

@@ -7,10 +7,12 @@
         {
             "id": "http://zhanglin233.github.io/2023/11/04/computer-science/blog/%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/",
             "url": "http://zhanglin233.github.io/2023/11/04/computer-science/blog/%E6%90%AD%E5%BB%BA%E5%9B%BE%E5%BA%8A/",
-            "title": "",
+            "title": "搭建图床",
             "date_published": "2023-11-03T17:17:25.218Z",
-            "content_html": "",
-            "tags": []
+            "content_html": "<h1 id=\"搭建图床\"><a class=\"anchor\" href=\"#搭建图床\">#</a> 搭建图床</h1>\n<p>原来是白嫖的码云仓库当做图床村放位置，后来被禁了就改用了将图片存放在七牛云上，七牛云每个月有免费额度，作为个人博客的图床还是够用的。</p>\n<h2 id=\"七牛云创建存储空间\"><a class=\"anchor\" href=\"#七牛云创建存储空间\">#</a> 七牛云创建存储空间</h2>\n<p>首先进入空间管理页面<span class=\"exturl\" data-url=\"aHR0cHM6Ly9wb3J0YWwucWluaXUuY29tL2tvZG8vYnVja2V0\">七牛云 - 对象存储 - 空间管理</span>）（没有账号的先注册账号并实名认证）</p>\n<p>点击新建空间，空间名称去个自己喜欢的就行，区域选个离自己近的，访问控制记得选择公开，然后确定即可。然后就会发现你的空间名称下面出现了刚刚新加的空间。</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104165833.png\" alt=\"\" /></p>\n<p>点击想要管理的空间名称，选择文件管理就可以上传文件以及创建目录了。</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104170231.png\" alt=\"\" /></p>\n<p>点击文件右侧的详情便能预览图片及获取用来访问的外链</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104170355.png\" alt=\"\" /></p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104170509.png\" alt=\"\" /></p>\n<h2 id=\"使用picgo快捷上传图片并获取连接\"><a class=\"anchor\" href=\"#使用picgo快捷上传图片并获取连接\">#</a> 使用 PicGo 快捷上传图片并获取连接</h2>\n<p>手动上传图片效率太慢，写博客时这样搞肯定不现实，借助 PicGo 工具可以极大的提升效率，谁用谁知道</p>\n<h3 id=\"安装picgo\"><a class=\"anchor\" href=\"#安装picgo\">#</a> 安装 PicGo</h3>\n<p><span class=\"exturl\" data-url=\"aHR0cHM6Ly9naXRodWIuY29tL01vbHVuZXJmaW5uL1BpY0dvL3JlbGVhc2Vz\">PicGo 下载地址</span>，下载后安装即可。打开后长这样：</p>\n<p><img data-src=\"C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231104170946818.png\" alt=\"image-20231104170946818\" /></p>\n<h3 id=\"配置picgo\"><a class=\"anchor\" href=\"#配置picgo\">#</a> 配置 PIcGo</h3>\n<p>首先点击左侧的 PicGo 设置选项，再将滚动条拉到底，可以看到有很多支持的图床，将七牛云勾上即可，剩下的图床够不够无所谓了，想研究的可以自己勾上玩一玩。</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104171032.png\" alt=\"\" /></p>\n<p>勾上之后回到图床设置页面，会发现出现了刚刚勾选的图床，选择七牛云， 进入配置页面</p>\n<p><img data-src=\"C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231104171512582.png\" alt=\"image-20231104171512582\" />1</p>\n<p>AccessKey 和 SecretKe（分别对应 AK 和 SK）进入这个页面获取<span class=\"exturl\" data-url=\"aHR0cHM6Ly9wb3J0YWwucWluaXUuY29tL2RldmVsb3Blci91c2VyL2tleQ==\">七牛云 - 密钥管理 (qiniu.com)</span>, 选择一组的内容填入设置中即可<img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104171601.png\" alt=\"\" /></p>\n<p>Bucket 就是你创建空间时候的空间名，至于访问地址就是你要放到哪个存储空间以及哪个目录下面，不知道怎么获取的可以在在七牛云的网站上，进入到你想要存放的空间及目录，然后手动上传一张图片，待图片上传完成后点击详情页，拿到外链，再将外链末尾的文件名去掉就是这里设置中要填入的设定访问网址了。比如你上传的图片的外链为 http://xxxx.com/dirname/xxx.png, 则访问网址为 http://xxxx.com/dirname/。</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104170509.png\" alt=\"\" /></p>\n<p>获取存储区域的话，首先在浏览器上进入你的存储空间，然后通过 F12 打开开发人员工具，打开不了的网上搜一下 你的浏览器怎么打开开发人员工具。</p>\n<p>打开之后找到网络（network）那一栏，没有的可以选择 “+” 号打开更多，选择网络那一栏即可</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104173027.png\" alt=\"\" /></p>\n<p>打开后 F5 刷新页面，会发现多了很多东西</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104173224.png\" alt=\"\" /></p>\n<p>在筛选器里面输入 bucketinfo，点击筛选出来的那一项，查看预览那一栏的信息，zone 里面的值就是你的存储区域。</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104173330.png\" alt=\"\" /></p>\n<p>配置完成后回到上传区，选择七牛云及配置完成，后续上传的图片就会自动上传到七牛云对应存储空间上。</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104173725.png\" alt=\"\" /></p>\n<h2 id=\"使用\"><a class=\"anchor\" href=\"#使用\">#</a> 使用</h2>\n<h4 id=\"上传图片\"><a class=\"anchor\" href=\"#上传图片\">#</a> 上传图片</h4>\n<p>图片上传支持拖拽上传、点击上传、剪贴板图片上传以及 URL 上传，写博客最方便的肯定是剪贴板上传，上传完图片后会自动将图片访问链接复制到剪贴板中。如果你是写博客的话，选择 Markdown，获取的就是 md 语法的图片格式。</p>\n<p><img data-src=\"C:%5CUsers%5CAdministrator%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20231104173542632.png\" alt=\"image-20231104173542632\" /></p>\n",
+            "tags": [
+                "博客"
+            ]
         },
         {
             "id": "http://zhanglin233.github.io/2023/11/04/computer-science/git/git%E4%BD%BF%E7%94%A8%E5%91%BD%E4%BB%A4/",
@@ -21,12 +23,14 @@
             "tags": []
         },
         {
-            "id": "http://zhanglin233.github.io/2023/11/04/computer-science/git/git@gihub.comPermission%20denied/",
-            "url": "http://zhanglin233.github.io/2023/11/04/computer-science/git/git@gihub.comPermission%20denied/",
-            "title": "",
+            "id": "http://zhanglin233.github.io/2023/11/04/computer-science/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/",
+            "url": "http://zhanglin233.github.io/2023/11/04/computer-science/git/git%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/",
+            "title": "git常见问题",
             "date_published": "2023-11-03T16:04:45.231Z",
-            "content_html": "<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104001648.png\" alt=\"\" /></p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104001757.png\" alt=\"\" /></p>\n",
-            "tags": []
+            "content_html": "<h1 id=\"git常见问题\"><a class=\"anchor\" href=\"#git常见问题\">#</a> git 常见问题</h1>\n<h2 id=\"permission-denied-publickey\"><a class=\"anchor\" href=\"#permission-denied-publickey\">#</a> permission denied (publickey)</h2>\n<p>换了新电脑之后 git pull 的时候提示 permission denied (publickey)</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104001648.png\" alt=\"\" /></p>\n<p>这才想起来没配 ssh，重新生成一下，生成 id_rsa 和 id_rsa.pub 文件说明生成成功。</p>\n<pre><code class=\"language-shel\">ssy-keygen -t rsa -C &quot;youemail&quot;\n</code></pre>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104001757.png\" alt=\"\" /></p>\n<p>接下来打开 id_ras.pub 文件，将里面的内容全部粘贴到 github 新建的 ssh 里面即可</p>\n<p><img data-src=\"http://s3k1abi6b.hd-bkt.clouddn.com//20231104164727.png\" alt=\"\" /></p>\n",
+            "tags": [
+                "git"
+            ]
         },
         {
             "id": "http://zhanglin233.github.io/2021/12/12/computer-science/algorithm/LeetCode%E5%B7%A6%E7%A8%8B%E4%BA%91%E7%AE%97%E6%B3%95%E8%AF%BE%E7%AC%94%E8%AE%B0/",
